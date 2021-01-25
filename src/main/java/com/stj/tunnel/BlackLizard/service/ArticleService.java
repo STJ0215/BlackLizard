@@ -1,6 +1,5 @@
 package com.stj.tunnel.BlackLizard.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +15,9 @@ public class ArticleService {
 	
 	public List<Article> getArticles() {		
 		return articleDao.getArticles();
+	}
+
+	public Article getArticleById(int id) {
+		return articleDao.getArticleById(id);
 	}
 }
