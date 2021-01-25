@@ -12,8 +12,7 @@ import com.stj.tunnel.BlackLizard.dto.Article;
 @Controller
 public class ArticleController {
 	@RequestMapping("/usr/article/list")
-	@ResponseBody
-	List<Article> showList() {
+	public String showList() {
 		List<Article> articles = new ArrayList<>();
 		
 		Article article1 = new Article(1, "2021-01-23 20:00:00", "2021-01-23 20:00:00", "제목1", "내용1");
@@ -24,6 +23,6 @@ public class ArticleController {
 		articles.add(article2);
 		articles.add(article3);
 		
-		return articles;
+		return "usr/article/list";
 	}
 }
