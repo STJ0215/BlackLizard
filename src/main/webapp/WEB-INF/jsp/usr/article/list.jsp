@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<title>게시물 리스트</title>
 </head>
+
 <body>
 	<h1>게시물 리스트</h1>
 	
@@ -18,6 +19,5 @@
 		body : ${article.body}
 		<hr>
 	</c:forEach>
-	
 </body>
 </html>
