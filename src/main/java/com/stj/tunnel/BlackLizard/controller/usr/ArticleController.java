@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stj.tunnel.BlackLizard.dto.Article;
 import com.stj.tunnel.BlackLizard.service.ArticleService;
@@ -31,5 +32,13 @@ public class ArticleController {
 		model.addAttribute("article", article);
 						
 		return "/usr/article/detail";
+	}
+	
+	@RequestMapping("/usr/article/doModify")
+	@ResponseBody
+	public String doModify(int id, String title, String body) {
+		articleService.modifyArticle(id, title, body);
+		
+		return String.format("<script> alert('%d번 게시물이 수정되었습니다.'); location.replace('/usr/article/detail?id=%d'); </script>", id, id);
 	}
 }
