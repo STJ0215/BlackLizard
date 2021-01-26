@@ -41,4 +41,12 @@ public class ArticleController {
 		
 		return String.format("<script> alert('%d번 게시물이 수정되었습니다.'); location.replace('/usr/article/detail?id=%d'); </script>", id, id);
 	}
+	
+	@RequestMapping("/usr/article/doDelete")
+	@ResponseBody
+	public String doDelete(int id) {
+		articleService.deleteArticleById(id);
+		
+		return String.format("<script> alert('%d번 게시물이 삭제되었습니다.'); location.replace('/usr/article/list'); </script>", id);
+	}
 }
