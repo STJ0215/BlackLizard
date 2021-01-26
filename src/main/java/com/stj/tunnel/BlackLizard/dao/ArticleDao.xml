@@ -13,6 +13,20 @@
 		WHERE id = #{id}
 	</select>
 	
+	<insert id="writeArticle" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO article
+		<set>
+			regDate = NOW(),
+			updateDate = NOW(),
+			<if test="title != null">
+				title = #{title},
+			</if>
+			<if test="body != null">
+				`body` = #{body},
+			</if>
+		</set>
+	</insert>
+	
 	<update id="modifyArticle">
 		UPDATE article
 		<set>
