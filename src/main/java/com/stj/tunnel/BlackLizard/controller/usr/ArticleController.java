@@ -49,6 +49,15 @@ public class ArticleController {
 		return String.format("<script> alert('%d번 게시물이 생성되었습니다.'); location.replace('/usr/article/detail?id=%d'); </script>", id, id);
 	}
 	
+	@RequestMapping("/usr/article/modify")
+	public String showModify(Model model, int id) {
+		Article article = articleService.getArticleById(id);
+		
+		model.addAttribute("article", article);
+		
+		return "usr/article/modify";
+	}
+	
 	@RequestMapping("/usr/article/doModify")
 	@ResponseBody
 	public String doModify(int id, String title, String body) {
