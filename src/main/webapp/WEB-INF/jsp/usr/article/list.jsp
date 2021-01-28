@@ -16,7 +16,7 @@
 			regDate : ${article.regDate} <br>
 			updateDate : ${article.updateDate} <br>
 			title : ${article.title} <br>
-			body : ${article.body}
+			body : ${article.body} <br>
 			<hr>
 		</c:forEach>
 	</body>

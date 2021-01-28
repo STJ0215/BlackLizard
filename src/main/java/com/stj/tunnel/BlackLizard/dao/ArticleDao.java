@@ -10,7 +10,7 @@ import com.stj.tunnel.BlackLizard.dto.Article;
 
 @Mapper
 public interface ArticleDao {
-	List<Article> getArticles();
+	List<Article> getArticles(Map<String, Object> param);
 	
 	Article getArticleById(@Param("id") int id);
 	
