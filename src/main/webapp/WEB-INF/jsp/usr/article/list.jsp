@@ -12,12 +12,17 @@
 		<h1>게시물 목록</h1>
 	
 		<c:forEach var="article" items="${articles}">
-			id : ${article.id} <br>
-			regDate : ${article.regDate} <br>
-			updateDate : ${article.updateDate} <br>
-			title : ${article.title} <br>
-			body : ${article.body} <br>
+			ID : <a href="detail?id=${article.id}">${article.id}</a> <br>
+			작성일 : ${article.regDate} <br>
+			수정일 : ${article.updateDate} <br>
+			제목 : <a href="detail?id=${article.id}">${article.title}</a> <br>
+			작업 : <a href="modify?id=${article.id}">수정</a>
+					<a href="doDelete?id=${article.id}" onclick="if (confirm('게시물을 삭제하시겠습니까?') == false) return false;">삭제</a>
 			<hr>
 		</c:forEach>
+		
+		<div>
+			<a href="write">게시물 작성</a>
+		</div>	
 	</body>
 </html>

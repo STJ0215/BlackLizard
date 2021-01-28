@@ -22,5 +22,9 @@
 				작성 : <input type="submit" value="작성"/>
 			</div>
 		</form>
+		<br>
+		<div>
+			<a href="list">게시물 목록</a>
+		</div>
 	</body>
 </html>

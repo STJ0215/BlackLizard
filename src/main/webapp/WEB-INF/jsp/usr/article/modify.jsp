@@ -33,5 +33,9 @@
                 수정 : <input type="submit" value="수정"/>
             </div>
         </form>
+        <br>
+        <div>
+        	<a href="list">게시물 목록</a>
+        </div>
 	</body>
 </html>
