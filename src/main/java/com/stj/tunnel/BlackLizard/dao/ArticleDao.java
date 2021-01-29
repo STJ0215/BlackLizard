@@ -12,6 +12,8 @@ import com.stj.tunnel.BlackLizard.dto.Article;
 public interface ArticleDao {
 	List<Article> getArticles(Map<String, Object> param);
 	
+	int getTotalCount();
+	
 	Article getArticleById(@Param("id") int id);
 	
 	void writeArticle(Map<String, Object> param);

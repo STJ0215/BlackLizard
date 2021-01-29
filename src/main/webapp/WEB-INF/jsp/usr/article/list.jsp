@@ -10,6 +10,9 @@
 
 	<body>
 		<h1>게시물 목록</h1>
+		
+		<div>총 게시물 갯수 : ${totalCount}</div>
+		<hr>
 	
 		<c:forEach var="article" items="${articles}">
 			ID : <a href="detail?id=${article.id}">${article.id}</a> <br>

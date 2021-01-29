@@ -41,6 +41,10 @@ public class ArticleService {
 		
 		return articleDao.getArticles(param);
 	}
+	
+	public int getTotalCount() {
+		return articleDao.getTotalCount();
+	}
 
 	public Article getArticleById(int id) {
 		return articleDao.getArticleById(id);
