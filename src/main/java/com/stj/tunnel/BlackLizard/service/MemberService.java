@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.stj.tunnel.BlackLizard.dao.MemberDao;
+import com.stj.tunnel.BlackLizard.dto.Member;
 import com.stj.tunnel.BlackLizard.util.Util;
 
 @Service
@@ -19,5 +20,15 @@ public class MemberService {
 		int id = Util.getAsInt(param.get("id"));
 		
 		return id;
+	}
+	
+	public boolean isJoinAvailableLoginId(String loginId) {
+		Member member = memberDao.getMemberByLoginId(loginId);
+		
+		if (member == null) {
+			return true;
+		}
+		
+		return false;
 	}
 }

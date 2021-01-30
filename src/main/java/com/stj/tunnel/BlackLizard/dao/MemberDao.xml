@@ -19,4 +19,9 @@
 			</if>
 		</set>
 	</insert>
+	
+	<select id="getMemberByLoginId" resultType="Member">
+		SELECT * FROM member
+		WHERE loginId = #{loginId}
+	</select>
 </mapper>
