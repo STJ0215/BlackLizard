@@ -33,9 +33,34 @@
 		</div>
 		<br>
 		
-		<span>페이지</span>
-		<c:forEach var="i" begin="1" end="${totalPage}">
-			<a href="?page=${i}">${i}</a>
-		</c:forEach>
+		<style>
+			.selected {
+				font-weight: bold;
+				color: red;
+			}
+		</style>
+		
+		<span>페이지 : </span>
+        <div>
+            <c:set var="goFirstBtnNeedToShow" value="${page > pageMenuArmSize + 1}"/>
+            <c:set var="goLastBtnNeedToShow" value="true"/>
+            
+            <c:if test="${goFirstBtnNeedToShow}">
+                <a href="?page=1">◀◀</a>
+            </c:if>
+            
+            <c:forEach var="i" begin="${pageMenuStart}" end="${pageMenuEnd}">
+                <c:set var="className" value="${i == page ? 'selected' : ''}"/>
+                <a class="${className}" href="?page=${i}">${i}</a>
+                
+                <c:if test="${i == totalPage}">
+                    <c:set var="goLastBtnNeedToShow" value="false"/>
+                </c:if>
+            </c:forEach>
+            
+            <c:if test="${goLastBtnNeedToShow}">
+                <a href="?page=${totalPage}">▶▶</a>
+            </c:if>
+        </div>
 	</body>
 </html>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stj.tunnel.BlackLizard.dto.Article;
 import com.stj.tunnel.BlackLizard.service.ArticleService;
+import com.stj.tunnel.BlackLizard.util.Util;
 
 @Controller
 public class ArticleController {
@@ -24,12 +25,26 @@ public class ArticleController {
 		int totalCount = articleService.getTotalCount();
 		int itemsCountInAPage = 10;
 		int totalPage = (int)Math.ceil(totalCount / (double)itemsCountInAPage);
+		int pageMenuArmSize = 5;
+		int page = Util.getAsInt(param.get("page"), 1);
+		int pageMenuStart = page - pageMenuArmSize;
+		if (pageMenuStart < 1) {
+			pageMenuStart = 1;
+		}
+		int pageMenuEnd = page + pageMenuArmSize;
+		if (pageMenuEnd > totalPage) {
+			pageMenuEnd = totalPage;
+		}
 		
 		param.put("itemsCountInAPage", itemsCountInAPage);
 		
 		model.addAttribute("articles", articles);
 		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("page", page);
+		model.addAttribute("pageMenuArmSize", pageMenuArmSize);
+		model.addAttribute("pageMenuStart", pageMenuStart);
+		model.addAttribute("pageMenuEnd", pageMenuEnd);
 		
 		return "usr/article/list";
 	}
