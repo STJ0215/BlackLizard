@@ -3,6 +3,8 @@ package com.stj.tunnel.BlackLizard.controller.usr;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,16 +24,20 @@ public class ArticleController {
 	@RequestMapping("/usr/article/list")
 	public String showList(Model model, @RequestParam Map<String, Object> param) {
 		List<Article> articles = articleService.getArticles(param);
+		
 		int totalCount = articleService.getTotalCount();
 		int itemsCountInAPage = 10;
 		int totalPage = (int)Math.ceil(totalCount / (double)itemsCountInAPage);
 		int pageMenuArmSize = 5;
 		int page = Util.getAsInt(param.get("page"), 1);
 		int pageMenuStart = page - pageMenuArmSize;
+		
 		if (pageMenuStart < 1) {
 			pageMenuStart = 1;
 		}
+		
 		int pageMenuEnd = page + pageMenuArmSize;
+		
 		if (pageMenuEnd > totalPage) {
 			pageMenuEnd = totalPage;
 		}
@@ -39,6 +45,7 @@ public class ArticleController {
 		param.put("itemsCountInAPage", itemsCountInAPage);
 		
 		model.addAttribute("articles", articles);
+		
 		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("totalPage", totalPage);
 		model.addAttribute("page", page);
@@ -59,8 +66,13 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/write")
-	public String showWrite() {
-		return "/usr/article/write";
+	public String showWrite(HttpSession session) {
+		int loginedMemberId = 0;
+		
+		if (session.getAttribute("loginedMemberId") != null) {
+			loginedMemberId = (int)session.getAttribute("loginedMemberId");
+		}
+		return "usr/article/write";
 	}
 	
 	@RequestMapping("/usr/article/doWrite")

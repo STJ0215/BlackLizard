@@ -9,6 +9,8 @@
 	</head>
 
 	<body>
+		[${sessionScope}] <!-- [{loginedMemberId=1}] -->
+		
 		<h1>게시물 목록</h1>
 		
 		<div>총 게시물 갯수 : ${totalCount}</div>
