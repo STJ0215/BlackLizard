@@ -46,7 +46,7 @@ public class ArticleController {
 		model.addAttribute("pageMenuStart", pageMenuStart);
 		model.addAttribute("pageMenuEnd", pageMenuEnd);
 		
-		return "usr/article/list";
+		return "/usr/article/list";
 	}
 	
 	@RequestMapping("/usr/article/detail")
@@ -60,7 +60,7 @@ public class ArticleController {
 	
 	@RequestMapping("/usr/article/write")
 	public String showWrite() {
-		return "usr/article/write";
+		return "/usr/article/write";
 	}
 	
 	@RequestMapping("/usr/article/doWrite")
@@ -77,7 +77,7 @@ public class ArticleController {
 		
 		model.addAttribute("article", article);
 		
-		return "usr/article/modify";
+		return "/usr/article/modify";
 	}
 	
 	@RequestMapping("/usr/article/doModify")
