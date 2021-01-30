@@ -22,9 +22,14 @@ public class ArticleController {
 	public String showList(Model model, @RequestParam Map<String, Object> param) {
 		List<Article> articles = articleService.getArticles(param);
 		int totalCount = articleService.getTotalCount();
+		int itemsCountInAPage = 10;
+		int totalPage = (int)Math.ceil(totalCount / (double)itemsCountInAPage);
+		
+		param.put("itemsCountInAPage", itemsCountInAPage);
 		
 		model.addAttribute("articles", articles);
 		model.addAttribute("totalCount", totalCount);
+		model.addAttribute("totalPage", totalPage);
 		
 		return "usr/article/list";
 	}
