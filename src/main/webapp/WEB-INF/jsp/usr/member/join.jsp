@@ -1,15 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>회원 가입</title>
-    </head>
     
-    <body>
-        <h1>회원 가입</h1>
+<c:set var="title" value="회원 가입"/>
+<%@ include file="../part/head.jspf"%>
         
         <script>
             var joinFormSubmitDone = false;
@@ -23,7 +17,7 @@
                 
                 form.loginId.value = form.loginId.value.trim();                
                 if (form.loginId.value.length == 0) {
-                    alert('아이디를 입력해 주세요.');
+                    alert('로그인 아이디를 입력해 주세요.');
                     form.loginId.focus();
 
                     return;
@@ -31,7 +25,7 @@
 
                 form.loginPw.value = form.loginPw.value.trim();
                 if (form.loginPw.value.length == 0) {
-                    alert('패스워드를 입력해 주세요.');
+                    alert('로그인 패스워드를 입력해 주세요.');
                     form.loginPw.focus();
 
                     return;
@@ -39,7 +33,7 @@
 
                 form.loginPwConfirm.value = form.loginPwConfirm.value.trim();
                 if (form.loginPw.value != form.loginPwConfirm.value) {
-                    alert('패스워드가 일치하지 않습니다.');
+                    alert('로그인 패스워드가 일치하지 않습니다.');
                     form.loginPwConfirm.focus();
 
                     return;
@@ -75,5 +69,4 @@
                 가입 : <input type="submit" value="가입"/>
             </div>
         </form>
-    </body>
-</html>
+<%@ include file="../part/foot.jspf"%>
