@@ -16,6 +16,7 @@
                 <a href="/usr/member/login">로그인</a>
             </c:if>
             <c:if test="${sessionScope.loginedMemberId > 0}">
+            	<a href="/usr/member/doLogout">로그아웃</a>
                 <a href="/usr/article/write">게시물 작성</a>
             </c:if>
             <a href="/usr/article/list">게시물 목록</a>
