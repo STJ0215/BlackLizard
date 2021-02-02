@@ -96,7 +96,8 @@ public class ArticleController {
 			return "/common/redirect";
 		}
 		
-		int id = articleService.writeArticle(param);
+		param.put("memberId", loginedMemberId); // 작성자 아이디
+		int id = articleService.writeArticle(param); // 게시물 번호
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 생성되었습니다.", id));
 		model.addAttribute("redirectUri", String.format("/usr/article/detail?id=%d", id));

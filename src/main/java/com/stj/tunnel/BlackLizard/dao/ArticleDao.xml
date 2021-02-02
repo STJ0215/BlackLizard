@@ -25,6 +25,9 @@
 		<set>
 			regDate = NOW(),
 			updateDate = NOW(),
+			<if test="memberId != null">
+				memberId = #{memberId},
+			</if>
 			<if test="title != null">
 				title = #{title},
 			</if>
