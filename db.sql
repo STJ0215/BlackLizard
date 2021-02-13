@@ -26,9 +26,9 @@ loginPw = 'admin',
 INSERT INTO `member` SET
 regDate = NOW(),
 updateDate = NOW(),
-loginId = 'user1',
-loginPw = 'user1',
-`name` = 'user1';
+loginId = 'user_test',
+loginPw = 'user_test',
+`name` = 'user_test';
 
 
 
@@ -60,6 +60,13 @@ updateDate = NOW(),
 title = '제목3',
 `body` = '내용3';
 
+INSERT INTO article SET
+regDate = NOW(),
+updateDate = NOW(),
+title = '제목4',
+`body` = '내용4';
+
+## 게시물 데이터 무작위 추가
 #INSERT INTO article SET
 #regDate = NOW(),
 #updateDate = NOW(),
@@ -70,6 +77,14 @@ title = '제목3',
 ALTER TABLE article ADD COLUMN memberId INT(10) UNSIGNED NOT NULL AFTER updateDate;
 # 기존 게시물의 작성자가 1번 회원이라고 정한다
 UPDATE article SET memberId = 1 WHERE memberId = 0;
+
+# 2번 회원이 작성한 게시물 데이터 추가
+INSERT INTO article SET
+regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+title = '제목5',
+`body` = '내용5';
 
 
 
