@@ -181,6 +181,15 @@ public class ArticleController {
 			return "/common/redirect";
 		}
 		
+		Article article = articleService.getArticleById(id);
+		
+		if (article.getMemberId() != loginedMemberId) {
+			model.addAttribute("msg", "삭제 권한이 없습니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "common/redirect";
+		}
+		
 		articleService.deleteArticleById(id);
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 삭제되었습니다.", id));
