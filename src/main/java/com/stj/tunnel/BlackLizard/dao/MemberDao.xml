@@ -20,6 +20,11 @@
 		</set>
 	</insert>
 	
+	<select id="getMemberById" resultType="Member">
+		SELECT * FROM member
+		WHERE id = #{id}
+	</select>
+	
 	<select id="getMemberByLoginId" resultType="Member">
 		SELECT * FROM member
 		WHERE loginId = #{loginId}

@@ -11,5 +11,7 @@ import com.stj.tunnel.BlackLizard.dto.Member;
 public interface MemberDao {
 	void join(Map<String, Object> param);
 	
+	Member getMemberById(@Param("id") int id);
+	
 	Member getMemberByLoginId(@Param("loginId") String loginId);
 }

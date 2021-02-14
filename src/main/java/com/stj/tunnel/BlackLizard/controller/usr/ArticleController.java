@@ -3,6 +3,7 @@ package com.stj.tunnel.BlackLizard.controller.usr;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,36 +65,30 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/write")
-	public String showWrite(HttpSession session, Model model) {
-		int loginedMemberId = 0;
-		
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (int)session.getAttribute("loginedMemberId");
-		}
-		
-		if (loginedMemberId == 0) {
+	public String showWrite(HttpServletRequest req, Model model) {
+		boolean isLogined = (boolean)req.getAttribute("isLogined");
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+
+		if (isLogined == false) {
 			model.addAttribute("msg", "로그인 후 이용해주세요.");
 			model.addAttribute("redirectUri", "/usr/member/login");
-			
-			return "/common/redirect";
+
+			return "common/redirect";
 		}
 		
 		return "/usr/article/write";
 	}
 	
 	@RequestMapping("/usr/article/doWrite")
-	public String doWrite(HttpSession session, Model model, @RequestParam Map<String, Object> param) {
-		int loginedMemberId = 0;
-		
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (int)session.getAttribute("loginedMemberId");
-		}
-		
-		if (loginedMemberId == 0) {
+	public String doWrite(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+		boolean isLogined = (boolean)req.getAttribute("isLogined");
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+
+		if (isLogined == false) {
 			model.addAttribute("msg", "로그인 후 이용해주세요.");
 			model.addAttribute("redirectUri", "/usr/member/login");
-			
-			return "/common/redirect";
+
+			return "common/redirect";
 		}
 		
 		param.put("memberId", loginedMemberId); // 작성자 아이디
@@ -106,18 +101,15 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/modify")
-	public String showModify(HttpSession session, Model model, int id) {
-		int loginedMemberId = 0;
-		
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (int)session.getAttribute("loginedMemberId");
-		}
-		
-		if (loginedMemberId == 0) {
+	public String showModify(HttpServletRequest req, Model model, int id) {
+		boolean isLogined = (boolean)req.getAttribute("isLogined");
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+
+		if (isLogined == false) {
 			model.addAttribute("msg", "로그인 후 이용해주세요.");
 			model.addAttribute("redirectUri", "/usr/member/login");
-			
-			return "/common/redirect";
+
+			return "common/redirect";
 		}
 		
 		Article article = articleService.getArticleById(id);
@@ -135,18 +127,15 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/doModify")
-	public String doModify(HttpSession session, Model model, int id, String title, String body) {
-		int loginedMemberId = 0;
-		
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (int)session.getAttribute("loginedMemberId");
-		}
-		
-		if (loginedMemberId == 0) {
+	public String doModify(HttpServletRequest req, Model model, int id, String title, String body) {
+		boolean isLogined = (boolean)req.getAttribute("isLogined");
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+
+		if (isLogined == false) {
 			model.addAttribute("msg", "로그인 후 이용해주세요.");
 			model.addAttribute("redirectUri", "/usr/member/login");
-			
-			return "/common/redirect";
+
+			return "common/redirect";
 		}
 		
 		Article article = articleService.getArticleById(id);
@@ -167,18 +156,15 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/doDelete")
-	public String doDelete(HttpSession session, Model model, int id) {
-		int loginedMemberId = 0;
-		
-		if (session.getAttribute("loginedMemberId") != null) {
-			loginedMemberId = (int)session.getAttribute("loginedMemberId");
-		}
-		
-		if (loginedMemberId == 0) {
+	public String doDelete(HttpServletRequest req, Model model, int id) {
+		boolean isLogined = (boolean)req.getAttribute("isLogined");
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+
+		if (isLogined == false) {
 			model.addAttribute("msg", "로그인 후 이용해주세요.");
 			model.addAttribute("redirectUri", "/usr/member/login");
-			
-			return "/common/redirect";
+
+			return "common/redirect";
 		}
 		
 		Article article = articleService.getArticleById(id);
