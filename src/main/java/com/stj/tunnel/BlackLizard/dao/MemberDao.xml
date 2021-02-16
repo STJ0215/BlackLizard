@@ -29,4 +29,15 @@
 		SELECT * FROM member
 		WHERE loginId = #{loginId}
 	</select>
+	
+	<update id="modify">
+		UPDATE member
+		<set>
+			updateDate = NOW(),
+			<if test="name != null">
+				`name` = #{name},
+			</if>
+		</set>
+		WHERE id = #{id}
+	</update>
 </mapper>

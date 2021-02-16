@@ -12,10 +12,14 @@
         <h1>${title}</h1>
         
         <div>
-            <c:if test="${not (sessionScope.loginedMemberId > 0)}">
+            <c:if test="${not isLogined}">
+            	<a href="/usr/member/join">회원 가입</a>
                 <a href="/usr/member/login">로그인</a>
             </c:if>
-            <c:if test="${sessionScope.loginedMemberId > 0}">
+            <c:if test="${isLogined}">
+            	<span>${loginedMember.name}님 어서오세요.</span>
+            	<br>
+            	<a href="/usr/member/modify">회원정보 수정</a>
             	<a href="/usr/member/doLogout">로그아웃</a>
                 <a href="/usr/article/write">게시물 작성</a>
             </c:if>

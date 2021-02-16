@@ -2,6 +2,7 @@ package com.stj.tunnel.BlackLizard.controller.usr;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,8 @@ public class MemberController {
 			
 			return "/common/redirect";
 		}
-				
-		int id = memberService.join(param);
+		
+		int id = memberService.join(param); // 회원 아이디(번호)
 		
 		model.addAttribute("msg", "회원 가입이 완료되었습니다");
 		model.addAttribute("redirectUri", "/usr/article/list");
@@ -95,6 +96,28 @@ public class MemberController {
 	public String doLogout(HttpSession session, Model model) {		
 		session.removeAttribute("loginedMemberId");
 		
+		model.addAttribute("redirectUri", "/usr/article/list");
+		
+		return "/common/redirect";
+	}
+	
+	@RequestMapping("/usr/member/modify")
+	public String showModify() {
+		return "/usr/member/modify";
+	}
+	
+	@RequestMapping("/usr/member/doModify")
+	public String doModify(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+		param.put("id", loginedMemberId);
+		
+		// 해킹 방지
+		param.remove("loginId");
+		param.remove("loginPw");
+		
+		memberService.modify(param);
+		
+		model.addAttribute("msg", "회원정보가 수정되었습니다.");
 		model.addAttribute("redirectUri", "/usr/article/list");
 		
 		return "/common/redirect";
