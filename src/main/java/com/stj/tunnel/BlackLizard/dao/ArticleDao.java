@@ -10,11 +10,11 @@ import com.stj.tunnel.BlackLizard.dto.Article;
 
 @Mapper
 public interface ArticleDao {
-	List<Article> getArticles(Map<String, Object> param);
+	List<Article> getForPrintArticles(Map<String, Object> param);
 	
 	int getTotalCount();
 	
-	Article getArticleById(@Param("id") int id);
+	Article getForPrintArticleById(@Param("id") int id);
 	
 	void writeArticle(Map<String, Object> param);
 

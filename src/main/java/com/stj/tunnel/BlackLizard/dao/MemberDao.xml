@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.stj.tunnel.BlackLizard.dao.MemberDao">
 	<insert id="join" useGeneratedKeys="true" keyProperty="id">
-		INSERT INTO member
+		INSERT INTO `member`
 		<set>
 			regDate = NOW(),
 			updateDate = NOW(),
@@ -21,17 +21,19 @@
 	</insert>
 	
 	<select id="getMemberById" resultType="Member">
-		SELECT * FROM member
+		SELECT *
+		FROM `member`
 		WHERE id = #{id}
 	</select>
 	
 	<select id="getMemberByLoginId" resultType="Member">
-		SELECT * FROM member
+		SELECT *
+		FROM `member`
 		WHERE loginId = #{loginId}
 	</select>
 	
 	<update id="modify">
-		UPDATE member
+		UPDATE `member`
 		<set>
 			updateDate = NOW(),
 			<if test="name != null">

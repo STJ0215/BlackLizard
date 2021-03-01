@@ -8,6 +8,7 @@
         <div>ID : ${article.id}</div>
         <div>등록일 : ${article.regDate}</div>
         <div>수정일 : ${article.updateDate}</div>
+        <div>작성자 : ${article.extra.writer}</div>
         <div>제목 : ${article.title}</div>
         <div>내용 : ${article.body}</div>
         <br>

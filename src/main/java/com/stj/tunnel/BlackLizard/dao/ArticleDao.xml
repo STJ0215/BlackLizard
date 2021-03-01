@@ -3,11 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.stj.tunnel.BlackLizard.dao.ArticleDao">
-	<select id="getArticles" resultMap="article">
+	<select id="getForPrintArticles" resultMap="article">
 		SELECT A.*,
 		M.name AS extra__writer
 		FROM article AS A
-		INNER JOIN member As M
+		INNER JOIN `member` As M
 		ON A.memberId = M.id
 		ORDER BY A.id DESC
 		<if test="limitFrom != null and limitTake != null">
@@ -16,12 +16,17 @@
 	</select>
 	
 	<select id="getTotalCount" resultType="int">
-		SELECT COUNT(*) FROM article 
+		SELECT COUNT(*)
+		FROM article 
 	</select>
 	
-	<select id="getArticleById" resultType="Article">
-		SELECT * FROM article
-		WHERE id = #{id}
+	<select id="getForPrintArticleById" resultMap="article">
+		SELECT A.*,
+		M.name AS extra__writer
+		FROM article AS A
+		INNER JOIN `member` AS M
+		ON A.memberId = M.id
+		WHERE A.id = #{id}
 	</select>
 	
 	<insert id="writeArticle" useGeneratedKeys="true" keyProperty="id">
