@@ -12,7 +12,7 @@ import com.stj.tunnel.BlackLizard.dto.Article;
 public interface ArticleDao {
 	List<Article> getForPrintArticles(Map<String, Object> param);
 	
-	int getTotalCount();
+	int getTotalCount(Map<String, Object> param);
 	
 	Article getForPrintArticleById(@Param("id") int id);
 	

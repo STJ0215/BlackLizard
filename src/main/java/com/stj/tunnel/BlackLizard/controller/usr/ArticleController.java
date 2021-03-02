@@ -24,7 +24,7 @@ public class ArticleController {
 	public String showList(Model model, @RequestParam Map<String, Object> param) {
 		List<Article> articles = articleService.getForPrintArticles(param);
 		
-		int totalCount = articleService.getTotalCount();
+		int totalCount = articleService.getTotalCount(param);
 		int itemsCountInAPage = 10;
 		int totalPage = (int)Math.ceil(totalCount / (double)itemsCountInAPage);
 		int pageMenuArmSize = 5;

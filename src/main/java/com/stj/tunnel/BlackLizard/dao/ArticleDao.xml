@@ -9,6 +9,10 @@
 		FROM article AS A
 		INNER JOIN `member` As M
 		ON A.memberId = M.id
+		WHERE 1
+		<if test="searchKeyword != null">
+			AND A.title LIKE CONCAT('%', #{searchKeyword}, '%')
+		</if>
 		ORDER BY A.id DESC
 		<if test="limitFrom != null and limitTake != null">
 			LIMIT #{limitFrom}, #{limitTake}
@@ -17,7 +21,11 @@
 	
 	<select id="getTotalCount" resultType="int">
 		SELECT COUNT(*)
-		FROM article 
+		FROM article
+		WHERE 1
+		<if test="searchKeyword != null">
+			AND title LIKE CONCAT('%', #{searchKeyword}, '%')
+		</if>
 	</select>
 	
 	<select id="getForPrintArticleById" resultMap="article">

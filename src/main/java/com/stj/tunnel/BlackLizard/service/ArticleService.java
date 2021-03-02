@@ -42,8 +42,8 @@ public class ArticleService {
 		return articleDao.getForPrintArticles(param);
 	}
 	
-	public int getTotalCount() {
-		return articleDao.getTotalCount();
+	public int getTotalCount(Map<String, Object> param) {
+		return articleDao.getTotalCount(param);
 	}
 
 	public Article getForPrintArticleById(int id) {
