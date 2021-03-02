@@ -28,4 +28,26 @@
             </div>
             <input type="submit" value="작성">
         </form>
+        <hr>
+        
+        <h2>댓글 목록</h2>
+        
+        <c:forEach var="reply" items="${replies}">
+            <div>
+                ID : ${reply.id}
+            </div>
+            <div>
+                등록일 : ${reply.regDate}
+            </div>
+            <div>
+                수정일 : ${reply.updateDate}
+            </div>
+            <div>
+                작성자 : ${reply.memberId}
+            </div>
+            <div>
+                내용 : ${reply.body}
+            </div>
+            <hr>
+        </c:forEach>
 <%@ include file="../part/foot.jspf"%>

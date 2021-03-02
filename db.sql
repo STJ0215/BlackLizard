@@ -100,6 +100,39 @@ CREATE TABLE reply (
     `body` TEXT NOT NULL
 );
 
+# 댓글 데이터 추가
+INSERT INTO reply SET
+regDate = NOW(),
+updateDate = NOW(),
+relTypeCode = 'article',
+relId = 1,
+memberId = 1,
+`body` = 'test_reply1';
+
+INSERT INTO reply SET
+regDate = NOW(),
+updateDate = NOW(),
+relTypeCode = 'article',
+relId = 1,
+memberId = 1,
+`body` = 'test_reply2';
+
+INSERT INTO reply SET
+regDate = NOW(),
+updateDate = NOW(),
+relTypeCode = 'article',
+relId = 1,
+memberId = 2,
+`body` = 'test_reply3';
+
+INSERT INTO reply SET
+regDate = NOW(),
+updateDate = NOW(),
+relTypeCode = 'article',
+relId = 2,
+memberId = 2,
+`body` = 'test_reply4';
+
 
 
 # 회원 테이블 조회

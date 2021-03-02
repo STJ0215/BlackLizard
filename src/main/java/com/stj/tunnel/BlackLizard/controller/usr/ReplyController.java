@@ -24,13 +24,12 @@ public class ReplyController {
 		param.put("memberId", loginedMemberId); // 작성자 아이디
 		
 		int id = replyService.writeReply(param); // 댓글 번호
-		String relTypeCode = (String)param.get("relTypeCode");
-		int relId = Util.getAsInt(param.get("relId"));
+		String relTypeCode = (String)param.get("relTypeCode"); // 관련 데이터 타입
+		int relId = Util.getAsInt(param.get("relId")); // 관련 Id
 				
 		model.addAttribute("msg", String.format("%d번 댓글이 생성되었습니다.", id));
 		model.addAttribute("redirectUri", String.format("/usr/%s/detail?id=%d", relTypeCode, relId));
 		
 		return "/common/redirect";
 	}
-
 }

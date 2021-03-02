@@ -12,13 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stj.tunnel.BlackLizard.dto.Article;
+import com.stj.tunnel.BlackLizard.dto.Reply;
 import com.stj.tunnel.BlackLizard.service.ArticleService;
+import com.stj.tunnel.BlackLizard.service.ReplyService;
 import com.stj.tunnel.BlackLizard.util.Util;
 
 @Controller
 public class ArticleController {
 	@Autowired
 	private ArticleService articleService;
+	@Autowired
+	private ReplyService replyService;
 	
 	@RequestMapping("/usr/article/list")
 	public String showList(Model model, @RequestParam Map<String, Object> param) {
@@ -57,8 +61,10 @@ public class ArticleController {
 	@RequestMapping("/usr/article/detail")
 	public String showDetail(Model model, int id) {
 		Article article = articleService.getForPrintArticleById(id);
+		List<Reply> replies = replyService.getForPrintReplies("article", id);
 		
 		model.addAttribute("article", article);
+		model.addAttribute("replies", replies);
 						
 		return "/usr/article/detail";
 	}
@@ -93,7 +99,7 @@ public class ArticleController {
 			model.addAttribute("msg", "수정 권한이 없습니다.");
 			model.addAttribute("historyBack", true);
 			
-			return "common/redirect";
+			return "/common/redirect";
 		}
 		
 		model.addAttribute("article", article);
@@ -111,7 +117,7 @@ public class ArticleController {
 			model.addAttribute("msg", "수정 권한이 없습니다.");
 			model.addAttribute("historyBack", true);
 			
-			return "common/redirect";
+			return "/common/redirect";
 		}
 				
 		articleService.modifyArticle(id, title, body);
@@ -132,7 +138,7 @@ public class ArticleController {
 			model.addAttribute("msg", "삭제 권한이 없습니다.");
 			model.addAttribute("historyBack", true);
 			
-			return "common/redirect";
+			return "/common/redirect";
 		}
 		
 		articleService.deleteArticleById(id);
