@@ -89,8 +89,24 @@ title = CONCAT('제목_', RAND()),
 
 
 
+#댓글 테이블 생성
+CREATE TABLE reply (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    relTypeCode CHAR(50) NOT NULL, # 관련 데이터 타입
+    relId INT(10) UNSIGNED NOT NULL, # 관련 ID
+    memberId INT(10) UNSIGNED NOT NULL,
+    `body` TEXT NOT NULL
+);
+
+
+
 # 회원 테이블 조회
 SELECT * FROM `member`;
 
 # 게시물 테이블 조회(내림차순)
 SELECT * FROM article ORDER BY id DESC;
+
+# 댓글 테이블 조회
+SELECT * FROM reply;

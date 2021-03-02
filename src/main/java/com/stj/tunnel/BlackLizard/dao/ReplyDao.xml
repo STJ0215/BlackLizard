@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stj.tunnel.BlackLizard.dao.ReplyDao">	
+	<insert id="writeReply" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO reply
+		<set>
+			regDate = NOW(),
+			updateDate = NOW(),
+			<if test="relTypeCode != null">
+				relTypeCode = #{relTypeCode},
+			</if>
+			<if test="relId != null">
+				relId = #{relId},
+			</if>
+			<if test="memberId != null">
+				memberId = #{memberId},
+			</if>
+			<if test="body != null">
+				`body` = #{body},
+			</if>
+		</set>
+	</insert>
+</mapper>

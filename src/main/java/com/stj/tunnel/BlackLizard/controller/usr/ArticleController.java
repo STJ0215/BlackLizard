@@ -73,8 +73,8 @@ public class ArticleController {
 	@RequestMapping("/usr/article/doWrite")
 	public String doWrite(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
-		
 		param.put("memberId", loginedMemberId); // 작성자 아이디
+		
 		int id = articleService.writeArticle(param); // 게시물 번호
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 생성되었습니다.", id));
