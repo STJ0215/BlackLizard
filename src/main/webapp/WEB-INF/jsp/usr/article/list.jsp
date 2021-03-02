@@ -9,6 +9,14 @@
         <div>
             <a href="write">글쓰기</a>
         </div>
+        <div>
+        	<form>
+        		<div>
+        			<input type="text" placeholder="검색어 입력" name="searchKeyword" value="${param.searchKeyword}">
+        			<input type="submit" value="검색">
+        		</div>
+        	</form>
+        </div>
         <hr>
         
         <c:forEach var="article" items="${articles}">

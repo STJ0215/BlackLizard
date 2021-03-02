@@ -18,7 +18,14 @@ public class Util {
 			return (int)((long) object);
 		}
 		else if (object instanceof String) {
-			return Integer.parseInt((String) object);
+			int value = defaultValue;
+			
+			try {
+				return Integer.parseInt((String) object);
+			}
+			catch (NumberFormatException e) {
+				return defaultValue;
+			}
 		}
 		
 		return defaultValue;
