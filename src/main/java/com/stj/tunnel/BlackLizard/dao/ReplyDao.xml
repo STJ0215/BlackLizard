@@ -3,12 +3,15 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.stj.tunnel.BlackLizard.dao.ReplyDao">	
-	<select id="getForPrintReplies" resultType="Reply">
-		SELECT *
-		FROM reply
-		WHERE relTypeCode = #{relTypeCode}
-		AND relId = #{relId}
-		ORDER BY id DESC
+	<select id="getForPrintReplies" resultMap="reply">
+		SELECT RE.*,
+		M.name AS extra__writer
+		FROM reply AS RE
+		INNER JOIN member AS M
+		ON RE.memberId = M.id
+		WHERE RE.relTypeCode = #{relTypeCode}
+		AND RE.relId = #{relId}
+		ORDER BY RE.id DESC
 	</select>
 	
 	<select id="getForPrintReplyById" resultType="Reply">
@@ -42,4 +45,18 @@
 		FROM reply
 		WHERE id = #{id}
 	</delete>
+	
+	<resultMap type="Reply" id="reply">
+		<id property="id" column="id"/>
+		<id property="regDate" column="id"/>
+		<id property="updateDate" column="id"/>
+		<id property="relTypeCode" column="id"/>
+		<id property="relId" column="id"/>
+		<id property="memberId" column="id"/>
+		<id property="body" column="id"/>
+		
+		<association property="extra" javaType="map">
+			<id property="writer" column="extra__writer"/>
+		</association>
+	</resultMap>
 </mapper>

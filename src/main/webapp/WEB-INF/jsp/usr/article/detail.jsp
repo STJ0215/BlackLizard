@@ -43,7 +43,7 @@
                 수정일 : ${reply.updateDate}
             </div>
             <div>
-                작성자 : ${reply.memberId}
+                작성자 : ${reply.extra.writer}
             </div>
             <div>
                 내용 : ${reply.body}
