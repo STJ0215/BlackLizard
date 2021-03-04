@@ -3,6 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.stj.tunnel.BlackLizard.dao.ReplyDao">	
+	<select id="getForPrintReplies" resultType="Reply">
+		SELECT *
+		FROM reply
+		WHERE relTypeCode = #{relTypeCode}
+		AND relId = #{relId}
+		ORDER BY id DESC
+	</select>
+	
+	<select id="getForPrintReplyById" resultType="Reply">
+		SELECT *
+		FROM reply
+		WHERE id = #{id}
+	</select>
+	
 	<insert id="writeReply" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO reply
 		<set>
@@ -23,11 +37,9 @@
 		</set>
 	</insert>
 	
-	<select id="getForPrintReplies" resultType="Reply">
-		SELECT *
+	<delete id="deleteReplyById">
+		DELETE
 		FROM reply
-		WHERE relTypeCode = #{relTypeCode}
-		AND relId = #{relId}
-		ORDER BY id DESC
-	</select>
+		WHERE id = #{id}
+	</delete>
 </mapper>

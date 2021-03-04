@@ -15,6 +15,14 @@ public class ReplyService {
 	@Autowired
 	private ReplyDao replyDao;
 	
+	public List<Reply> getForPrintReplies(String relTypeCode, int relId) {
+		return replyDao.getForPrintReplies(relTypeCode, relId);
+	}
+
+	public Reply getforPrintReplyById(int id) {
+		return replyDao.getForPrintReplyById(id);
+	}
+	
 	public int writeReply(Map<String, Object> param) {
 		replyDao.writeReply(param);
 		
@@ -23,7 +31,7 @@ public class ReplyService {
 		return id;
 	}
 	
-	public List<Reply> getForPrintReplies(String relTypeCode, int relId) {
-		return replyDao.getForPrintReplies(relTypeCode, relId);
+	public void deleteReplyById(int id) {
+		replyDao.deleteReplyById(id);
 	}
 }
