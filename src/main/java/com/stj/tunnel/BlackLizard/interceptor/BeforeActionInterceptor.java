@@ -10,6 +10,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import com.stj.tunnel.BlackLizard.dto.Member;
 import com.stj.tunnel.BlackLizard.service.MemberService;
+import com.stj.tunnel.BlackLizard.util.Util;
 
 @Component("beforeActionInterceptor")
 public class BeforeActionInterceptor implements HandlerInterceptor {
@@ -35,6 +36,17 @@ public class BeforeActionInterceptor implements HandlerInterceptor {
 		request.setAttribute("isAjax", isAjax);
 		request.setAttribute("loginedMemberId", loginedMemberId);
 		request.setAttribute("loginedMember", loginedMember);
+		
+		String currentUri = request.getRequestURI();
+		
+		if (request.getQueryString() != null) {
+			currentUri += "?" + request.getQueryString();
+		}
+		
+		String encodedCurrentUri = Util.getUriEncoded(currentUri);
+		
+		request.setAttribute("currentUri", currentUri);
+		request.setAttribute("encodedCurrentUri", encodedCurrentUri);
 		
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}

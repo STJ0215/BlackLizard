@@ -23,5 +23,5 @@
             	<a href="/usr/member/doLogout">로그아웃</a>
                 <a href="/usr/article/write">게시물 작성</a>
             </c:if>
-            <a href="/usr/article/list">게시물 목록</a>
+            <a href="${listUrl}">게시물 목록</a>
         </div>
