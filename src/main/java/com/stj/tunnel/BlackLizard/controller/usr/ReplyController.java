@@ -20,16 +20,20 @@ public class ReplyController {
 	private ReplyService replyService;
 	
 	@RequestMapping("/usr/reply/doWrite")
-	public String doWrite(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+	public String doWrite(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param, String redirectUri) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
 		param.put("memberId", loginedMemberId); // 작성자 아이디
 		
 		int id = replyService.writeReply(param); // 댓글 번호
 		String relTypeCode = (String)param.get("relTypeCode"); // 관련 데이터 타입
 		int relId = Util.getAsInt(param.get("relId")); // 관련 Id
+		
+		if (redirectUri == null || redirectUri.length() == 0) {
+			redirectUri = String.format("/usr/%s/detail?id=%d", relTypeCode, relId);
+		}
 				
 		model.addAttribute("msg", String.format("%d번 댓글이 생성되었습니다.", id));
-		model.addAttribute("redirectUri", String.format("/usr/%s/detail?id=%d", relTypeCode, relId));
+		model.addAttribute("redirectUri", redirectUri);
 		
 		return "/common/redirect";
 	}
