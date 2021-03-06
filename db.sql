@@ -107,7 +107,7 @@ updateDate = NOW(),
 relTypeCode = 'article',
 relId = 1,
 memberId = 1,
-`body` = 'test_reply1';
+`body` = 'reply1';
 
 INSERT INTO reply SET
 regDate = NOW(),
@@ -115,7 +115,7 @@ updateDate = NOW(),
 relTypeCode = 'article',
 relId = 1,
 memberId = 1,
-`body` = 'test_reply2';
+`body` = 'reply2';
 
 INSERT INTO reply SET
 regDate = NOW(),
@@ -123,7 +123,7 @@ updateDate = NOW(),
 relTypeCode = 'article',
 relId = 1,
 memberId = 2,
-`body` = 'test_reply3';
+`body` = 'reply3';
 
 INSERT INTO reply SET
 regDate = NOW(),
@@ -131,7 +131,7 @@ updateDate = NOW(),
 relTypeCode = 'article',
 relId = 2,
 memberId = 2,
-`body` = 'test_reply4';
+`body` = 'reply4';
 
 
 
