@@ -18,6 +18,6 @@
         </form>
         <br>
         <div>
-            <a href="list">게시물 목록</a>
+            <a href="../article/list">게시물 목록</a>
         </div>
 <%@ include file="../part/foot.jspf"%>

@@ -38,11 +38,40 @@ public class ReplyController {
 		return "/common/redirect";
 	}
 	
+	@RequestMapping("/usr/reply/modify")
+	public String showModify(HttpServletRequest req, Model model, int id, String redirectUri) {
+		int loginedMemberId = (int)req.getAttribute("loginedMemberId"); 
+		
+		Reply reply = replyService.getForPrintReplyById(id);
+		
+		if (reply == null) {
+			model.addAttribute("msg", "존재하지 않는 댓글입니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		if (loginedMemberId != reply.getMemberId()) {
+			model.addAttribute("msg", "수정 권한이 없습니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		if (redirectUri == null || redirectUri.length() == 0) {
+			redirectUri = String.format("/usr/%s/detail?id=%d",reply.getRelTypeCode(), reply.getRelId());
+		}
+
+		model.addAttribute("reply", reply);
+		
+		return "/usr/reply/modify";
+	}
+	
 	@RequestMapping("/usr/reply/doDelete")
 	public String doDelete(HttpServletRequest req, Model model, int id, String redirectUri) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
 		
-		Reply reply = replyService.getforPrintReplyById(id);
+		Reply reply = replyService.getForPrintReplyById(id);
 		
 		if (reply == null) {
 			model.addAttribute("msg", "존재하지 않는 댓글입니다.");

@@ -19,7 +19,7 @@ public class ReplyService {
 		return replyDao.getForPrintReplies(relTypeCode, relId);
 	}
 
-	public Reply getforPrintReplyById(int id) {
+	public Reply getForPrintReplyById(int id) {
 		return replyDao.getForPrintReplyById(id);
 	}
 	

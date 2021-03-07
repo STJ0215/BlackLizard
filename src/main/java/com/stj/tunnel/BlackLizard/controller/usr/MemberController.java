@@ -21,7 +21,7 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping("/usr/member/join")
-	public String showJoin() {
+	public String showJoin() {		
 		return "/usr/member/join";
 	}
 	
@@ -54,7 +54,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/login")
-	public String showLogin() {
+	public String showLogin() {		
 		return "/usr/member/login";
 	}
 	
@@ -102,7 +102,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/modify")
-	public String showModify() {
+	public String showModify() {		
 		return "/usr/member/modify";
 	}
 	
