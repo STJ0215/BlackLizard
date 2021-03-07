@@ -66,7 +66,7 @@ public class ArticleController {
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		Article article = articleService.getForPrintArticleById(loginedMember, id);
-		List<Reply> replies = replyService.getForPrintReplies("article", id);
+		List<Reply> replies = replyService.getForPrintReplies(loginedMember, "article", id);
 		
 		if (listUrl == null) {
 			listUrl = "/usr/article/list";
