@@ -21,7 +21,13 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping("/usr/member/join")
-	public String showJoin() {
+	public String showJoin(Model model, String listUrl) {
+		if (listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
+		
+		model.addAttribute("listUrl", listUrl);
+		
 		return "/usr/member/join";
 	}
 	
@@ -54,7 +60,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/login")
-	public String showLogin() {
+	public String showLogin(Model model, String listUrl) {
+		if (listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
+		
+		model.addAttribute("listUrl", listUrl);
+		
 		return "/usr/member/login";
 	}
 	
@@ -102,7 +114,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/modify")
-	public String showModify() {
+	public String showModify(Model model, String listUrl) {
+		if (listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
+		
+		model.addAttribute("listUrl", listUrl);
+		
 		return "/usr/member/modify";
 	}
 	

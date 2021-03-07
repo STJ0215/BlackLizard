@@ -39,7 +39,7 @@ public class ReplyController {
 	}
 	
 	@RequestMapping("/usr/reply/modify")
-	public String showModify(HttpServletRequest req, Model model, int id, String redirectUri) {
+	public String showModify(HttpServletRequest req, Model model, int id, String redirectUri, String listUrl) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId"); 
 		
 		Reply reply = replyService.getForPrintReplyById(id);
@@ -61,8 +61,14 @@ public class ReplyController {
 		if (redirectUri == null || redirectUri.length() == 0) {
 			redirectUri = String.format("/usr/%s/detail?id=%d",reply.getRelTypeCode(), reply.getRelId());
 		}
+		
+		if (listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
 
 		model.addAttribute("reply", reply);
+		
+		model.addAttribute("listUrl", listUrl);
 		
 		return "/usr/reply/modify";
 	}

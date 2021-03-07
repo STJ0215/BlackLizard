@@ -76,8 +76,14 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/write")
-	public String showWrite(HttpServletRequest req, Model model) {
+	public String showWrite(HttpServletRequest req, Model model, String listUrl) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+		
+		if (listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
+		
+		model.addAttribute("listUrl", listUrl);
 		
 		return "/usr/article/write";
 	}
@@ -96,7 +102,7 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/usr/article/modify")
-	public String showModify(HttpServletRequest req, Model model, int id) {
+	public String showModify(HttpServletRequest req, Model model, int id, String listUrl) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
 		
 		Article article = articleService.getForPrintArticleById(id);
@@ -108,7 +114,13 @@ public class ArticleController {
 			return "/common/redirect";
 		}
 		
+		if (listUrl == null) {
+			listUrl = "/usr/article/list";
+		}
+		
 		model.addAttribute("article", article);
+		
+		model.addAttribute("listUrl", listUrl);
 		
 		return "/usr/article/modify";
 	}
