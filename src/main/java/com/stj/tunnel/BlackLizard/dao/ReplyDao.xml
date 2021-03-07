@@ -40,6 +40,17 @@
 		</set>
 	</insert>
 	
+	<update id="modifyReply">
+		UPDATE reply
+		<set>
+			updateDate = NOW(),
+			<if test="body != null">
+				`body` = #{body},
+			</if>
+		</set>
+		WHERE id = #{id}
+	</update>
+	
 	<delete id="deleteReplyById">
 		DELETE
 		FROM reply

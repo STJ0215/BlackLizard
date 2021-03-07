@@ -6,6 +6,7 @@
 <%@ include file="../part/head.jspf"%>
         
         <form action="doModify" method="POST">
+        	<input type="hidden" name="redirectUri" value="${param.redirectUri}"/>
             <input type="hidden" name="id" value="${reply.id}"/>
             <div>
                 ID : ${reply.id}
@@ -28,6 +29,6 @@
         <br>
         
         <div>
-            <a href="../article/list">게시물 목록</a>
+            <a href="${param.redirectUri}">돌아가기</a>
         </div>
 <%@ include file="../part/foot.jspf"%>

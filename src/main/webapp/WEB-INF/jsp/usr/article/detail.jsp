@@ -21,7 +21,7 @@
         <h2>댓글 작성</h2>
         
         <form action="/usr/reply/doWrite" method="POST">
-        	<input type="hidden" name="redirectUri" value="${currentUri}">
+        	<input type="hidden" name="redirectUri" value="${param.redirectUri}">
             <input type="hidden" name="relTypeCode" value="article">
             <input type="hidden" name="relId" value="${param.id}">
             <div>
@@ -51,7 +51,7 @@
             </div>
             <div>
             	<a href="/usr/reply/modify?id=${reply.id}&redirectUri=${encodedCurrentUri}">수정</a>
-        		<a href="/usr/reply/doDelete?id=${reply.id}&redirectUri=${encodedCurrentUri}">삭제</a>
+            	<a href="/usr/reply/doDelete?id=${reply.id}&redirectUri=${encodedCurrentUri}">삭제</a>
         	</div>
             <hr>
         </c:forEach>

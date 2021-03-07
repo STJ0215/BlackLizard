@@ -31,6 +31,10 @@ public class ReplyService {
 		return id;
 	}
 	
+	public void modifyReply(Map<String, Object> param) {
+		replyDao.modifyReply(param);
+	}
+	
 	public void deleteReplyById(int id) {
 		replyDao.deleteReplyById(id);
 	}
