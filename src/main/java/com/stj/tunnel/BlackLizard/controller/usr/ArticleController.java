@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stj.tunnel.BlackLizard.dto.Article;
+import com.stj.tunnel.BlackLizard.dto.Member;
 import com.stj.tunnel.BlackLizard.dto.Reply;
 import com.stj.tunnel.BlackLizard.service.ArticleService;
 import com.stj.tunnel.BlackLizard.service.ReplyService;
@@ -25,8 +26,10 @@ public class ArticleController {
 	private ReplyService replyService;
 	
 	@RequestMapping("/usr/article/list")
-	public String showList(Model model, @RequestParam Map<String, Object> param) {
-		List<Article> articles = articleService.getForPrintArticles(param);
+	public String showList(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+		Member loginedMember = (Member)req.getAttribute("loginedMember");
+		
+		List<Article> articles = articleService.getForPrintArticles(loginedMember, param);
 		
 		int totalCount = articleService.getTotalCount(param);
 		int itemsCountInAPage = 10;

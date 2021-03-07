@@ -1,5 +1,6 @@
 package com.stj.tunnel.BlackLizard.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.stj.tunnel.BlackLizard.dao.ArticleDao;
 import com.stj.tunnel.BlackLizard.dto.Article;
+import com.stj.tunnel.BlackLizard.dto.Member;
 import com.stj.tunnel.BlackLizard.util.Util;
 
 @Service
@@ -15,7 +17,7 @@ public class ArticleService {
 	@Autowired
 	private ArticleDao articleDao;
 	
-	public List<Article> getForPrintArticles(Map<String, Object> param) {
+	public List<Article> getForPrintArticles(Member actorMember, Map<String, Object> param) {
 		int page = Util.getAsInt(param.get("page"), 1);
 		
 		if (page < 1) {
@@ -39,7 +41,21 @@ public class ArticleService {
 		param.put("limitFrom", limitFrom);
 		param.put("limitTake", limitTake);
 		
-		return articleDao.getForPrintArticles(param);
+		List<Article> articles = articleDao.getForPrintArticles(param);
+		
+		for (Article article : articles) {
+			if (article.getExtra() == null) {
+				article.setExtra(new HashMap<>()); 
+			}
+			
+			boolean actorCanModify = actorMember.getId() == article.getMemberId();
+			boolean actorCanDelete = actorMember.getId() == article.getMemberId();
+
+			article.getExtra().put("actorCanModify", actorCanModify);
+			article.getExtra().put("actorCanDelete", actorCanDelete);
+		}
+
+		return articles;
 	}
 	
 	public int getTotalCount(Map<String, Object> param) {

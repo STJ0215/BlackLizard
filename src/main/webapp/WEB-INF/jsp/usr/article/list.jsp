@@ -27,11 +27,12 @@
             	수정일 : ${article.updateDate} <br>
             	작성자 : ${article.extra.writer} <br>
             	제목 : <a href="${detailUrl}">${article.title}</a> <br>
-            	<c:if test="${loginedMemberId == article.memberId}">
-                    <br>
-                    작업 : <a href="modify?id=${article.id}">수정</a>
-                            <a href="doDelete?id=${article.id}"  
-                                onclick="if (confirm('삭제하시겠습니까?') == false) return false;">삭제</a>
+                <c:if test="${article.extra.actorCanModify}">
+                    <a href="modify?id=${article.id}">수정</a>
+                </c:if>
+                <c:if test="${article.extra.actorCanDelete}">
+                    <a href="doDelete?id=${article.id}" 
+                        onclick="if (confirm('삭제하시겠습니까?') == false) return false;">삭제</a>
                 </c:if>
         	</div>
             <hr>
