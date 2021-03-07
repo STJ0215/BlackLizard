@@ -32,6 +32,30 @@ loginPw = 'user_test',
 
 
 
+# 게시판 테이블 생성
+CREATE TABLE board (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    `name` CHAR(20) UNIQUE NOT NULL,
+    `code` CHAR(20) UNIQUE NOT NULL
+);
+
+# 게시판 데이터 추가
+INSERT INTO board SET
+regDate = NOW(),
+updateDate = NOW(),
+`name` = '공지사항',
+`code` = 'notice';
+
+INSERT INTO board SET
+regDate = NOW(),
+updateDate = NOW(),
+`name` = '자유게시판',
+`code` = 'free';
+
+
+
 # 게시물 테이블 생성
 CREATE TABLE article (
     id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -137,6 +161,9 @@ memberId = 2,
 
 # 회원 테이블 조회
 SELECT * FROM `member`;
+
+# 게시판 테이블 조회
+SELECT * FROM board;
 
 # 게시물 테이블 조회(내림차순)
 SELECT * FROM article ORDER BY id DESC;
