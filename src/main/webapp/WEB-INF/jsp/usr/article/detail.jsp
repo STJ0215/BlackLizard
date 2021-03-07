@@ -14,9 +14,11 @@
         <br>
         <div>
             <a href="${listUrl}">게시물 목록</a>
-            <c:if test="${loginedMemberId == article.memberId}">
-                <a href="modify?id=${article.id}">수정</a>
-                <a href="doDelete?id=${article.id}"
+            <c:if test="${article.extra.actorCanModify}">
+            	<a href="modify?id=${article.id}">수정</a>
+            </c:if>
+            <c:if test="${article.extra.actorCanDelete}">
+            	<a href="doDelete?id=${article.id}"
                     onclick="if (confirm('삭제하시겠습니까?') == false) return false;">삭제</a>
             </c:if>
         </div>

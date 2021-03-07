@@ -62,8 +62,20 @@ public class ArticleService {
 		return articleDao.getTotalCount(param);
 	}
 
-	public Article getForPrintArticleById(int id) {
-		return articleDao.getForPrintArticleById(id);
+	public Article getForPrintArticleById(Member actorMember, int id) {
+		Article article = articleDao.getForPrintArticleById(id);
+		
+		if (article.getExtra() == null) {
+			article.setExtra(new HashMap<>());
+		}
+		
+		boolean actorCanModify = actorMember.getId() == article.getMemberId();
+		boolean actorCanDelete = actorMember.getId() == article.getMemberId();
+		
+		article.getExtra().put("actorCanModify", actorCanModify);
+		article.getExtra().put("actorCanDelete", actorCanDelete);
+		
+		return article;
 	}
 	
 	public int writeArticle(Map<String, Object> param) {
