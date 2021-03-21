@@ -38,6 +38,8 @@ public class ArticleController {
 			return "/common/redirect";
 		}
 		
+		param.put("boardId", board.getId());
+		
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		List<Article> articles = articleService.getForPrintArticles(loginedMember, param);
