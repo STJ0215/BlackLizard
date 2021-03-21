@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.stj.tunnel.BlackLizard.dao.ArticleDao;
 import com.stj.tunnel.BlackLizard.dto.Article;
+import com.stj.tunnel.BlackLizard.dto.Board;
 import com.stj.tunnel.BlackLizard.dto.Member;
 import com.stj.tunnel.BlackLizard.util.Util;
 
@@ -16,6 +17,10 @@ import com.stj.tunnel.BlackLizard.util.Util;
 public class ArticleService {
 	@Autowired
 	private ArticleDao articleDao;
+	
+	public Board getBoardByCode(String boardCode) {
+		return articleDao.getBoardByCode(boardCode);
+	}
 	
 	public List<Article> getForPrintArticles(Member actorMember, Map<String, Object> param) {
 		int page = Util.getAsInt(param.get("page"), 1);

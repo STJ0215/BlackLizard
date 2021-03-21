@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stj.tunnel.BlackLizard.dto.Article;
+import com.stj.tunnel.BlackLizard.dto.Board;
 import com.stj.tunnel.BlackLizard.dto.Member;
 import com.stj.tunnel.BlackLizard.dto.Reply;
 import com.stj.tunnel.BlackLizard.service.ArticleService;
@@ -25,8 +27,17 @@ public class ArticleController {
 	@Autowired
 	private ReplyService replyService;
 	
-	@RequestMapping("/usr/article/list")
-	public String showList(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+	@RequestMapping("/usr/article-{boardCode}/list")
+	public String showList(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, @RequestParam Map<String, Object> param) {
+		Board board = articleService.getBoardByCode(boardCode);
+		
+		if (board == null) {
+			model.addAttribute("msg", "존재하지 않는 게시판입니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		List<Article> articles = articleService.getForPrintArticles(loginedMember, param);
@@ -49,6 +60,7 @@ public class ArticleController {
 		
 		param.put("itemsCountInAPage", itemsCountInAPage);
 		
+		model.addAttribute("board", board);
 		model.addAttribute("articles", articles);
 		
 		model.addAttribute("totalCount", totalCount);

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="title" value="게시물 목록"/>
+<c:set var="title" value="${board.name} 게시물 목록"/>
 <%@ include file="../part/head.jspf"%>
         
         <div>총 게시물 갯수 : ${totalCount}</div>

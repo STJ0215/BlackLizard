@@ -7,9 +7,12 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.stj.tunnel.BlackLizard.dto.Article;
+import com.stj.tunnel.BlackLizard.dto.Board;
 
 @Mapper
 public interface ArticleDao {
+	Board getBoardByCode(@Param("boardCode") String boardCode);
+	
 	List<Article> getForPrintArticles(Map<String, Object> param);
 	
 	int getTotalCount(Map<String, Object> param);
