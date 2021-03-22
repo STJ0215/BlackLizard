@@ -47,4 +47,6 @@
                 로그인 : <input type="submit" value="로그인"/>
             </div>
         </form>
+        <br>
+        <a href="/usr/member/findLoginId">아이디 찾기</a>
 <%@ include file="../part/foot.jspf"%>

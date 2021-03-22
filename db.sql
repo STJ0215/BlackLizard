@@ -100,7 +100,6 @@ title = '제목4',
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
-memberId = 2,
 title = '제목5',
 `body` = '내용5';
 
@@ -108,7 +107,6 @@ title = '제목5',
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
-memberId = 2,
 title = CONCAT('제목_', RAND()),
 `body` = CONCAT('내용_', RAND());
 
@@ -181,5 +179,3 @@ SELECT * FROM article ORDER BY id DESC;
 
 # 댓글 테이블 조회
 SELECT * FROM reply;
-
-TRUNCATE article;

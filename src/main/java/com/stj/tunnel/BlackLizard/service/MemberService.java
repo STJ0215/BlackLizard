@@ -53,6 +53,10 @@ public class MemberService {
 		return memberDao.getMemberByLoginId(loginId);
 	}
 	
+	public Member getMemberByNameAndEmail(String name, String email) {
+		return memberDao.getMemberByNameAndEmail(name, email);
+	}
+	
 	public void modify(Map<String, Object> param) {
 		memberDao.modify(param);
 	}
