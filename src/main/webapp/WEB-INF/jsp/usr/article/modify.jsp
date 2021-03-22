@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
-<c:set var="title" value="게시물 수정"/>
+<c:set var="title" value="${board.name} 게시물 수정"/>
 <%@ include file="../part/head.jspf"%>
         
         <form action="doModify" method="POST">

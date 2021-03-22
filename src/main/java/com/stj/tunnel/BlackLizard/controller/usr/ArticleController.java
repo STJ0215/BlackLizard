@@ -47,6 +47,7 @@ public class ArticleController {
 		int totalCount = articleService.getTotalCount(param);
 		int itemsCountInAPage = 10;
 		int totalPage = (int)Math.ceil(totalCount / (double)itemsCountInAPage);
+		
 		int pageMenuArmSize = 5;
 		int page = Util.getAsInt(param.get("page"), 1);
 		
@@ -72,14 +73,12 @@ public class ArticleController {
 		model.addAttribute("pageMenuStart", pageMenuStart);
 		model.addAttribute("pageMenuEnd", pageMenuEnd);
 		
-		return "/usr/article-free/list";
+		return "/usr/article/list";
 	}
 	
 	@RequestMapping("/usr/article-{boardCode}/detail")
 	public String showDetail(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, int id, String listUrl) {
 		Board board = articleService.getBoardByCode(boardCode);
-		
-		model.addAttribute("board", board);
 		
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
@@ -89,6 +88,8 @@ public class ArticleController {
 		if (listUrl == null) {
 			listUrl = "/usr/article-free/list";
 		}
+		
+		model.addAttribute("board", board);
 		
 		model.addAttribute("article", article);
 		model.addAttribute("replies", replies);
@@ -113,13 +114,6 @@ public class ArticleController {
 	public String doWrite(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, @RequestParam Map<String, Object> param) {
 		Board board = articleService.getBoardByCode(boardCode);
 		
-		if (board == null) {
-			model.addAttribute("msg", "존재하지 않는 게시판입니다.");
-			model.addAttribute("historyBack", true);
-			
-			return "/common/redirect";
-		}
-		
 		param.put("boardId", board.getId());
 		
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
@@ -134,8 +128,10 @@ public class ArticleController {
 		return "/common/redirect";
 	}
 	
-	@RequestMapping("/usr/article/modify")
-	public String showModify(HttpServletRequest req, Model model, int id) {
+	@RequestMapping("/usr/article-{boardCode}/modify")
+	public String showModify(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, int id) {
+		Board board = articleService.getBoardByCode(boardCode);
+		
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		Article article = articleService.getForPrintArticleById(loginedMember, id);
@@ -147,14 +143,15 @@ public class ArticleController {
 			return "/common/redirect";
 		}
 		
+		model.addAttribute("board", board);
 		model.addAttribute("article", article);
 		
 		return "/usr/article/modify";
 	}
 	
-	@RequestMapping("/usr/article/doModify")
-	public String doModify(HttpServletRequest req, Model model, int id, String title, String body) {
-Member loginedMember = (Member)req.getAttribute("loginedMember");
+	@RequestMapping("/usr/article-{boardCode}/doModify")
+	public String doModify(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, int id, String title, String body) {
+		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		Article article = articleService.getForPrintArticleById(loginedMember, id);
 		
@@ -168,14 +165,14 @@ Member loginedMember = (Member)req.getAttribute("loginedMember");
 		articleService.modifyArticle(id, title, body);
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 수정되었습니다.", id));
-		model.addAttribute("redirectUri", String.format("/usr/article/detail?id=%d", id));
+		model.addAttribute("redirectUri", String.format("/usr/article-%s/detail?id=%d", boardCode, id));
 		
 		return "/common/redirect";
 	}
 	
-	@RequestMapping("/usr/article/doDelete")
-	public String doDelete(HttpServletRequest req, Model model, int id) {
-Member loginedMember = (Member)req.getAttribute("loginedMember");
+	@RequestMapping("/usr/article-{boardCode}/doDelete")
+	public String doDelete(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, int id) {
+		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		Article article = articleService.getForPrintArticleById(loginedMember, id);
 		
@@ -189,7 +186,7 @@ Member loginedMember = (Member)req.getAttribute("loginedMember");
 		articleService.deleteArticleById(id);
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 삭제되었습니다.", id));
-		model.addAttribute("redirectUri", "/usr/article-free/list");
+		model.addAttribute("redirectUri", String.format("/usr/article-%s/list", boardCode));
 		
 		return "/common/redirect";
 	}
