@@ -64,7 +64,7 @@ public class ReplyController {
 		}
 		
 		if (listUrl == null) {
-			listUrl = "/usr/article/list";
+			listUrl = "/usr/article-free/list";
 		}
 
 		model.addAttribute("reply", reply);

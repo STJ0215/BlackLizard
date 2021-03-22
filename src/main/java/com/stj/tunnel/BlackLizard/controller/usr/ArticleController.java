@@ -72,7 +72,7 @@ public class ArticleController {
 		model.addAttribute("pageMenuStart", pageMenuStart);
 		model.addAttribute("pageMenuEnd", pageMenuEnd);
 		
-		return "/usr/article/list";
+		return "/usr/article-free/list";
 	}
 	
 	@RequestMapping("/usr/article/detail")
@@ -83,7 +83,7 @@ public class ArticleController {
 		List<Reply> replies = replyService.getForPrintReplies(loginedMember, "article", id);
 		
 		if (listUrl == null) {
-			listUrl = "/usr/article/list";
+			listUrl = "/usr/article-free/list";
 		}
 		
 		model.addAttribute("article", article);
@@ -99,7 +99,7 @@ public class ArticleController {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
 		
 		if (listUrl == null) {
-			listUrl = "/usr/article/list";
+			listUrl = "/usr/article-free/list";
 		}
 		
 		model.addAttribute("listUrl", listUrl);
@@ -134,7 +134,7 @@ public class ArticleController {
 		}
 		
 		if (listUrl == null) {
-			listUrl = "/usr/article/list";
+			listUrl = "/usr/article-free/list";
 		}
 		
 		model.addAttribute("article", article);
@@ -181,7 +181,7 @@ Member loginedMember = (Member)req.getAttribute("loginedMember");
 		articleService.deleteArticleById(id);
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 삭제되었습니다.", id));
-		model.addAttribute("redirectUri", "/usr/article/list");
+		model.addAttribute("redirectUri", "/usr/article-free/list");
 		
 		return "/common/redirect";
 	}
