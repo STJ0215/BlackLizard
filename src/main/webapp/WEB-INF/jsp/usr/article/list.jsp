@@ -38,6 +38,15 @@
             <hr>
         </c:forEach>
         
+        <!-- 페이지가 0일때 임시코드 -->
+        <c:if test="${totalCount == 0}">
+        	<div>
+        		게시물이 존재하지 않습니다.
+        	</div>
+        	<hr>
+        </c:if>
+        <!-- 임시코드 끝 -->
+        
         <div>
             <a href="write">글쓰기</a>
         </div>
@@ -55,6 +64,16 @@
             <c:set var="goFirstBtnNeedToShow" value="${page > pageMenuArmSize + 1}"/>
             <c:set var="goLastBtnNeedToShow" value="true"/>
             
+            <!-- 페이지가 0일때 임시코드 -->
+            <c:if test="${totalPage == 0}">
+            	<a href="/usr/article-${board.code}/list">1</a>
+            </c:if>
+            <!-- 임시 코드 끝 -->
+            
+            <c:if test="${totalPage == 0}">
+            	<c:set var="goFirstBtnNeedToShow" value="false"/>
+            </c:if>
+            
             <c:if test="${goFirstBtnNeedToShow}">
                 <a href="?page=1&searchKeyword=${param.searchKeyword}">◀◀</a>
             </c:if>
@@ -63,10 +82,14 @@
                 <c:set var="className" value="${i == page ? 'selected' : ''}"/>
                 <a class="${className}" href="?page=${i}&searchKeyword=${param.searchKeyword}">${i}</a>
                 
-                <c:if test="${i == totalPage}">
+                <c:if test="${totalPage == i}">
                     <c:set var="goLastBtnNeedToShow" value="false"/>
                 </c:if>
             </c:forEach>
+            
+            <c:if test="${totalPage == 0}">
+            	<c:set var="goLastBtnNeedToShow" value="false"/>
+            </c:if>
             
             <c:if test="${goLastBtnNeedToShow}">
                 <a href="?page=${totalPage}&searchKeyword=${param.searchKeyword}">▶▶</a>
