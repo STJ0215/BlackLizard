@@ -21,13 +21,7 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping("/usr/member/join")
-	public String showJoin(Model model, String listUrl) {
-		if (listUrl == null) {
-			listUrl = "/usr/article-free/list";
-		}
-		
-		model.addAttribute("listUrl", listUrl);
-		
+	public String showJoin() {
 		return "/usr/member/join";
 	}
 	
@@ -60,19 +54,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/login")
-	public String showLogin(Model model, String listUrl) {
-		if (listUrl == null) {
-			listUrl = "/usr/article-free/list";
-		}
-		
-		model.addAttribute("listUrl", listUrl);
-		
+	public String showLogin() {		
 		return "/usr/member/login";
 	}
 	
 	@RequestMapping("/usr/member/doLogin")
 	public String doLogin(HttpSession session, Model model, String loginId, String loginPw) {
-		
 		if (loginId.length() == 0) {
 			model.addAttribute("msg", "로그인 아이디를 입력해주세요.");
 			model.addAttribute("historyBack", true);
@@ -114,13 +101,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/modify")
-	public String showModify(Model model, String listUrl) {
-		if (listUrl == null) {
-			listUrl = "/usr/article-free/list";
-		}
-		
-		model.addAttribute("listUrl", listUrl);
-		
+	public String showModify() {		
 		return "/usr/member/modify";
 	}
 	

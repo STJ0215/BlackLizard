@@ -94,34 +94,44 @@ public class ArticleController {
 		return "/usr/article/detail";
 	}
 	
-	@RequestMapping("/usr/article/write")
-	public String showWrite(HttpServletRequest req, Model model, String listUrl) {
-		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+	@RequestMapping("/usr/article-{boardCode}/write")
+	public String showWrite(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode) {
+		Board board = articleService.getBoardByCode(boardCode);
 		
-		if (listUrl == null) {
-			listUrl = "/usr/article-free/list";
-		}
+		model.addAttribute("board", board);
 		
-		model.addAttribute("listUrl", listUrl);
+		//int loginedMemberId = (int)req.getAttribute("loginedMemberId");
 		
 		return "/usr/article/write";
 	}
 	
-	@RequestMapping("/usr/article/doWrite")
-	public String doWrite(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+	@RequestMapping("/usr/article-{boardCode}/doWrite")
+	public String doWrite(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, @RequestParam Map<String, Object> param) {
+		Board board = articleService.getBoardByCode(boardCode);
+		
+		if (board == null) {
+			model.addAttribute("msg", "존재하지 않는 게시판입니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		param.put("boardId", board.getId());
+		
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+		
 		param.put("memberId", loginedMemberId); // 작성자 아이디
 		
 		int id = articleService.writeArticle(param); // 게시물 번호
 		
 		model.addAttribute("msg", String.format("%d번 게시물이 생성되었습니다.", id));
-		model.addAttribute("redirectUri", String.format("/usr/article/detail?id=%d", id));
+		model.addAttribute("redirectUri", String.format("/usr/article-%s/detail?id=%d", boardCode, id));
 		
 		return "/common/redirect";
 	}
 	
 	@RequestMapping("/usr/article/modify")
-	public String showModify(HttpServletRequest req, Model model, int id, String listUrl) {
+	public String showModify(HttpServletRequest req, Model model, int id) {
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		Article article = articleService.getForPrintArticleById(loginedMember, id);
@@ -133,13 +143,7 @@ public class ArticleController {
 			return "/common/redirect";
 		}
 		
-		if (listUrl == null) {
-			listUrl = "/usr/article-free/list";
-		}
-		
 		model.addAttribute("article", article);
-		
-		model.addAttribute("listUrl", listUrl);
 		
 		return "/usr/article/modify";
 	}
