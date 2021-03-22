@@ -17,6 +17,9 @@
 			<if test="name != null">
 				`name` = #{name},
 			</if>
+			<if test="eamil != null">
+				email = #{email},
+			</if>
 		</set>
 	</insert>
 	
@@ -30,6 +33,14 @@
 		SELECT *
 		FROM `member`
 		WHERE loginId = #{loginId}
+	</select>
+	
+	<select id="getMemberByNameAndEmail" resultType="Member">
+		SELECT *
+		FROM `member`
+		WHERE `name` = #{name}
+		AND email = #{email}
+		LIMIT 1
 	</select>
 	
 	<update id="modify">

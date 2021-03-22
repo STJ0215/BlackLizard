@@ -28,6 +28,8 @@ public class MemberController {
 	@RequestMapping("/usr/member/doJoin")
 	public String doJoin(Model model, @RequestParam Map<String, Object> param) {
 		String loginId = Util.getAsStr(param.get("loginId"), "");
+		String name = Util.getAsStr(param.get("name"), "");
+		String email = Util.getAsStr(param.get("email"), "");
 		
 		if (loginId.length() == 0) {
 			model.addAttribute("msg", "로그인 아이디를 입력해주세요.");
@@ -36,11 +38,22 @@ public class MemberController {
 			return "/common/redirect";
 		}
 		
+		// 아이디 중복체크
 		boolean isJoinAvailableLoginId = memberService.isJoinAvailableLoginId(loginId);
 		
 		if (isJoinAvailableLoginId == false) {
 			model.addAttribute("msg", String.format("%s(은)는 이미 사용중인 로그인 아이디입니다.", loginId));
 			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		// 이름, 이메일 중복체크
+		boolean isJoinAvailableNameAndEmail = memberService.isJoinAvailableNameAndEmail(name, email);
+		
+		if (isJoinAvailableNameAndEmail == false) {
+			model.addAttribute("msg", String.format("이미 가입한 회원입니다."));
+			model.addAttribute("redirectUri", "/usr/member/findLoginId");
 			
 			return "/common/redirect";
 		}

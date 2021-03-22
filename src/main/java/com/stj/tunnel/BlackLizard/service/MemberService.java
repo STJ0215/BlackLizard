@@ -32,6 +32,19 @@ public class MemberService {
 		return false;
 	}
 	
+	public boolean isJoinAvailableNameAndEmail(String name, String email) {
+		if (name == null || name.length() == 0) {
+			return false;
+		}
+		if (email == null || email.length() == 0) {
+			return false;
+		}
+		
+		Member member = memberDao.getMemberByNameAndEmail(name, email);
+		
+		return member == null;
+	}
+	
 	public Member getMemberById(int id) {
 		return memberDao.getMemberById(id);
 	}

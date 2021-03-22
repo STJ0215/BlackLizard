@@ -30,6 +30,12 @@ loginId = 'user_test',
 loginPw = 'user_test',
 `name` = 'user_test';
 
+# 회원 테이블에 email 칼럼 추가
+ALTER TABLE `member` ADD COLUMN email CHAR(100) AFTER `name`;
+
+# 기존 회원의 email 정보 추가
+UPDATE `member` SET email = 'stj960215@gmail.com';
+
 
 
 # 게시판 테이블 생성
@@ -175,3 +181,5 @@ SELECT * FROM article ORDER BY id DESC;
 
 # 댓글 테이블 조회
 SELECT * FROM reply;
+
+TRUNCATE article;

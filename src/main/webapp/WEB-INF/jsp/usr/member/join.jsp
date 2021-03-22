@@ -47,6 +47,14 @@
                     return;
                 }
 
+                form.email.value = form.email.value.trim();
+                if (form.email.value.length == 0) {
+                    alert('이메일 주소를 입력해 주세요.');
+                    form.email.focus();
+
+                    return;
+                }
+                    
                 form.submit();
                 joinFormSubmitDone = true;
             }
@@ -64,6 +72,9 @@
             </div>
             <div>
                 이름 : <input type="text" maxlength="30" placeholder="이름을 입력해 주세요." name="name"/>
+            </div>
+            <div>
+            	이메일 : <input type="email" maxlength="50" placeholder="이메일 주소를 입력해 주세요." name="email"/>
             </div>
             <div>
                 가입 : <input type="submit" value="가입"/>
