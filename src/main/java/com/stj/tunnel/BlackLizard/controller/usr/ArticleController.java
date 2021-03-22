@@ -75,8 +75,12 @@ public class ArticleController {
 		return "/usr/article-free/list";
 	}
 	
-	@RequestMapping("/usr/article/detail")
-	public String showDetail(HttpServletRequest req, Model model, int id, String listUrl) {
+	@RequestMapping("/usr/article-{boardCode}/detail")
+	public String showDetail(HttpServletRequest req, Model model, @PathVariable("boardCode") String boardCode, int id, String listUrl) {
+		Board board = articleService.getBoardByCode(boardCode);
+		
+		model.addAttribute("board", board);
+		
 		Member loginedMember = (Member)req.getAttribute("loginedMember");
 		
 		Article article = articleService.getForPrintArticleById(loginedMember, id);

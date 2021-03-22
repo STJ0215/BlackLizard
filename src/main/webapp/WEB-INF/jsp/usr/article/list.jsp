@@ -20,7 +20,7 @@
         <hr>
         
         <c:forEach var="article" items="${articles}">
-        	<c:set var="detailUrl" value="/usr/article/detail?id=${article.id}&listUrl=${encodedCurrentUri}"/>
+        	<c:set var="detailUrl" value="/usr/article-${board.code}/detail?id=${article.id}&listUrl=${encodedCurrentUri}"/>
         	<div>
         		ID : <a href="${detailUrl}">${article.id}</a> <br>
             	등록일 : ${article.regDate} <br>

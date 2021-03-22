@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="title" value="게시물 상세 정보"/>
+<c:set var="title" value="${board.name} 게시물 상세 정보"/>
 <%@ include file="../part/head.jspf"%>
         
         <div>ID : ${article.id}</div>
@@ -21,6 +21,7 @@
             	<a href="doDelete?id=${article.id}"
                     onclick="if (confirm('삭제하시겠습니까?') == false) return false;">삭제</a>
             </c:if>
+            <a href="write">게시물 작성</a>
         </div>
         
         <h2>댓글 작성</h2>
