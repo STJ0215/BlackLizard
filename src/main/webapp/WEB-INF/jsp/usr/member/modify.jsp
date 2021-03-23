@@ -6,6 +6,7 @@
 <%@ include file="../part/head.jspf"%>
         
         <form action="doModify" method="POST">
+        	<input type="hidden" name="checkLoginPwAuthCode" value="${param.checkLoginPwAuthCode}"/>
             <div>
                 회원번호 : ${loginedMember.id}
             </div>

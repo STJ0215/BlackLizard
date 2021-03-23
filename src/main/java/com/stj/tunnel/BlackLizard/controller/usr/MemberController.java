@@ -191,8 +191,25 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/doModify")
-	public String doModify(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param) {
+	public String doModify(HttpServletRequest req, Model model, String checkLoginPwAuthCode, @RequestParam Map<String, Object> param) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
+		
+		if (checkLoginPwAuthCode == null || checkLoginPwAuthCode.length() == 0) {
+			model.addAttribute("msg", "비밀번호 체크 인증코드가 없습니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		ResultData checkValidCheckPasswordAuthCodeResultData = memberService.checkValidCheckLoginPwAuthCode(loginedMemberId, checkLoginPwAuthCode);
+
+		if (checkValidCheckPasswordAuthCodeResultData.isFail()) {
+			model.addAttribute("msg", checkValidCheckPasswordAuthCodeResultData.getMsg());
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
 		param.put("id", loginedMemberId);
 		
 		// 해킹 방지

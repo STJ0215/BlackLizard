@@ -36,6 +36,10 @@ ALTER TABLE `member` ADD COLUMN email CHAR(100) AFTER `name`;
 # 기존 회원의 email 정보 추가
 UPDATE `member` SET email = 'stj960215@gmail.com';
 
+# 현재 패스워드를 암호화
+UPDATE `member` SET
+loginPw = SHA2(loginPw, 256)
+
 
 
 # 게시판 테이블 생성
@@ -207,10 +211,6 @@ SELECT * FROM article ORDER BY id DESC;
 
 # 댓글 테이블 조회
 SELECT * FROM reply;
-
-## 현재 패스워드를 암호화
-#UPDATE `member` SET
-#loginPw = SHA2(loginPw, 256)
 
 ## 현재 패스워드를 조회(암호화)
 #SELECT SHA2(loginPw, 256)
