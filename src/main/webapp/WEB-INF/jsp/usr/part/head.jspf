@@ -21,7 +21,7 @@
             <c:if test="${isLogined}">
             	<span>${loginedMember.name}님 어서오세요.</span>
             	<br>
-            	<a href="/usr/member/modify">회원정보 수정</a>
+            	<a href="/usr/member/checkLoginPw">회원정보 수정</a>
             	<a href="/usr/member/doLogout">로그아웃</a>
                 <a href="/usr/article-notice/write">공지사항 작성</a>
                 <a href="/usr/article-free/write">게시물 작성</a>
