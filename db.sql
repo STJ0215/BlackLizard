@@ -96,20 +96,6 @@ updateDate = NOW(),
 title = '제목4',
 `body` = '내용4';
 
-# 2번 회원이 작성한 게시물 데이터 추가
-INSERT INTO article SET
-regDate = NOW(),
-updateDate = NOW(),
-title = '제목5',
-`body` = '내용5';
-
-# 게시물 데이터 무작위 추가
-INSERT INTO article SET
-regDate = NOW(),
-updateDate = NOW(),
-title = CONCAT('제목_', RAND()),
-`body` = CONCAT('내용_', RAND());
-
 # 게시물 테이블에 boardId 칼럼 추가
 ALTER TABLE article ADD COLUMN boardId INT(10) UNSIGNED NOT NULL AFTER updateDate;
 UPDATE article SET boardId = 1 WHERE id <= 2;
@@ -119,6 +105,24 @@ UPDATE article SET boardId = 2 WHERE id > 2;
 ALTER TABLE article ADD COLUMN memberId INT(10) UNSIGNED NOT NULL AFTER updateDate;
 # 기존 게시물의 작성자가 1번 회원이라고 정한다
 UPDATE article SET memberId = 1 WHERE memberId = 0;
+
+# 2번 회원이 작성한 게시물 데이터 추가
+INSERT INTO article SET
+regDate = NOW(),
+updateDate = NOW(),
+boardId = 2,
+memberId = 2,
+title = '제목5',
+`body` = '내용5';
+
+# 게시물 데이터 무작위 추가
+INSERT INTO article SET
+regDate = NOW(),
+updateDate = NOW(),
+boardId = 2,
+memberId = 2,
+title = CONCAT('제목_', RAND()),
+`body` = CONCAT('내용_', RAND());
 
 
 
@@ -179,3 +183,11 @@ SELECT * FROM article ORDER BY id DESC;
 
 # 댓글 테이블 조회
 SELECT * FROM reply;
+
+# 현재 패스워드를 암호화
+UPDATE `member` SET
+loginPw = SHA2(loginPw, 256)
+
+# 현재 패스워드를 조회(암호화)
+SELECT SHA2(loginPw, 256)
+FROM `member`;
