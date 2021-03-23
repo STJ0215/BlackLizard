@@ -35,6 +35,11 @@ public class AttrService {
 		return setValue(relTypeCode, relId, typeCode, type2Code, value, expireDate);
 	}
 	
+	// 메서드 오버로딩의 법칙
+	public int setValue(String name, String value) {
+		return setValue(name, value, null);
+	}
+	
 	public String getValue(String name) {
 		String[] nameBits = name.split("__");
 		String relTypeCode = nameBits[0];

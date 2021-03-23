@@ -38,7 +38,7 @@ UPDATE `member` SET email = 'stj960215@gmail.com';
 
 # 현재 패스워드를 암호화
 UPDATE `member` SET
-loginPw = SHA2(loginPw, 256)
+loginPw = SHA2(loginPw, 256);
 
 
 
