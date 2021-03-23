@@ -168,7 +168,25 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/modify")
-	public String showModify() {		
+	public String showModify(HttpServletRequest req, Model model, String checkLoginPwAuthCode) {
+		int loginedMemberId = (int) req.getAttribute("loginedMemberId");
+		
+		if (checkLoginPwAuthCode == null || checkLoginPwAuthCode.length() == 0) {
+			model.addAttribute("msg", "비밀번호 체크 인증코드가 없습니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+
+		ResultData checkValidCheckPasswordAuthCodeResultData = memberService.checkValidCheckLoginPwAuthCode(loginedMemberId, checkLoginPwAuthCode);
+
+		if (checkValidCheckPasswordAuthCodeResultData.isFail()) {
+			model.addAttribute("msg", checkValidCheckPasswordAuthCodeResultData.getMsg());
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
 		return "/usr/member/modify";
 	}
 	
@@ -204,6 +222,8 @@ public class MemberController {
 			
 			return "/common/redirect";
 		}
+		
+		String authCode = memberService.genCheckLoginPwAuthCode(loginedMember.getId());
 		
 		if (redirectUri == null || redirectUri.length() == 0) {
 			redirectUri = "/usr/home/main";

@@ -172,6 +172,30 @@ memberId = 2,
 
 
 
+# 부가정보 테이블 생성
+CREATE TABLE attr (
+    id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    `relTypeCode` CHAR(20) NOT NULL,
+    `relId` INT(10) UNSIGNED NOT NULL,
+    `typeCode` CHAR(30) NOT NULL,
+    `type2Code` CHAR(30) NOT NULL,
+    `value` TEXT NOT NULL
+);
+
+# attr 유니크 인덱스 걸기
+## 변수찾는 속도 최적화
+ALTER TABLE `attr` ADD UNIQUE INDEX (`relTypeCode`, `relId`, `typeCode`, `type2Code`); 
+
+## 특정 조건을 만족하는 회원 또는 게시물(기타 데이터)를 빠르게 찾기 위해서
+ALTER TABLE `attr` ADD INDEX (`relTypeCode`, `typeCode`, `type2Code`);
+
+# attr에 만료날짜 추가
+ALTER TABLE `attr` ADD COLUMN `expireDate` DATETIME NULL AFTER `value`;
+
+
+
 # 회원 테이블 조회
 SELECT * FROM `member`;
 
@@ -184,10 +208,10 @@ SELECT * FROM article ORDER BY id DESC;
 # 댓글 테이블 조회
 SELECT * FROM reply;
 
-# 현재 패스워드를 암호화
-UPDATE `member` SET
-loginPw = SHA2(loginPw, 256)
+## 현재 패스워드를 암호화
+#UPDATE `member` SET
+#loginPw = SHA2(loginPw, 256)
 
-# 현재 패스워드를 조회(암호화)
-SELECT SHA2(loginPw, 256)
-FROM `member`;
+## 현재 패스워드를 조회(암호화)
+#SELECT SHA2(loginPw, 256)
+#FROM `member`;

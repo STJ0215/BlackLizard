@@ -3,6 +3,7 @@ package com.stj.tunnel.BlackLizard.service;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +21,9 @@ public class MemberService {
 	
 	@Autowired
 	private MailService mailService;
+	
+	@Autowired
+	private AttrService attrService;
 	
 	@Value("${custom.siteName}")
 	private String siteName;
@@ -115,5 +119,20 @@ public class MemberService {
 	
 	public void modify(Map<String, Object> param) {
 		memberDao.modify(param);
+	}
+
+	public String genCheckLoginPwAuthCode(int actorId) {
+		String authCode = UUID.randomUUID().toString();
+		attrService.setValue("member__" + actorId + "__extra__modifyPrivateAuthCode", authCode, Util.getDateStrLater(60 * 60));
+
+		return authCode;
+	}
+	
+	public ResultData checkValidCheckLoginPwAuthCode(int actorId, String checkLoginPwAuthCode) {
+		if (attrService.getValue("member__" + actorId + "__extra__modifyPrivateAuthCode").equals(checkLoginPwAuthCode)) {
+			return new ResultData("S-1", "유효한 키 입니다.");
+		}
+
+		return new ResultData("F-1", "유효하지 않은 키 입니다.");
 	}
 }
