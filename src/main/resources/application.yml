@@ -31,7 +31,8 @@ server:
     include-binding-errors: always
 custom:
   siteName: 검은도마뱀
-  siteMainUri: http://localhost:8085/usr/article-free/list
+  siteMainUri: http://localhost:8085/usr/home/main
+  siteLoginUri: http://localhost:8085/usr/member/login
   emailFrom: no-reply@localhost
   emailFromName: 검은도마뱀
   logging:

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stj.tunnel.BlackLizard.dto.Member;
+import com.stj.tunnel.BlackLizard.dto.ResultData;
 import com.stj.tunnel.BlackLizard.service.MemberService;
 import com.stj.tunnel.BlackLizard.util.Util;
 
@@ -130,6 +131,37 @@ public class MemberController {
 		}
 		
 		model.addAttribute("msg", String.format("회원님의 아이디 : %s, 가입일 : %s", member.getLoginId(), member.getRegDate()));
+		model.addAttribute("redirectUri", "/usr/member/login");
+		
+		return "/common/redirect";
+	}
+	
+	@RequestMapping("/usr/member/findLoginPw")
+	public String showFindLoginPw() {
+		return "/usr/member/findLoginPw";
+	}
+	
+	@RequestMapping("/usr/member/doFindLoginPw")
+	public String doFindLoginPw(Model model, String loginId, String email) {
+		Member member = memberService.getMemberByLoginId(loginId);
+		
+		if (member == null) {
+			model.addAttribute("msg", "존재하지 않는 회원입니다.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		if (member.getEmail().equals(email) == false) {
+			model.addAttribute("msg", "이메일을 다시 확인해 주세요.");
+			model.addAttribute("historyBack", true);
+			
+			return "/common/redirect";
+		}
+		
+		ResultData setTempPasswordAndNotifyRsData = memberService.setTempPasswordAndNotify(member);
+		
+		model.addAttribute("msg", setTempPasswordAndNotifyRsData.getMsg());
 		model.addAttribute("redirectUri", "/usr/member/login");
 		
 		return "/common/redirect";

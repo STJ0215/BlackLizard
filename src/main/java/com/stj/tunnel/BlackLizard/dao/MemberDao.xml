@@ -50,6 +50,9 @@
 			<if test="name != null">
 				`name` = #{name},
 			</if>
+			<if test="loginPw != null">
+				loginPw = #{loginPw},
+			</if>
 		</set>
 		WHERE id = #{id}
 	</update>
