@@ -5,27 +5,40 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="/resource/app.css">
         <title>${title}</title>
     </head>
     
     <body>
-        <h1>${title}</h1>
+        <div class="logo-bar con-min-width flex flex-jc-c">
+            <a href="/" class="logo block img-box">
+                <img src="/resource/img/BlackLizard-logo_500px.png">
+            </a>
+        </div>
         
-        <div>
-            <c:if test="${not isLogined}">
-            	<a href="/usr/member/join">회원 가입</a>
-                <a href="/usr/member/login">로그인</a>
-                <a href="/usr/member/findLoginId">아이디 찾기</a>
-                <a href="/usr/member/findLoginPw">패스워드 찾기</a>
-            </c:if>
-            <c:if test="${isLogined}">
-            	<span>${loginedMember.name}님 어서오세요.</span>
-            	<br>
-            	<a href="/usr/member/checkLoginPw">회원정보 수정</a>
-            	<a href="/usr/member/doLogout">로그아웃</a>
-                <a href="/usr/article-notice/write">공지사항 작성</a>
-                <a href="/usr/article-free/write">게시물 작성</a>
-            </c:if>
-            <a href="/usr/article-notice/list">공지사항</a>
-            <a href="/usr/article-free/list">자유게시판</a>
+        <div class="top-bar con-min-width">
+            <div class="con">
+                <c:if test="${not isLogined}">
+                    <a href="/usr/member/join">회원 가입</a>
+                    <a href="/usr/member/login">로그인</a>
+                    <a href="/usr/member/findLoginId">아이디 찾기</a>
+                    <a href="/usr/member/findLoginPw">패스워드 찾기</a>
+                </c:if>
+                <c:if test="${isLogined}">
+                    <span>${loginedMember.name}님 어서오세요.</span>
+                    <br>
+                    <a href="/usr/member/checkLoginPw">회원정보 수정</a>
+                    <a href="/usr/member/doLogout">로그아웃</a>
+                    <a href="/usr/article-notice/write">공지사항 작성</a>
+                    <a href="/usr/article-free/write">게시물 작성</a>
+                </c:if>
+                <a href="/usr/article-notice/list">공지사항</a>
+                <a href="/usr/article-free/list">자유게시판</a>
+            </div>
+        </div>
+        
+        <div class="title-bar con-min-width">
+            <div class="con">
+                <h1>${title}</h1>
+            </div>
         </div>
