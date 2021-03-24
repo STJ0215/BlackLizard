@@ -41,11 +41,14 @@ a {
 	align-items: center;
 }
 
+.flex-jc-sb {
+	justify-content: space-between;
+}
+
 .height-100p {
 	height: 100%;
 }
 
-/* 테스트용 */
 .bg-red {
 	background-color: red;
 }
@@ -84,8 +87,9 @@ html {
 
 .top-bar__menu-box-1 > ul > li > a {
 	padding: 0 10px;
-	min-width: 100px;
+	min-width: 70px;
 	font-weight: bold;
+	border-radius: 10px 10px 0 0;
 }
 
 .top-bar__menu-box-1 > ul > li:hover > a {
@@ -94,6 +98,24 @@ html {
 }
 
 .top-bar__menu-box-1 > ul > li > a > span:first-child {
+	margin-top: 4px;
+	margin-right: 5px;
+	font-size: 0.8rem;
+}
+
+.top-bar__menu-box-2 > ul > li > a {
+	padding: 0 10px;
+	min-width: 70px;
+	font-weight: bold;
+	border-radius: 10px 10px 0 0;
+}
+
+.top-bar__menu-box-2 > ul > li:hover > a {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+
+.top-bar__menu-box-2 > ul > li > a > span:first-child {
 	margin-top: 4px;
 	margin-right: 5px;
 	font-size: 0.8rem;
