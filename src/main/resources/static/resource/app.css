@@ -12,6 +12,8 @@ a {
 	text-decoration: none;
 }
 
+
+
 /* 라이브러리 */
 .con {
 	margin-left: auto;
@@ -22,6 +24,11 @@ a {
 	display: block;
 }
 
+.img-box > img {
+	display: block;
+	width: 100%;
+}
+
 .flex {
 	display: flex;
 }
@@ -30,12 +37,26 @@ a {
 	justify-content: center;
 }
 
-.img-box > img {
-	display: block;
-	width: 100%;
+.flex-ai-c {
+	align-items: center;
 }
 
+.height-100p {
+	height: 100%;
+}
+
+/* 테스트용 */
+.bg-red {
+	background-color: red;
+}
+
+
+
 /* 커스텀 */
+html {
+	font-family: 'Roboto', 'Noto Sans KR', sans-serif; /* 1순위 Roboto, 2순위 Noto Sans */
+}
+
 .con-min-width {
 	min-width: 1200px;
 }
@@ -45,11 +66,36 @@ a {
 }
 
 /* 로고바 시작 */
+.logo-bar {
+	background-color: rgb(255, 255, 255);
+}
+
 .logo-bar > a {
 	width: 150px;
 }
 /* 로고바 끝 */
 
 /* 탑바 시작 */
+.top-bar {
+	height: 50px;
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
 
+.top-bar__menu-box-1 > ul > li > a {
+	padding: 0 10px;
+	min-width: 100px;
+	font-weight: bold;
+}
+
+.top-bar__menu-box-1 > ul > li:hover > a {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+
+.top-bar__menu-box-1 > ul > li > a > span:first-child {
+	margin-top: 4px;
+	margin-right: 5px;
+	font-size: 0.8rem;
+}
 /* 탑바 끝 */

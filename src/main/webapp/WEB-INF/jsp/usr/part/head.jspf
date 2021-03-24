@@ -6,6 +6,13 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/resource/app.css">
+        
+        <!-- font -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
+        
         <title>${title}</title>
     </head>
     
@@ -17,7 +24,34 @@
         </div>
         
         <div class="top-bar con-min-width">
-            <div class="con">
+            <div class="con flex height-100p">
+                <nav class="top-bar__menu-box-1">
+                	<ul class="flex height-100p">
+                		<li><a href="/" class="height-100p flex flex-jc-c flex-ai-c">
+                            <span><i class="fas fa-home"></i></span>
+                            <span>홈</span>
+                        </a></li>
+                		<li><a href="/usr/article-free/list" class="height-100p flex flex-jc-c flex-ai-c">
+                            <span><i class="fas fa-list"></i></span>
+                            <span>자유게시판</span>
+                        </a></li>
+                		<li><a href="/usr/article-free/write" class="height-100p flex flex-jc-c flex-ai-c">
+                            <span><i class="fas fa-pen"></i></span>
+                            <span>자유게시판 작성</span>
+                        </a></li>
+                		<li><a href="/usr/article-notice/list" class="height-100p flex flex-jc-c flex-ai-c">
+                            <span><i class="fas fa-list"></i></span>
+                            <span>공지사항</span>
+                        </a></li>
+                        <c:if test="${loginedMember.isAdmin()}">
+                    		<li><a href="/usr/article-notice/write" class="height-100p flex flex-jc-c flex-ai-c">
+                                <span><i class="fas fa-pen"></i></span>
+                                <span>공지사항 작성</span>
+                            </a></li>
+                        </c:if>
+                	</ul>
+                </nav>
+                <!--
                 <c:if test="${not isLogined}">
                     <a href="/usr/member/join">회원 가입</a>
                     <a href="/usr/member/login">로그인</a>
@@ -29,11 +63,12 @@
                     <br>
                     <a href="/usr/member/checkLoginPw">회원정보 수정</a>
                     <a href="/usr/member/doLogout">로그아웃</a>
-                    <a href="/usr/article-notice/write">공지사항 작성</a>
-                    <a href="/usr/article-free/write">게시물 작성</a>
                 </c:if>
+                <a href="/usr/article-notice/write">공지사항 작성</a>
                 <a href="/usr/article-notice/list">공지사항</a>
+                <a href="/usr/article-free/write">게시물 작성</a>
                 <a href="/usr/article-free/list">자유게시판</a>
+                 -->
             </div>
         </div>
         

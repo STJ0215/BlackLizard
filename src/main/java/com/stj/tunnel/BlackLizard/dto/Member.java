@@ -13,4 +13,9 @@ public class Member {
 	private String loginPw;
 	private String name;
 	private String email;
+	
+	// 관리자 권한
+	public boolean isAdmin() {
+		return "admin".equals(loginId);
+	}
 }
