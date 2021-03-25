@@ -45,12 +45,28 @@ a {
 	justify-content: space-between;
 }
 
+.flex-jc-e {
+	justify-content: flex-end;
+}
+
+.flex-1-0-0 {
+	flex: 1 0 0;
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
 .height-100p {
 	height: 100%;
 }
 
 .bg-red {
 	background-color: red;
+}
+
+.bd-red {
+	border: 3px solid red;
 }
 
 
@@ -71,10 +87,25 @@ html {
 /* 로고바 시작 */
 .logo-bar {
 	background-color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
 }
 
-.logo-bar > a {
+.logo-bar__logo {
 	width: 150px;
+}
+
+.logo-bar__avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	font-size: 2rem;
+	border-radius: 50%;
+	border: 2px solid black;
+	
 }
 /* 로고바 끝 */
 
@@ -85,37 +116,19 @@ html {
 	color: rgb(255, 255, 255);
 }
 
-.top-bar__menu-box-1 > ul > li > a {
+.top-bar__menu-box > ul > li > a {
 	padding: 0 10px;
 	min-width: 70px;
 	font-weight: bold;
 	border-radius: 10px 10px 0 0;
 }
 
-.top-bar__menu-box-1 > ul > li:hover > a {
+.top-bar__menu-box > ul > li:hover > a {
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 0);
 }
 
-.top-bar__menu-box-1 > ul > li > a > span:first-child {
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 0.8rem;
-}
-
-.top-bar__menu-box-2 > ul > li > a {
-	padding: 0 10px;
-	min-width: 70px;
-	font-weight: bold;
-	border-radius: 10px 10px 0 0;
-}
-
-.top-bar__menu-box-2 > ul > li:hover > a {
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
-}
-
-.top-bar__menu-box-2 > ul > li > a > span:first-child {
+.top-bar__menu-box > ul > li > a > span:first-child {
 	margin-top: 4px;
 	margin-right: 5px;
 	font-size: 0.8rem;

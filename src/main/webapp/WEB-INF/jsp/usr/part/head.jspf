@@ -17,15 +17,25 @@
     </head>
     
     <body>
-        <div class="logo-bar con-min-width flex flex-jc-c">
-            <a href="/" class="logo block img-box">
-                <img src="/resource/img/BlackLizard-logo_500px.png">
-            </a>
+         <div class="logo-bar con-min-width">
+            <div class="con flex flex-jc-c">
+                <div class="flex-1-0-0"></div>
+                <a href="/" class="logo-bar__logo block img-box">
+                    <img src="/resource/img/BlackLizard-logo_500px.png">
+                </a>
+                <div class="flex flex-1-0-0 flex-ai-c flex-jc-e">
+                    <c:if test="${isLogined}">
+                        <div class="logo-bar__avatar">
+                            <i class="far fa-user"></i>
+                        </div>
+                    </c:if>
+                </div>
+            </div>
         </div>
         
-        <div class="top-bar con-min-width">
+         <div class="top-bar con-min-width">
             <div class="con flex flex-jc-sb height-100p">
-                <nav class="top-bar__menu-box-1">
+                <nav class="top-bar__menu-box top-bar__menu-box-1">
                 	<ul class="flex height-100p">
                 		<li><a href="/" class="height-100p flex flex-jc-c flex-ai-c">
                             <span><i class="fas fa-home"></i></span>
@@ -52,7 +62,7 @@
                 	</ul>
                 </nav>
                 
-                <nav class="top-bar__menu-box-2">
+                <nav class="top-bar__menu-box top-bar__menu-box-2">
                     <ul class="flex height-100p">
                         <c:if test="${not isLogined}">
                             <li><a href="/usr/member/join" class="height-100p flex flex-jc-jc flex-ai-c">
@@ -84,24 +94,6 @@
                         </c:if>
                     </ul>
                 </nav>
-                <!--
-                <c:if test="${not isLogined}">
-                    <a href="/usr/member/join">회원 가입</a>
-                    <a href="/usr/member/login">로그인</a>
-                    <a href="/usr/member/findLoginId">아이디 찾기</a>
-                    <a href="/usr/member/findLoginPw">패스워드 찾기</a>
-                </c:if>
-                <c:if test="${isLogined}">
-                    <span>${loginedMember.name}님 어서오세요.</span>
-                    <br>
-                    <a href="/usr/member/checkLoginPw">회원정보 수정</a>
-                    <a href="/usr/member/doLogout">로그아웃</a>
-                </c:if>
-                <a href="/usr/article-notice/write">공지사항 작성</a>
-                <a href="/usr/article-notice/list">공지사항</a>
-                <a href="/usr/article-free/write">게시물 작성</a>
-                <a href="/usr/article-free/list">자유게시판</a>
-                 -->
             </div>
         </div>
         
