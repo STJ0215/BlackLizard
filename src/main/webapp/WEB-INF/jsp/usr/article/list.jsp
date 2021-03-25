@@ -2,76 +2,118 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="title" value="${board.name} 게시물 목록"/>
+<c:set var="title" value="${board.name}"/>
 <%@ include file="../part/head.jspf"%>
         
-        <div>총 게시물 갯수 : ${totalCount}</div>
-        <div>
-            <a href="write">글쓰기</a>
+        <div class="articles-info-bar con-min-width">
+            <div class="con">
+                <span class="articles-info-bar__total-count">
+                    <span>총 게시물 갯수 :</span>
+                    <span>${totalCount}</span>
+                </span>
+            </div>
         </div>
-        <div>
-        	<form>
-        		<div>
-        			<input type="text" placeholder="검색어 입력" name="searchKeyword" value="${param.searchKeyword}">
-        			<input type="submit" value="검색">
-        		</div>
-        	</form>
+        
+        <div class="con-min-width">
+            <div class="con">
+                <form class="form-box-type-1">
+                    <div>
+                        <div>
+                            <span>검색어</span>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="검색어 입력" name="searchKeyword" value="${param.searchKeyword}">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>검색</span>
+                        </div>
+                        <div>
+                            <input type="submit" value="검색">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <hr>
         
-        <c:forEach var="article" items="${articles}">
-        	<c:set var="detailUrl" value="/usr/article-${board.code}/detail?id=${article.id}&listUrl=${encodedCurrentUri}"/>
-        	<div>
-        		ID : <a href="${detailUrl}">${article.id}</a> <br>
-            	등록일 : ${article.regDate} <br>
-            	수정일 : ${article.updateDate} <br>
-            	작성자 : ${article.extra.writer} <br>
-            	제목 : <a href="${detailUrl}">${article.title}</a> <br>
-                <c:if test="${article.extra.actorCanModify}">
-                    <a href="modify?id=${article.id}">수정</a>
-                </c:if>
-                <c:if test="${article.extra.actorCanDelete}">
-                    <a href="doDelete?id=${article.id}" 
-                        onclick="if (confirm('삭제하시겠습니까?') == false) return false;">삭제</a>
-                </c:if>
-        	</div>
-            <hr>
-        </c:forEach>
-        
-        <!-- 페이지가 0일때 임시코드 -->
-        <c:if test="${totalCount == 0}">
-        	<div>
-        		게시물이 존재하지 않습니다.
-        	</div>
-        	<hr>
-        </c:if>
-        <!-- 임시코드 끝 -->
-        
-        <div>
-            <a href="write">글쓰기</a>
+        <div class="article-list-box con-min-width">
+            <div class="con">
+                <div class="article-list-box__head">
+                    <div class="article-list-box__row">
+                        <div>
+                            <span>ID</span>
+                        </div>
+                        <div>
+                            <span>등록일</span>
+                        </div>
+                        <div>
+                            <span>수정일</span>
+                        </div>
+                        <div>
+                            <span>작성자</span>
+                        </div>
+                        <div>
+                            <span>제목</span>
+                        </div>
+                        
+                        <div>
+                            <span>작업</span>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="article-list-box__body">
+                    <c:forEach var="article" items="${articles}">
+                        <c:set var="detailUrl" value="/usr/article-${board.code}/detail?id=${article.id}&listUrl=${encodedCurrentUri}"/>
+                        <div class="article-list-box__row">
+                            <div>
+                                <a href="${detailUrl}">${article.id}</a>
+                            </div>
+                            <div>
+                                <span>${article.regDate}</span>
+                            </div>
+                            <div>
+                                <span>${article.updateDate}</span>
+                            </div>
+                            <div>
+                                <span>${article.extra.writer}</span>
+                            </div>
+                            <div>
+                                <a href="${detailUrl}">${article.title}</a>
+                            </div>
+                            
+                            <div>
+                                <c:if test="${article.extra.actorCanModify}">
+                                    <a href="modify?id=${article.id}">수정</a>
+                                </c:if>
+                                <c:if test="${article.extra.actorCanDelete}">
+                                    <a href="doDelete?id=${article.id}" 
+                                        onclick="if (confirm('삭제하시겠습니까?') == false) return false;">삭제</a>
+                                </c:if>
+                            </div>                        
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
         </div>
+        
+
+        
+        <div class="sub-menu-bar con-min-width">
+            <div class="con">
+                <a href="write">게시물 작성</a>
+            </div>
+        </div>
+        
         <br>
         
-        <style>
-            .selected {
-                font-weight: bold;
-                color: red;
-            }
-        </style>
-        
-        <span>페이지 : </span>
-        <div>
+        <div class="article-page-box con-min-width">
             <c:set var="goFirstBtnNeedToShow" value="${page > pageMenuArmSize + 1}"/>
             <c:set var="goLastBtnNeedToShow" value="true"/>
             
-            <!-- 페이지가 0일때 임시코드 -->
-            <c:if test="${totalPage == 0}">
-            	<a href="/usr/article-${board.code}/list">1</a>
-            </c:if>
-            <!-- 임시 코드 끝 -->
             
-            <c:if test="${totalPage == 0}">
-            	<c:set var="goFirstBtnNeedToShow" value="false"/>
+            <c:if test="${0 == totalPage}">
+                <c:set var="goFirstBtnNeedToShow" value="false" />
             </c:if>
             
             <c:if test="${goFirstBtnNeedToShow}">
@@ -79,16 +121,16 @@
             </c:if>
             
             <c:forEach var="i" begin="${pageMenuStart}" end="${pageMenuEnd}">
-                <c:set var="className" value="${i == page ? 'selected' : ''}"/>
-                <a class="${className}" href="?page=${i}&searchKeyword=${param.searchKeyword}">${i}</a>
+                <c:set var="className" value="${i == page ? 'article-page-box__page-btn--selected' : ''}"/>
+                <a href="?page=${i}&searchKeyword=${param.searchKeyword}" class="${className}">${i}</a>
                 
-                <c:if test="${totalPage == i}">
+                <c:if test="${i == totalPage}">
                     <c:set var="goLastBtnNeedToShow" value="false"/>
                 </c:if>
             </c:forEach>
             
-            <c:if test="${totalPage == 0}">
-            	<c:set var="goLastBtnNeedToShow" value="false"/>
+            <c:if test="${0 == totalPage}">
+                <c:set var="goLastBtnNeedToShow" value="false" />
             </c:if>
             
             <c:if test="${goLastBtnNeedToShow}">
