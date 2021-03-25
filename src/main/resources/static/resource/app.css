@@ -104,8 +104,7 @@ html {
 	color: rgb(0, 0, 0);
 	font-size: 2rem;
 	border-radius: 50%;
-	border: 2px solid black;
-	
+	border: 2px solid black;	
 }
 /* 로고바 끝 */
 
@@ -141,6 +140,13 @@ html {
 	margin-bottom: 30px;
 }
 /* 타이틀 바 끝 */
+
+/* 서브 메뉴 바 시작 */
+.sub-menu-bar {
+	margin-top: 20px;
+	font-weight: bold;
+}
+/* 서브 메뉴 바 끝 */
 
 /* 폼 박스 타입 1 시작 */
 .form-box-type-1 > div {
