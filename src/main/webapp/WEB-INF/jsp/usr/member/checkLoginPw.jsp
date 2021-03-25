@@ -32,14 +32,28 @@
             }
         </script>
         
-        <form action="doCheckLoginPw" method="POST" onsubmit="checkLoginPwFormSubmit(this); return false;">
-            <input type="hidden" name="redirectUri" value="/usr/member/modify"/>
-            <div>
-                패스워드 : <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해주세요." name="loginPw"/>
+        <div class="check-login-pw-box con-min-width">
+            <div class="con">
+                <form class="form-box-type-1" action="doCheckLoginPw" method="POST" onsubmit="checkLoginPwFormSubmit(this); return false;">
+                    <input type="hidden" name="redirectUri" value="/usr/member/modify"/>
+                    <div>
+                        <div>
+                            <span>패스워드 :</span>
+                        </div>
+                        <div>
+                            <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해 주세요." name="loginPw"/>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <span>확인 :</span>
+                        </div>
+                        <div>
+                            <input type="submit" value="패스워드 확인"/>
+                        </div>
+                    </div>
+                </form>
             </div>
-            
-            <div>
-                확인 : <input type="submit" value="패스워드 확인"/>
-            </div>
-        </form>
+        </div>
 <%@ include file="../part/foot.jspf"%>
