@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* 노멀라이즈 */
-body, ul, li {
+body, ul, li, h1, h2, h3 {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -134,3 +134,44 @@ html {
 	font-size: 0.8rem;
 }
 /* 탑바 끝 */
+
+/* 타이틀 바 시작 */
+.title-bar {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+/* 타이틀 바 끝 */
+
+/* 폼 박스 타입 1 시작 */
+.form-box-type-1 > div {
+	display: flex;
+	margin-top: 10px;
+}
+
+.form-box-type-1 > div > div:first-child {
+	display: flex;
+	align-items: center;
+	min-width: 150px;
+}
+
+.form-box-type-1 > div > div:first-child > span {
+	font-weight: bold;
+}
+
+.form-box-type-1 > div > div:last-child {
+	flex: 1 0 0;
+}
+
+.form-box-type-1 > div > div:last-child > input[type="text"],
+.form-box-type-1 > div > div:last-child > input[type="email"],
+.form-box-type-1 > div > div:last-child > input[type="password"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.form-box-type-1 > div > div:last-child > input[type="submit"] {
+	
+}
+/* 폼 박스 타입 1 끝 */

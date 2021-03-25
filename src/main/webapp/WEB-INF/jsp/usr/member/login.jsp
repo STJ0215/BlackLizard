@@ -40,17 +40,35 @@
             }
         </script>
         
-        <form action="doLogin" method="POST" onsubmit="loginFormSubmit(this); return false;">
-            <div>
-                아이디 : <input type="text" maxlength="30" placeholder="로그인 아이디를 입력해 주세요." name="loginId"/>
+        <div class="login-box con-min-width">
+            <div class="con">
+                <form class="form-box-type-1" action="doLogin" method="POST" onsubmit="loginFormSubmit(this); return false;">
+                    <div>
+                        <div>
+                            <span>아이디 :</span>
+                        </div>
+                        <div>
+                            <input type="text" maxlength="30" placeholder="로그인 아이디를 입력해주세요." name="loginId"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>패스워드 :</span>
+                        </div>
+                        <div>
+                            <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해주세요." name="loginPw"/>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <span>로그인 :</span>
+                        </div>
+                        <div>
+                            <input type="submit" value="로그인"/>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div>
-                패스워드 : <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해 주세요." name="loginPw"/>
-            </div>
-            <div>
-                로그인 : <input type="submit" value="로그인"/>
-            </div>
-        </form>
-        <br>
-        <a href="/usr/member/findLoginId">아이디 찾기</a>
+        </div>
 <%@ include file="../part/foot.jspf"%>
