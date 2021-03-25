@@ -70,45 +70,99 @@
             </div>
         </div>
         
-        <h2>댓글 작성</h2>
-        
-        <form action="/usr/reply/doWrite" method="POST">
-            <input type="hidden" name="redirectUri" value="${currentUri}">
-            <input type="hidden" name="relTypeCode" value="article">
-            <input type="hidden" name="relId" value="${param.id}">
-            <div>
-                <textarea rows="5" name="body" placeholder="댓글을 입력해 주세요."></textarea>
+        <div class="con-min-width margin-top-30">
+            <div class="con">
+                <h2>댓글 작성</h2>
             </div>
-            <input type="submit" value="작성">
-        </form>
+        </div>
+        
+        <div class="write-reply-box">
+            <div class="con">                
+                <form class="form-box-type-1" action="/usr/reply/doWrite" method="POST">
+                    <input type="hidden" name="redirectUri" value="${currentUri}">
+                    <input type="hidden" name="relTypeCode" value="article">
+                    <input type="hidden" name="relId" value="${param.id}">
+                    
+                    <div>
+                        <div>
+                            <span>내용</span>
+                        </div>
+                        <div>
+                            <textarea maxlength="2000" name="body" placeholder="댓글을 입력해 주세요."></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span></span>
+                        </div>
+                        <div>
+                            <input type="submit" value="작성">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="con-min-width margin-top-30">
+            <div class="con">
+                <h2>댓글 목록</h2>
+            </div>
+        </div>
+        
+        <div class="article-reply-list-box con-min-width">
+            <div class="con">
+                <div class="article-reply-list-box__head">
+                    <div class="article-reply-list-box__row">
+                        <div>
+                            <span>ID :</span>
+                        </div>
+                        <div>
+                            <span>등록일 :</span>
+                        </div>
+                        <div>
+                            <span>수정일 :</span>
+                        </div>
+                        <div>
+                            <span>작성자 :</span>
+                        </div>
+                        <div>
+                            <span>내용 :</span>
+                        </div>
+                        <div>
+                            <span>작업 :</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-reply-list-box__body">
+                    <c:forEach var="reply" items="${replies}">
+                        <div class="article-reply-list-box__row">
+                            <div>
+                                <span>${reply.id}</span>
+                            </div>
+                            <div>
+                                <span>${reply.regDate}</span>
+                            </div>
+                            <div>
+                                <span>${reply.updateDate}</span>
+                            </div>
+                            <div>
+                                <span>${reply.extra.writer}</span>
+                            </div>
+                            <div>
+                                <span>${reply.forPrintBody}</span>
+                            </div>
+                            <div>
+                                <c:if test="${reply.extra.actorCanModify}">
+                                    <a href="/usr/reply/modify?id=${reply.id}&redirectUri=${encodedCurrentUri}">수정</a>
+                                </c:if>
+                                <c:if test="${reply.extra.actorCanDelete}">
+                                    <a href="/usr/reply/doDelete?id=${reply.id}&redirectUri=${encodedCurrentUri}">삭제</a>
+                                </c:if>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+        </div>
         <hr>
-        
-        <h2>댓글 리스트</h2>
-        
-        <c:forEach var="reply" items="${replies}">
-            <div>
-                ID : ${reply.id}
-            </div>
-            <div>
-                등록일 : ${reply.regDate}
-            </div>
-            <div>
-                수정일 : ${reply.updateDate}
-            </div>
-            <div>
-                작성자 : ${reply.extra.writer}
-            </div>
-            <div>
-                내용 : ${reply.body}
-            </div>
-            <div>
-                <c:if test="${reply.extra.actorCanModify}">
-                    <a href="/usr/reply/modify?id=${reply.id}&redirectUri=${encodedCurrentUri}">수정</a>
-                </c:if>
-                <c:if test="${reply.extra.actorCanDelete}">
-                    <a href="/usr/reply/doDelete?id=${reply.id}&redirectUri=${encodedCurrentUri}">삭제</a>
-                </c:if>
-            </div>
-            <hr>
-        </c:forEach>
 <%@ include file="../part/foot.jspf"%>
