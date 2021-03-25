@@ -65,24 +65,59 @@
             }
         </script>
         
-        <form action="doJoin" method="POST" onsubmit="joinFormSubmit(this); return false;">
-            <div>
-                아이디 : <input type="text" maxlength="30" placeholder="로그인 아이디를 입력해 주세요." name="loginId"/>
+        <div class="join-box con-min-width">
+            <div class="con">
+                <form class="form-box-type-1" action="doJoin" method="POST" onsubmit="joinFormSubmit(this); return false;">
+                    <div>
+                        <div>
+                            <span>아이디 :</span>
+                        </div>
+                        <div>
+                            <input type="text" maxlength="30" placeholder="로그인 아이디를 입력해 주세요." name="loginId"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>패스워드 :</span>
+                        </div>
+                        <div>
+                            <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해 주세요." name="loginPw"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>패스워드 확인 :</span>
+                        </div>
+                        <div>
+                            <input type="password" maxlength="30" placeholder="로그인 패스워드 확인" name="loginPwConfirm"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>이름 :</span>
+                        </div>
+                        <div>
+                            <input type="text" maxlength="30" placeholder="이름을 입력해 주세요." name="name"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>이메일 :</span>
+                        </div>
+                        <div>
+                            <input type="email" maxlength="50" placeholder="이메일 주소를 입력해 주세요." name="email"/>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <span>가입 :</span>
+                        </div>
+                        <div>
+                            <input type="submit" value="가입"/>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div>
-                패스워드 : <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해 주세요." name="loginPw"/>
-            </div>
-            <div>
-                패스워드 확인 : <input type="password" maxlength="30" placeholder="로그인 패스워드를 다시 입력해 주세요." name="loginPwConfirm"/>
-            </div>
-            <div>
-                이름 : <input type="text" maxlength="30" placeholder="이름을 입력해 주세요." name="name"/>
-            </div>
-            <div>
-            	이메일 : <input type="email" maxlength="50" placeholder="이메일 주소를 입력해 주세요." name="email"/>
-            </div>
-            <div>
-                가입 : <input type="submit" value="가입"/>
-            </div>
-        </form>
+        </div>
 <%@ include file="../part/foot.jspf"%>

@@ -48,7 +48,7 @@
                             <span>아이디 :</span>
                         </div>
                         <div>
-                            <input type="text" maxlength="30" placeholder="로그인 아이디를 입력해주세요." name="loginId"/>
+                            <input type="text" maxlength="30" placeholder="로그인 아이디를 입력해 주세요." name="loginId"/>
                         </div>
                     </div>
                     <div>
@@ -56,7 +56,7 @@
                             <span>패스워드 :</span>
                         </div>
                         <div>
-                            <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해주세요." name="loginPw"/>
+                            <input type="password" maxlength="30" placeholder="로그인 패스워드를 입력해 주세요." name="loginPw"/>
                         </div>
                     </div>
                     
