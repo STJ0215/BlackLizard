@@ -5,30 +5,60 @@
 <c:set var="title" value="댓글 수정"/>
 <%@ include file="../part/head.jspf"%>
         
-        <form action="doModify" method="POST">
-        	<input type="hidden" name="redirectUri" value="${param.redirectUri}"/>
-            <input type="hidden" name="id" value="${reply.id}"/>
-            <div>
-                ID : ${reply.id}
+        <div class="modify-reply-box con-min-width">
+            <div class="con">
+                <form class="form-box-type-1" action="doModify" method="POST">
+                    <input type="hidden" name="id" value="${reply.id}"/>
+                    <input type="hidden" name="redirectUri" value="${param.redirectUri}"/>
+                    <div>
+                        <div>
+                            <span>ID :</span>
+                        </div>
+                        <div>
+                            <span>${reply.id}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>등록일 :</span>
+                        </div>
+                        <div>
+                            <span>${reply.regDate}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>수정일 :</span>
+                        </div>
+                        <div>
+                            <span>${reply.updateDate}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>내용 :</span>
+                        </div>
+                        <div>
+                            <textarea maxlength="2000" placeholder="내용을 입력해 주세요." name="body">${reply.body}</textarea>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <span>수정 :</span>
+                        </div>
+                        <div>
+                            <input type="submit" value="수정"/>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div>
-                등록일 : ${reply.regDate}
-            </div>
-            <div>
-                수정일 : ${reply.updateDate}
-            </div>
-            <div>
-                내용 : <input type="text" maxlength="30" placeholder="내용을 입력해 주세요." 
-                            name="body" value="${reply.body}"/>
-            </div>
-            
-            <div>
-                수정 : <input type="submit" value="수정"/>
-            </div>
-        </form>
+        </div>
         <br>
         
-        <div>
-            <a href="${param.redirectUri}">돌아가기</a>
+        <div class="sub-menu-bar con-min-width">
+            <div class="con">
+                <a href="${param.redirectUri}">돌아가기</a>
+            </div>
         </div>
 <%@ include file="../part/foot.jspf"%>
