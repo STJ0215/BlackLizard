@@ -12,8 +12,7 @@ CREATE TABLE `member` (
     updateDate DATETIME NOT NULL,
     loginId CHAR(20) NOT NULL,
     loginPw CHAR(100) NOT NULL,
-    `name` CHAR(100) NOT NULL,
-    email CHAR(100) NOT NULL
+    `name` CHAR(100) NOT NULL
 );
 
 # 회원 데이터 추가
@@ -22,16 +21,20 @@ regDate = NOW(),
 updateDate = NOW(),
 loginId = 'admin',
 loginPw = 'admin',
-`name` = 'admin',
-email = 'stj960215@gmail.com';
+`name` = 'admin';
 
 INSERT INTO `member` SET
 regDate = NOW(),
 updateDate = NOW(),
 loginId = 'user_test',
 loginPw = 'user_test',
-`name` = 'user_test',
-email = 'stj960215@gmail.com';
+`name` = 'user_test';
+
+# 회원 테이블에 email 칼럼 추가
+ALTER TABLE `member` ADD COLUMN email CHAR(100) AFTER `name`;
+
+# 기존 회원의 email 정보 추가
+UPDATE `member` SET email = 'stj960215@gmail.com';
 
 # 현재 패스워드를 암호화
 UPDATE `member` SET
@@ -68,8 +71,6 @@ CREATE TABLE article (
     id INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     regDate DATETIME NOT NULL,
     updateDate DATETIME NOT NULL,
-    boardId INT(10) UNSIGNED NOT NULL,
-    memberId INT(10) UNSIGNED NOT NULL,
     title CHAR(200) NOT NULL,
     `body` TEXT NOT NULL
 );
@@ -78,34 +79,45 @@ CREATE TABLE article (
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
-boardId = 1,
-memberId = 1,
-title = 'notice1_title',
-`body` = 'notice1_body';
+title = '제목1',
+`body` = '내용1';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
-boardId = 1,
-memberId = 1,
-title = 'notice2_title',
-`body` = 'notice2_body';
+title = '제목2',
+`body` = '내용2';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
-boardId = 2,
-memberId = 1,
 title = '제목3',
 `body` = '내용3';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
-boardId = 2,
-memberId = 2,
 title = '제목4',
 `body` = '내용4';
+
+# 게시물 테이블에 boardId 칼럼 추가
+ALTER TABLE article ADD COLUMN boardId INT(10) UNSIGNED NOT NULL AFTER updateDate;
+UPDATE article SET boardId = 1 WHERE id <= 2;
+UPDATE article SET boardId = 2 WHERE id > 2;
+
+# 게시물 테이블에 memberId 칼럼 추가
+ALTER TABLE article ADD COLUMN memberId INT(10) UNSIGNED NOT NULL AFTER updateDate;
+# 기존 게시물의 작성자가 1번 회원이라고 정한다
+UPDATE article SET memberId = 1 WHERE memberId = 0;
+
+# 2번 회원이 작성한 게시물 데이터 추가
+INSERT INTO article SET
+regDate = NOW(),
+updateDate = NOW(),
+boardId = 2,
+memberId = 2,
+title = '제목5',
+`body` = '내용5';
 
 # 게시물 데이터 무작위 추가
 INSERT INTO article SET
@@ -143,22 +155,22 @@ regDate = NOW(),
 updateDate = NOW(),
 relTypeCode = 'article',
 relId = 1,
-memberId = 2,
+memberId = 1,
 `body` = 'reply2';
 
 INSERT INTO reply SET
 regDate = NOW(),
 updateDate = NOW(),
 relTypeCode = 'article',
-relId = 3,
-memberId = 1,
+relId = 1,
+memberId = 2,
 `body` = 'reply3';
 
 INSERT INTO reply SET
 regDate = NOW(),
 updateDate = NOW(),
 relTypeCode = 'article',
-relId = 3,
+relId = 2,
 memberId = 2,
 `body` = 'reply4';
 
