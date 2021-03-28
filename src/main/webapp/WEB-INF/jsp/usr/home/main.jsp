@@ -4,10 +4,14 @@
 
 <c:set var="title" value="메인 페이지"/>
 <%@ include file="../part/head.jspf"%>
-        <div class="page-main con-min-width">
+        <div class="home-main con-min-width">
         	<div class="con">
-        		<p>검은 도마뱀🦎🦎🦎</p>
-        		<p>임시 메인 페이지입니다.</p>
+        		<div class="content1">
+        		</div>
+        		<div class="content2 margin-top-30">
+        		</div>
+        		<div class="content3 margin-top-30">
+        		</div>
         	</div>
         </div>
 <%@ include file="../part/foot.jspf"%>

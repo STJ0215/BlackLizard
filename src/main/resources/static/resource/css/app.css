@@ -152,10 +152,12 @@ html {
 
 
 /* 타이틀 바 시작 */
+/*
 .title-bar {
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+*/
 /* 타이틀 바 끝 */
 
 
@@ -211,6 +213,29 @@ html {
 }
 /* 폼 박스 타입 1 끝 */
 
+
+
+/* 메인 페이지 시작 */
+.content1 {
+	width: 100%;
+	height: 500px;
+	background-color: gray;
+}
+
+.content2 {
+	width: 100%;
+	height: 400px;
+	background-color: silver;
+}
+
+.content3 {
+	width: 100%;
+	height: 400px;
+	background-color: darkgray;
+}
+
+
+/* 메인 페이지 끝 */
 
 
 /* 게시물 목록 시작 */
@@ -379,7 +404,7 @@ html {
 .footer-bar > .footer-inner > .copyright-area {
     position: absolute;
     top: 2px;
-    left: 0;
+    left: 10px;
 }
 
 .footer-bar > .footer-inner > .copyright-area > .txt_copyright {
