@@ -38,28 +38,40 @@
             <div class="con flex flex-jc-sb height-100p">
                 <nav class="top-bar__menu-box top-bar__menu-box-1">
                 	<ul class="flex height-100p">
-                		<li><a href="/" class="height-100p flex flex-jc-c flex-ai-c">
-                            <span><i class="fas fa-home"></i></span>
-                            <span>홈</span>
-                        </a></li>
-                		<li><a href="/usr/article-free/list" class="height-100p flex flex-jc-c flex-ai-c">
-                            <span><i class="fas fa-list"></i></span>
-                            <span>자유게시판</span>
-                        </a></li>
-                		<li><a href="/usr/article-free/write" class="height-100p flex flex-jc-c flex-ai-c">
-                            <span><i class="fas fa-pen"></i></span>
-                            <span>자유게시판 작성</span>
-                        </a></li>
-                		<li><a href="/usr/article-notice/list" class="height-100p flex flex-jc-c flex-ai-c">
-                            <span><i class="fas fa-list"></i></span>
-                            <span>공지사항</span>
-                        </a></li>
+                		<li>
+                			<a href="/" class="height-100p flex flex-jc-c flex-ai-c">
+                            	<span><i class="fas fa-home"></i></span>
+                            	<span>홈</span>
+                        	</a>
+                        </li>
+                        <li>
+                			<a href="/usr/article-notice/list" class="height-100p flex flex-jc-c flex-ai-c">
+                            	<span><i class="fas fa-list"></i></span>
+                            	<span>공지사항</span>
+                        	</a>
+                        </li>
+                		<li>
+                			<a href="/usr/article-free/list" class="height-100p flex flex-jc-c flex-ai-c">
+                            	<span><i class="fas fa-list"></i></span>
+                            	<span>자유게시판</span>
+                        	</a>
+                        </li>
+                        <!--
+                        <li>
+                			<a href="/usr/article-free/write" class="height-100p flex flex-jc-c flex-ai-c">
+                            	<span><i class="fas fa-pen"></i></span>
+                            	<span>자유게시판 작성</span>
+                        	</a>
+                        </li>
                         <c:if test="${loginedMember.isAdmin()}">
-                    		<li><a href="/usr/article-notice/write" class="height-100p flex flex-jc-c flex-ai-c">
-                                <span><i class="fas fa-pen"></i></span>
-                                <span>공지사항 작성</span>
-                            </a></li>
+                    		<li>
+                    			<a href="/usr/article-notice/write" class="height-100p flex flex-jc-c flex-ai-c">
+                                	<span><i class="fas fa-pen"></i></span>
+                                	<span>공지사항 작성</span>
+                            	</a>
+                            </li>
                         </c:if>
+                        -->
                 	</ul>
                 </nav>
                 

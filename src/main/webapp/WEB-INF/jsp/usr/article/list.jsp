@@ -7,10 +7,8 @@
         
         <div class="articles-info-bar con-min-width">
             <div class="con">
-                <span class="articles-info-bar__total-count">
-                    <span>총 게시물 갯수 :</span>
-                    <span>${totalCount}</span>
-                </span>
+                <span>총 게시물 갯수 :</span>
+                <span>${totalCount}</span>
             </div>
         </div>
         
@@ -25,7 +23,6 @@
                             <input type="submit" value="검색">
                         </div>
                     </div>
-                    
                 </form>
             </div>
         </div>

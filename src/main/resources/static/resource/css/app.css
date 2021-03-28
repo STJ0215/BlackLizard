@@ -239,6 +239,10 @@ html {
 
 
 /* 게시물 목록 시작 */
+articles-info-bar__total-count {
+	position: absolute;
+}
+
 .searchKeyword-box > div {
 	height: 25px;
 }
@@ -403,8 +407,8 @@ html {
 
 .footer-bar > .footer-inner > .copyright-area {
     position: absolute;
-    top: 2px;
-    left: 10px;
+    top: 0;
+    left: 0;
 }
 
 .footer-bar > .footer-inner > .copyright-area > .txt_copyright {
@@ -413,10 +417,9 @@ html {
     line-height: 40px;
     font-size: 13px;
     color: rgb(0, 0, 0);
-    padding-top: 1px;
 }
 
-.footer-bar > .footer-inner > .copyright-area > .txt_copy > .link_Blog {
+.footer-bar > .footer-inner > .copyright-area > .txt_copyright > .link_Blog {
     display: inline-block;
     vertical-align: top;
     line-height: 40px;
