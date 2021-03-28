@@ -114,22 +114,22 @@
                 <div class="article-reply-list-box__head">
                     <div class="article-reply-list-box__row">
                         <div>
-                            <span>ID :</span>
+                            <span>ID</span>
                         </div>
                         <div>
-                            <span>등록일 :</span>
+                            <span>등록일</span>
                         </div>
                         <div>
-                            <span>수정일 :</span>
+                            <span>수정일</span>
                         </div>
                         <div>
-                            <span>작성자 :</span>
+                            <span>작성자</span>
                         </div>
                         <div>
-                            <span>내용 :</span>
+                            <span>내용</span>
                         </div>
                         <div>
-                            <span>작업 :</span>
+                            <span>작업</span>
                         </div>
                     </div>
                 </div>
@@ -164,5 +164,4 @@
                 </div>
             </div>
         </div>
-        <hr>
 <%@ include file="../part/foot.jspf"%>

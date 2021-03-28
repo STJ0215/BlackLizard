@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="title" value="메인 페이지"/>
+<c:set var="title" value="BlackLizard"/>
 <%@ include file="../part/head.jspf"%>
         <div class="home-main con-min-width">
         	<div class="con">

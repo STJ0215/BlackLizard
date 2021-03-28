@@ -142,11 +142,14 @@ html {
 	color: rgb(0, 0, 0);
 }
 
+/*
 .top-bar__menu-box > ul > li > a > span:first-child {
 	margin-top: 4px;
 	margin-right: 5px;
 	font-size: 0.8rem;
 }
+*/
+
 /* 탑바 끝 */
 
 
@@ -396,25 +399,26 @@ articles-info-bar__total-count {
     position: relative;
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
+    height: 60px;
     margin-top: 50px;
-    padding: 15px 32px;
 }
 
 .footer-bar > .footer-inner {
     position: relative;
-    min-height: 40px;
+    height: 40px;
 }
 
 .footer-bar > .footer-inner > .copyright-area {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20px;
 }
 
 .footer-bar > .footer-inner > .copyright-area > .txt_copyright {
     display: inline-block;
     vertical-align: top;
     line-height: 40px;
+    font-weight: bold;
     font-size: 13px;
     color: rgb(0, 0, 0);
 }
@@ -423,14 +427,16 @@ articles-info-bar__total-count {
     display: inline-block;
     vertical-align: top;
     line-height: 40px;
+    font-weight: bold;
     font-size: 13px;
     color: rgb(0, 0, 0);
+    margin-left: 20px;
 }
 
 .footer-bar > .footer-inner > .familysite-area {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 20px;
 }
 
 .footer-bar > .footer-inner > .familysite-area > .box_site {
@@ -439,6 +445,7 @@ articles-info-bar__total-count {
 
 .footer-bar > .footer-inner > .familysite-area > .box_site > .link_site {
     line-height: 40px;
+    font-weight: bold;
     font-size: 12px;
     color: rgb(0, 0, 0);
     float: left;
