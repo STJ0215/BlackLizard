@@ -13,8 +13,8 @@ a {
 }
 
 a:hover {
-	color: blue;
-	text-decoration: underline;
+	color: rgb(75, 75, 75);
+	text-decoration: none;
 }
 
 
@@ -125,8 +125,8 @@ html {
 /* 탑바 시작 */
 .top-bar {
 	height: 50px;
-	background-color: rgb(0, 0, 0);
-	color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 	margin: 0 auto;
 }
 
@@ -205,7 +205,7 @@ html {
 .form-box-type-1 > div > div:last-child > textarea {
 	display: block;
 	width: 100%;
-	min-height: 300px;
+	min-height: 200px;
 	padding: 10px;
 	box-sizing: border-box;
 }
@@ -214,6 +214,30 @@ html {
 
 
 /* 게시물 목록 시작 */
+.searchKeyword-box > div {
+	height: 25px;
+}
+
+.searchKeyword-box > .searchKeyword-input > input[type="text"] {
+	display: block;
+	width: 200px;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.searchKeyword-box > .searchKeyword-submit {
+	margin-left: 10px;
+}
+
+.searchKeyword-box > .searchKeyword-submit > input[type="submit"] {
+	width: 50px;
+	height: 100%;
+	background-color: rgb(255, 255, 255);
+	font-weight: bold;
+	border: 2px solid rgb(0, 0, 0);
+	box-sizing: border-box;
+}
+
 .article-list-box {
 	margin-top: 30px;
 }
@@ -335,3 +359,74 @@ html {
 	width: 80px;
 }
 /* 게시물 댓글 목록 끝 */ 
+
+
+
+/* 푸터 바 시작 */
+.footer-bar {
+    position: relative;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    margin-top: 50px;
+    padding: 15px 32px;
+}
+
+.footer-bar > .footer-inner {
+    position: relative;
+    min-height: 40px;
+}
+
+.footer-bar > .footer-inner > .copyright-area {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.footer-bar > .footer-inner > .copyright-area > .txt_copyright {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 40px;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    padding-top: 1px;
+}
+
+.footer-bar > .footer-inner > .copyright-area > .txt_copy > .link_Blog {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 40px;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+}
+
+.footer-bar > .footer-inner > .familysite-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.footer-bar > .footer-inner > .familysite-area > .box_site {
+    float: right;   
+}
+
+.footer-bar > .footer-inner > .familysite-area > .box_site > .link_site {
+    line-height: 40px;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    float: left;
+    transition: color .25s;
+}
+
+.footer-bar > .footer-inner > .familysite-area > .box_site > .link_site:hover {
+    color: #999;
+}
+
+.footer-bar > .footer-inner > .familysite-area > .box_site > .txt_bar {
+    line-height: 40px;
+    font-size: 12px;
+    color: #33343B;
+    float: left;
+    margin: 0 15px;
+}
+
+/* 푸터 바 끝 */

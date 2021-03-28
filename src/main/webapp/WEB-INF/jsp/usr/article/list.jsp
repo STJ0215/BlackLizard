@@ -17,22 +17,15 @@
         <div class="con-min-width">
             <div class="con">
                 <form class="form-box-type-1">
-                    <div>
-                        <div>
-                            <span>검색어</span>
-                        </div>
-                        <div>
+                    <div class="searchKeyword-box">
+                        <div class="searchKeyword-input">
                             <input type="text" placeholder="검색어 입력" name="searchKeyword" value="${param.searchKeyword}">
                         </div>
-                    </div>
-                    <div>
-                        <div>
-                            <span>검색</span>
-                        </div>
-                        <div>
+                        <div class="searchKeyword-submit">
                             <input type="submit" value="검색">
                         </div>
                     </div>
+                    
                 </form>
             </div>
         </div>

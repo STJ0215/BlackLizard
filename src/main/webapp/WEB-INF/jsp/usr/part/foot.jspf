@@ -1,2 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+		<div class="footer-bar con-min-width">
+			<div class="footer-inner con flex flex-jc-c">
+				<div class="copyright-area">
+					<span class="txt_copyright">
+						Copyright©
+						<a class="link_Blog" href="https://stj960215.tistory.com">
+							STJ
+                        </a>
+                        All rights reserved.
+					</span>
+            	</div>
+            	<div class="familysite-area">
+					<div class="box_site">
+						<a class="link_site" href="https://stj960215.tistory.com">
+							Blog
+						</a>
+						<span class="txt_bar">|</span>
+						<a class="link_site" href="http://stj960215.dothome.co.kr/stj/main.html">
+							Site
+						</a>
+						<span class="txt_bar">|</span>
+						<a class="link_site" href="https://github.com/STJ0215/BlackLizard">
+							Github
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
