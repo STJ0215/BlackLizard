@@ -104,20 +104,6 @@ html {
 .logo-bar__logo {
 	width: 150px;
 }
-
-.logo-bar__avatar {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 50px;
-	height: 50px;
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
-	font-size: 2rem;
-	border: 2px solid;
-	border-color: rgb(0, 0, 0);
-	border-radius: 50%;
-}
 /* 로고바 끝 */
 
 
@@ -132,24 +118,14 @@ html {
 
 .top-bar__menu-box > ul > li > a {
 	padding: 0 10px;
-	min-width: 70px;
+	min-width: 80px;
 	font-weight: bold;
-	border-radius: 10px 10px 0 0;
 }
 
 .top-bar__menu-box > ul > li:hover > a {
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 0);
 }
-
-/*
-.top-bar__menu-box > ul > li > a > span:first-child {
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 0.8rem;
-}
-*/
-
 /* 탑바 끝 */
 
 

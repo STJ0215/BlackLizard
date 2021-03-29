@@ -20,16 +20,13 @@
     <body>
          <div class="logo-bar con-min-width">
             <div class="con flex flex-jc-c">
+            	<!-- 좌우 대칭 맞추기 -->
                 <div class="flex-1-0-0"></div>
                 <a href="/" class="logo-bar__logo block img-box">
                     <img src="/resource/img/BlackLizard-logo_500px.png">
                 </a>
+                <!-- 좌우 대칭 맞추기 -->
                 <div class="flex flex-1-0-0 flex-ai-c flex-jc-e">
-                    <c:if test="${isLogined}">
-                        <div class="logo-bar__avatar">
-                            <i class="far fa-user"></i>
-                        </div>
-                    </c:if>
                 </div>
             </div>
         </div>
@@ -40,44 +37,19 @@
                 	<ul class="flex height-100p">
                 		<li>
                 			<a href="/" class="height-100p flex flex-jc-c flex-ai-c">
-                            	<!--
-                            	<span><i class="fas fa-home"></i></span>
-                            	-->
                             	<span>홈</span>
                         	</a>
                         </li>
                         <li>
                 			<a href="/usr/article-notice/list" class="height-100p flex flex-jc-c flex-ai-c">
-                            	<!--
-                            	<span><i class="fas fa-list"></i></span>
-                            	-->
                             	<span>공지사항</span>
                         	</a>
                         </li>
                 		<li>
                 			<a href="/usr/article-free/list" class="height-100p flex flex-jc-c flex-ai-c">
-                            	<!--
-                            	<span><i class="fas fa-list"></i></span>
-                            	-->
                             	<span>자유게시판</span>
                         	</a>
                         </li>
-                        <!--
-                        <li>
-                			<a href="/usr/article-free/write" class="height-100p flex flex-jc-c flex-ai-c">
-                            	<span><i class="fas fa-pen"></i></span>
-                            	<span>자유게시판 작성</span>
-                        	</a>
-                        </li>
-                        <c:if test="${loginedMember.isAdmin()}">
-                    		<li>
-                    			<a href="/usr/article-notice/write" class="height-100p flex flex-jc-c flex-ai-c">
-                                	<span><i class="fas fa-pen"></i></span>
-                                	<span>공지사항 작성</span>
-                            	</a>
-                            </li>
-                        </c:if>
-                        -->
                 	</ul>
                 </nav>
                 
@@ -85,53 +57,25 @@
                     <ul class="flex height-100p">
                         <c:if test="${not isLogined}">
                             <li>
-                            	<a href="/usr/member/join" class="height-100p flex flex-jc-jc flex-ai-c">
-                                	<!--
-                                	<span><i class="fas fa-user"></i></span>
-                                	-->
-                                	<span>회원가입</span>
-                            	</a>
-                            </li>
-                            <li>
                             	<a href="/usr/member/login" class="height-100p flex flex-jc-jc flex-ai-c">
-                                	<!--
-                                	<span><i class="fas fa-sign-in-alt"></i></span>
-                                	-->
                                 	<span>로그인</span>
                             	</a>
                             </li>
                             <li>
-                            	<a href="/usr/member/findLoginId" class="height-100p flex flex-jc-jc flex-ai-c">
-                                	<!--
-                                	<span><i class="fas fa-user-lock"></i></span>
-                                	-->
-                                	<span>아이디 찾기</span>
-                            	</a>
-                            </li>
-                            <li>
-                            	<a href="/usr/member/findLoginPw" class="height-100p flex flex-jc-jc flex-ai-c">
-                                	<!--
-                                	<span><i class="fas fa-user-lock"></i></span>
-                                	-->
-                                	<span>패스워드 찾기</span>
+                            	<a href="/usr/member/join" class="height-100p flex flex-jc-jc flex-ai-c">
+                                	<span>회원가입</span>
                             	</a>
                             </li>
                         </c:if>
                         <c:if test="${isLogined}">
-                            <li>
-                            	<a href="/usr/member/checkLoginPw" class="height-100p flex flex-jc-jc flex-ai-c">
-                            		<!--
-                            		<span><i class="fas fa-user-edit"></i></span>
-                            		-->
-                                	<span>회원정보 수정</span>
+                        	<li>
+                            	<a href="/usr/member/doLogout" class="height-100p flex flex-jc-jc flex-ai-c">
+                                	<span>로그아웃</span>
                             	</a>
                             </li>
                             <li>
-                            	<a href="/usr/member/doLogout" class="height-100p flex flex-jc-jc flex-ai-c">
-                                	<!--
-                                	<span><i class="fas fa-sign-out-alt"></i></span>
-                                	-->
-                                	<span>로그아웃</span>
+                            	<a href="/usr/member/checkLoginPw" class="height-100p flex flex-jc-jc flex-ai-c">
+                            		<span><i class="far fa-user flex flex-jc-jc flex-ai-c"></i></span>
                             	</a>
                             </li>
                         </c:if>

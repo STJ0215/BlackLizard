@@ -71,4 +71,15 @@
                 </form>
             </div>
         </div>
+        
+        <div class="sub-menu-bar con-min-width">
+            <div class="con">
+                <a href="/usr/member/findLoginId">
+                	<span>아이디 찾기</span>
+                </a>
+                <a href="/usr/member/findLoginPw">
+                	<span>패스워드 찾기</span>
+                </a>
+            </div>
+        </div>
 <%@ include file="../part/foot.jspf"%>
