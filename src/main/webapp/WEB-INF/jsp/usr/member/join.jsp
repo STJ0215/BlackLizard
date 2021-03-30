@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <c:set var="title" value="회원 가입"/>
-<%@ include file="../part/head.jspf"%>
+<%@ include file="../part/head_2.jspf"%>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
         
@@ -65,9 +65,12 @@
             }
         </script>
         
-        <div class="join-box con-min-width">
+        <div class="join-box con-min-width margin-top-30">
             <div class="con">
-                <form class="form-box-type-1" action="doJoin" method="POST" onsubmit="joinFormSubmit(this); return false;">
+            	<a href="/" class="logo-login block img-box">
+                   	<img src="/resource/img/BlackLizard-logo_500px.png">
+                </a>
+                <form class="form-box-type-2" action="doJoin" method="POST" onsubmit="joinFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>아이디 :</span>
@@ -111,10 +114,7 @@
                     
                     <div>
                         <div>
-                            <span>가입 :</span>
-                        </div>
-                        <div>
-                            <input type="submit" value="가입"/>
+                            <input type="submit" class="join-button" value="가입"/>
                         </div>
                     </div>
                 </form>
