@@ -25,6 +25,20 @@ public class AttrService {
 		return attrDao.get(relTypeCode, relId, typeCode, type2Code);
 	}
 	
+	public int remove(String name) {
+		String[] nameBits = name.split("__");
+		String relTypeCode = nameBits[0];
+		int relId = Integer.parseInt(nameBits[1]);
+		String typeCode = nameBits[2];
+		String type2Code = nameBits[3];
+		
+		return remove(relTypeCode, relId, typeCode, type2Code);
+	}
+	
+	public int remove(String relTypeCode, int relId, String typeCode, String type2Code) {
+		return attrDao.remove(relTypeCode, relId, typeCode, type2Code);
+	}
+	
 	public int setValue(String name, String value, String expireDate) {
 		String[] nameBits = name.split("__");
 		String relTypeCode = nameBits[0];
@@ -38,6 +52,24 @@ public class AttrService {
 	// 메서드 오버로딩의 법칙
 	public int setValue(String name, String value) {
 		return setValue(name, value, null);
+	}
+	
+	public int setValue(String relTypeCode, int relId, String typeCode, String type2Code, String value, String expireDate) {
+		System.out.println("relTypeCode : " + relTypeCode);
+		System.out.println("relId : " + relId);
+		System.out.println("typeCode : " + typeCode);
+		System.out.println("type2Code : " + type2Code);
+		System.out.println("value : " + value);
+		System.out.println("expireDate : " + expireDate);
+		
+		attrDao.setValue(relTypeCode, relId, typeCode, type2Code, value, expireDate);
+		Attr attr = get(relTypeCode, relId, typeCode, type2Code);
+		
+		if (attr != null) {
+			return attr.getId();
+		}
+		
+		return -1;
 	}
 	
 	public String getValue(String name) {
@@ -58,37 +90,5 @@ public class AttrService {
 		}
 		
 		return value;
-	}
-	
-	public int remove(String name) {
-		String[] nameBits = name.split("__");
-		String relTypeCode = nameBits[0];
-		int relId = Integer.parseInt(nameBits[1]);
-		String typeCode = nameBits[2];
-		String type2Code = nameBits[3];
-		
-		return remove(relTypeCode, relId, typeCode, type2Code);
-	}
-	
-	public int remove(String relTypeCode, int relId, String typeCode, String type2Code) {
-		return attrDao.remove(relTypeCode, relId, typeCode, type2Code);
-	}
-	
-	public int setValue(String relTypeCode, int relId, String typeCode, String type2Code, String value, String expireDate) {
-		System.out.println("relTypeCode : " + relTypeCode);
-		System.out.println("relId : " + relId);
-		System.out.println("typeCode : " + typeCode);
-		System.out.println("type2Code : " + type2Code);
-		System.out.println("value : " + value);
-		System.out.println("expireDate : " + expireDate);
-		
-		attrDao.setValue(relTypeCode, relId, typeCode, type2Code, value, expireDate);
-		Attr attr = get(relTypeCode, relId, typeCode, type2Code);
-		
-		if (attr != null) {
-			return attr.getId();
-		}
-		
-		return -1;
 	}
 }

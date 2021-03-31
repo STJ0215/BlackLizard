@@ -235,7 +235,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/usr/member/doModify")
-	public String doModify(HttpServletRequest req, Model model, String checkLoginPwAuthCode, @RequestParam Map<String, Object> param) {
+	public String doModify(HttpServletRequest req, Model model, @RequestParam Map<String, Object> param, String checkLoginPwAuthCode) {
 		int loginedMemberId = (int)req.getAttribute("loginedMemberId");
 		
 		if (checkLoginPwAuthCode == null || checkLoginPwAuthCode.length() == 0) {
@@ -289,6 +289,8 @@ public class MemberController {
 		if (redirectUri == null || redirectUri.length() == 0) {
 			redirectUri = "/usr/home/main";
 		}
+		
+		redirectUri = Util.getNewUri(redirectUri, "checkLoginPwAuthCode", authCode);
 		
 		model.addAttribute("redirectUri", redirectUri);
 		

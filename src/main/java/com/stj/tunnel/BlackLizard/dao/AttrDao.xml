@@ -15,20 +15,7 @@
 			LIMIT 1
 		 ]]>
 	</select>
-
-	<select id="getValue" resultType="String">
-	 	<![CDATA[
-			SELECT value
-			FROM attr
-			WHERE relId = #{relId}
-			AND relTypeCode = #{relTypeCode}
-			AND typeCode = #{typeCode}
-			AND type2Code = #{type2Code}
-			AND (expireDate >= NOW() OR expireDate IS NULL)
-			LIMIT 1
-		 ]]>
-	</select>
-
+	
 	<delete id="remove">
 		DELETE FROM attr
 		WHERE relId = #{relId}
@@ -45,6 +32,19 @@
 		ON DUPLICATE KEY UPDATE
 		updateDate = NOW() , `value` = #{value}, expireDate = #{expireDate}
 	</insert>
+	
+	<select id="getValue" resultType="String">
+	 	<![CDATA[
+			SELECT value
+			FROM attr
+			WHERE relId = #{relId}
+			AND relTypeCode = #{relTypeCode}
+			AND typeCode = #{typeCode}
+			AND type2Code = #{type2Code}
+			AND (expireDate >= NOW() OR expireDate IS NULL)
+			LIMIT 1
+		 ]]>
+	</select>
 
 	<select id="getArticleById" resultType="Article">
 		SELECT *

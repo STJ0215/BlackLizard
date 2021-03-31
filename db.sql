@@ -220,6 +220,9 @@ SELECT * FROM article ORDER BY id DESC;
 # 댓글 테이블 조회
 SELECT * FROM reply;
 
+# 부가정보 테이블 조회
+SELECT * FROM attr;
+
 ## 현재 패스워드를 조회(암호화)
 #SELECT SHA2(loginPw, 256)
 #FROM `member`;
