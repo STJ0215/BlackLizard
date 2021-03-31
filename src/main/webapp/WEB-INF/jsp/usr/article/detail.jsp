@@ -47,14 +47,11 @@
                         <span>${article.forPrintTitle}</span>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <div>${article.forPrintBody}</div>
-                    </div>
-                </div>
+                <div class="article-area">
+	            	${article.forPrintBody}
+	            </div>
             </div>
         </div>
-        <br>
         
         <div class="sub-menu-bar con-min-width">
             <div class="con">
@@ -76,7 +73,7 @@
             </div>
         </div>
         
-        <div class="write-reply-box">
+        <div class="write-reply-box con-min-width">
             <div class="con">                
                 <form class="form-box-type-1" action="/usr/reply/doWrite" method="POST">
                     <input type="hidden" name="redirectUri" value="${currentUri}">
