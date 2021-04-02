@@ -80,41 +80,41 @@ regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = 'notice1_title',
-`body` = 'notice1_body';
+title = 'notice_title-1',
+`body` = 'notice_body-1';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = 'notice2_title',
-`body` = 'notice2_body';
+title = 'notice_title-2',
+`body` = 'notice_body-2';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
 boardId = 2,
 memberId = 1,
-title = '제목3',
-`body` = '내용3';
+title = 'article_title-1',
+`body` = 'article_body-1';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
 boardId = 2,
 memberId = 2,
-title = '제목4',
-`body` = '내용4';
+title = 'article_title-2',
+`body` = 'article_body-2';
 
-# 게시물 데이터 무작위 추가
-INSERT INTO article SET
-regDate = NOW(),
-updateDate = NOW(),
-boardId = 2,
-memberId = 2,
-title = CONCAT('제목_', RAND()),
-`body` = CONCAT('내용_', RAND());
+## 게시물 데이터 무작위 추가
+#INSERT INTO article SET
+#regDate = NOW(),
+#updateDate = NOW(),
+#boardId = 2,
+#memberId = 2,
+#title = CONCAT('제목_', RAND()),
+#`body` = CONCAT('내용_', RAND());
 
 
 

@@ -48,7 +48,9 @@
                         </div>
                         
                         <div>
+                            <!--
                             <span>작업</span>
+                            -->
                         </div>                       
                     </div>
                 </div>
