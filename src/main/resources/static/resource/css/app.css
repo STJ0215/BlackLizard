@@ -147,6 +147,11 @@ html {
 
 
 /* 회원 가입 페이지 시작 */
+.logo-join {
+	width: 150px;
+	margin: 0 auto;
+}
+
 .join-button {
 	
 }
@@ -155,6 +160,11 @@ html {
 
 
 /* 로그인 페이지 시작 */
+.logo-login {
+	width: 150px;
+	margin: 0 auto;
+}
+
 .login-button {
 	
 }
@@ -197,16 +207,6 @@ html {
 .logo-blank {
 	width: 100%;
 	height: 91.5px;
-}
-
-.logo-join {
-	width: 150px;
-	margin: 20px auto;
-}
-
-.logo-login {
-	width: 150px;
-	margin: 20px auto;
 }
 /* 로고바 끝 */
 

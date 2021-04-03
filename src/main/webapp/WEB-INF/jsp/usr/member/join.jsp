@@ -65,7 +65,7 @@
             }
         </script>
         
-        <div class="join-box con-min-width margin-top-30">
+        <div class="join-box con-min-width">
             <div class="con">
             	<a href="/" class="logo-login block img-box">
                    	<img src="/resource/img/BlackLizard-logo_500px.png">
