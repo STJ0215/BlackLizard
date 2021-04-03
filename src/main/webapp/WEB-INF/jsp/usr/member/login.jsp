@@ -45,7 +45,7 @@
             	<a href="/" class="logo-login block img-box">
                    	<img src="/resource/img/BlackLizard-logo_500px.png">
                 </a>
-                <form class="form-box-type-2 margin-top-30" action="doLogin" method="POST" onsubmit="loginFormSubmit(this); return false;">
+                <form class="form-box-type-1 margin-top-30" action="doLogin" method="POST" onsubmit="loginFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>아이디 :</span>

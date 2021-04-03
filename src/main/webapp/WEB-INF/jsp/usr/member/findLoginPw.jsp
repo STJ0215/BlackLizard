@@ -38,7 +38,7 @@
         
         <div class="find-login-pw-box con-min-width">
             <div class="con">
-                <form class="form-box-type-1" action="doFindLoginPw" method="POST" onsubmit="findLoginPwFormSubmit(this); return false;">
+                <form class="form-box-type-2" action="doFindLoginPw" method="POST" onsubmit="findLoginPwFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>로그인 아이디 :</span>

@@ -95,6 +95,95 @@ html {
 
 
 
+/* 폼 박스 타입 1 (회원가입, 로그인) 시작 */
+.form-box-type-1 {
+	width: 500px;
+	margin: 0 auto;
+}
+.form-box-type-1 > div {
+	display: flex;
+	margin-top: 10px;
+}
+
+.form-box-type-1 > div > div {
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.form-box-type-1 > div > div:first-child {
+	display: flex;
+	align-items: center;
+	min-width: 150px;
+}
+
+.form-box-type-1 > div > div:first-child > span {
+	font-weight: bold;
+}
+
+.form-box-type-1 > div > div:last-child {
+	flex: 1 0 0;
+}
+
+.form-box-type-1 > div > div:last-child > input[type="text"],
+.form-box-type-1 > div > div:last-child > input[type="email"],
+.form-box-type-1 > div > div:last-child > input[type="password"] {
+	display: block;
+	width: 300px;
+	height: 30px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.form-box-type-1 > div > div:last-child > input[type="submit"] {
+	width: 60px;
+	height: 30px;
+	margin: 20px auto;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 5px;
+}
+/* 폼 박스 타입 1 (회원가입, 로그인) 끝 */
+
+
+
+/* 회원 가입 페이지 시작 */
+.join-button {
+	
+}
+/* 회원 가입 페이지 끝 */
+
+
+
+/* 로그인 페이지 시작 */
+.login-button {
+	
+}
+
+.sub-menu_login {
+	width: 250px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.sub-menu_login > div {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.sub-menu_login > div > a {
+	
+}
+
+.sub-menu_login > div > a > p {
+	color: rgb(100, 100, 100);
+	text-align: center;
+	vertical-align: center;
+}
+/* 로그인 페이지 끝 */
+
+
+
 /* 로고바 시작 */
 .logo-bar {
 	background-color: rgb(255, 255, 255);
@@ -170,64 +259,10 @@ html {
 
 
 
-/* 폼 박스 타입 1 시작 */
-.form-box-type-1 > div {
-	display: flex;
-	margin-top: 10px;
-}
-
-.form-box-type-1 > div > div:first-child {
-	display: flex;
-	align-items: center;
-	min-width: 150px;
-}
-
-.form-box-type-1 > div > div:first-child > span {
-	font-weight: bold;
-}
-
-.form-box-type-1 > div > div:last-child {
-	flex: 1 0 0;
-}
-
-.form-box-type-1 > div > div:last-child > input[type="text"],
-.form-box-type-1 > div > div:last-child > input[type="email"],
-.form-box-type-1 > div > div:last-child > input[type="password"] {
-	display: block;
-	width: 300px;
-	height: 30px;
-	padding: 10px;
-	box-sizing: border-box;
-}
-
-.form-box-type-1 > div > div:last-child > input[type="submit"] {
-	
-}
-
-.form-box-type-1 > div > div:last-child > textarea {
-	display: block;
-	width: 100%;
-	min-height: 200px;
-	padding: 10px;
-	box-sizing: border-box;
-}
-/* 폼 박스 타입 1 끝 */
-
-
-
 /* 폼 박스 타입 2 시작 */
-.form-box-type-2 {
-	width: 500px;
-	margin: 0 auto;
-}
 .form-box-type-2 > div {
 	display: flex;
 	margin-top: 10px;
-}
-
-.form-box-type-2 > div > div {
-	margin-top: 5px;
-	margin-left: 5px;
 }
 
 .form-box-type-2 > div > div:first-child {
@@ -269,56 +304,7 @@ html {
 
 
 
-/* 회원 가입 페이지 시작 */
-.join-button {
-	width: 60px;
-	height: 30px;
-	margin: 20px auto;
-	background-color: rgb(255, 255, 255);
-	border: 1px solid rgb(0, 0, 0);
-	border-radius: 5px;
-}
-/* 회원 가입 페이지 끝 */
-
-
-/* 로그인 페이지 시작 */
-.login-button {
-	width: 60px;
-	height: 30px;
-	margin: 20px auto;
-	background-color: rgb(255, 255, 255);
-	border: 1px solid rgb(0, 0, 0);
-	border-radius: 5px;
-}
-
-.sub-menu_login {
-	width: 250px;
-	height: 50px;
-	margin: 0 auto;
-}
-
-.sub-menu_login > div {
-	width: 50%;
-	height: 100%;
-	float: left;
-}
-
-.sub-menu_login > div > a {
-	
-}
-
-.sub-menu_login > div > a > p {
-	color: rgb(100, 100, 100);
-	text-align: center;
-	vertical-align: center;
-}
-/* 로그인 페이지 끝 */
-
-
-
 /* 메인 페이지 시작 */
-
-
 
 /* 메인 페이지 끝 */
 
@@ -349,6 +335,7 @@ articles-info-bar__total-count {
 	background-color: rgb(255, 255, 255);
 	font-weight: bold;
 	border: 2px solid rgb(0, 0, 0);
+	border-radius: 5px;
 	box-sizing: border-box;
 }
 
@@ -450,6 +437,12 @@ articles-info-bar__total-count {
 	margin-top: 50px;
 }
 /* 게시물 상세 정보 끝 */
+
+
+
+/* 댓글 작성 시작 */
+
+/* 댓글 작성 끝 */
 
 
 

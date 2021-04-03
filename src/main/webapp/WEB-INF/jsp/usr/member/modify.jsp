@@ -7,7 +7,7 @@
         
         <div class="modify-member-box con-min-width">
             <div class="con">
-                <form class="form-box-type-1" action="doModify" method="POST">
+                <form class="form-box-type-2" action="doModify" method="POST">
                     <input type="hidden" name="checkLoginPwAuthCode" value="${param.checkLoginPwAuthCode}"/>
                     <div>
                         <div>

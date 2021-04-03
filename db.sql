@@ -80,32 +80,32 @@ regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = 'notice_title-1',
-`body` = 'notice_body-1';
+title = 'notice-title_1',
+`body` = 'notice-body_1';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
 boardId = 1,
 memberId = 1,
-title = 'notice_title-2',
-`body` = 'notice_body-2';
+title = 'notice-title_2',
+`body` = 'notice-body_2';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
 boardId = 2,
 memberId = 1,
-title = 'article_title-1',
-`body` = 'article_body-1';
+title = 'article-title_1',
+`body` = 'article-body_1';
 
 INSERT INTO article SET
 regDate = NOW(),
 updateDate = NOW(),
 boardId = 2,
 memberId = 2,
-title = 'article_title-2',
-`body` = 'article_body-2';
+title = 'article-title_2',
+`body` = 'article-body_2';
 
 ## 게시물 데이터 무작위 추가
 #INSERT INTO article SET

@@ -7,7 +7,7 @@
         
         <div class="write-box con-min-width">
             <div class="con">
-                <form class="form-box-type-1" action="doWrite" method="POST">
+                <form class="form-box-type-2" action="doWrite" method="POST">
                     <div>
                         <div>
                             <span>제목 :</span>

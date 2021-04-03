@@ -67,22 +67,16 @@
             </div>
         </div>
         
-        <div class="con-min-width margin-top-30">
-            <div class="con">
-                <h2>댓글 작성</h2>
-            </div>
-        </div>
-        
         <div class="write-reply-box con-min-width">
             <div class="con">                
-                <form class="form-box-type-1" action="/usr/reply/doWrite" method="POST">
+                <form class="" action="/usr/reply/doWrite" method="POST">
                     <input type="hidden" name="redirectUri" value="${currentUri}">
                     <input type="hidden" name="relTypeCode" value="article">
                     <input type="hidden" name="relId" value="${param.id}">
                     
                     <div>
                         <div>
-                            <span>내용</span>
+                            <span>댓글 작성</span>
                         </div>
                         <div>
                             <textarea maxlength="2000" name="body" placeholder="댓글을 입력해 주세요."></textarea>

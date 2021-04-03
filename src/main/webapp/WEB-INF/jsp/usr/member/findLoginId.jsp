@@ -38,7 +38,7 @@
         
         <div class="find-login-id-box con-min-width">
             <div class="con">
-                <form class="form-box-type-1" action="doFindLoginId" method="POST" onsubmit="findLoginIdFormSubmit(this); return false;">
+                <form class="form-box-type-2" action="doFindLoginId" method="POST" onsubmit="findLoginIdFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>이름 :</span>
