@@ -117,8 +117,8 @@ html {
 
 .form-box-type-1 > div > div:first-child {
 	display: flex;
+	min-width: 120px;
 	align-items: center;
-	min-width: 150px;
 }
 
 .form-box-type-1 > div > div:first-child > span {
@@ -133,7 +133,7 @@ html {
 .form-box-type-1 > div > div:last-child > input[type="email"],
 .form-box-type-1 > div > div:last-child > input[type="password"] {
 	display: block;
-	width: 300px;
+	width: 320px;
 	height: 30px;
 	padding: 10px;
 	box-sizing: border-box;
@@ -144,6 +144,7 @@ html {
 	height: 30px;
 	margin: 20px auto;
 	background-color: rgb(255, 255, 255);
+	font-weight: bold;
 	border: 1px solid rgb(0, 0, 0);
 	border-radius: 5px;
 }
@@ -266,7 +267,8 @@ html {
 
 /* 폼 박스 타입 2 시작 */
 /* 로그인 아이디 찾기, 로그인 패스워드 찾기, 패스워드 체크, 회원정보 수정 */
-/* 게시물 목록, 상세 정보, 작성, 삭제 */
+/* 검색창 */
+/* 게시물 목록, 작성, 수정 */
 /* 댓글 수정 */
 .form-box-type-2 > div {
 	display: flex;
@@ -275,8 +277,8 @@ html {
 
 .form-box-type-2 > div > div:first-child {
 	display: flex;
+	min-width: 120px;
 	align-items: center;
-	min-width: 150px;
 }
 
 .form-box-type-2 > div > div:first-child > span {
@@ -291,30 +293,30 @@ html {
 .form-box-type-2 > div > div:last-child > input[type="email"],
 .form-box-type-2 > div > div:last-child > input[type="password"] {
 	display: block;
-	width: 300px;
+	width: 320px;
 	height: 30px;
 	padding: 10px;
 	box-sizing: border-box;
 }
 
 .form-box-type-2 > div > div:last-child > input[type="submit"] {
-	
+	width: 100px;
+	height: 30px;
+	margin: 10px auto;
+	background-color: rgb(255, 255, 255);
+	font-weight: bold;
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 5px;
 }
 
 .form-box-type-2 > div > div:last-child > textarea {
 	display: block;
 	width: 100%;
-	min-height: 200px;
+	min-height: 300px;
 	padding: 10px;
 	box-sizing: border-box;
 }
 /* 폼 박스 타입 2 끝 */
-
-
-
-/* 메인 페이지 시작 */
-
-/* 메인 페이지 끝 */
 
 
 
@@ -428,30 +430,19 @@ articles-info-bar__total-count {
 /* 게시물 페이지 메뉴 끝 */
 
 
-
-/* 게시물 상세 정보 시작 */
-.article-detail-box > div > div {
+/* 게시물 작성 시작 */
+.write-box .form-box-type-2 > div > div:first-child {
 	display: flex;
-	margin-top: 10px;
+	min-width: 80px;
+	line-height: 30px;
+	align-items: center;
 }
+/* 게시물 작성 끝 */
 
-.article-detail-box > div > div > div:nth-child(1) {
-	width: 150px;
-}
-
-.article-detail-box > div > div > div:nth-child(1) > span {
-	font-weight: bold;
-}
-
-.article-detail-box > div > .article-area {
-	width: 1200px;
-	min-height: 500px;
-	margin-top: 50px;
-}
-/* 게시물 상세 정보 끝 */
 
 
 /* 폼 박스 타입 3 시작 */
+/* 게시물 상세 정보 */
 .form-box-type-3 > div {
 	display: flex;
 	margin-top: 10px;
@@ -487,6 +478,29 @@ articles-info-bar__total-count {
 	border-radius: 5px;
 }
 /* 폼 박스 타입 3 끝 */
+
+
+
+/* 게시물 상세 정보 시작 */
+.article-detail-box > div > div {
+	display: flex;
+	margin-top: 10px;
+}
+
+.article-detail-box > div > div > div:nth-child(1) {
+	width: 150px;
+}
+
+.article-detail-box > div > div > div:nth-child(1) > span {
+	font-weight: bold;
+}
+
+.article-detail-box > div > .article-area {
+	width: 1200px;
+	min-height: 500px;
+	margin-top: 50px;
+}
+/* 게시물 상세 정보 끝 */
 
 
 
