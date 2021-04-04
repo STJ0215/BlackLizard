@@ -14,7 +14,7 @@
         
         <div class="con-min-width">
             <div class="con">
-                <form class="form-box-type-2">
+                <form class="">
                     <div class="searchKeyword-box">
                         <div class="searchKeyword-input">
                             <input type="text" placeholder="검색어 입력" name="searchKeyword" value="${param.searchKeyword}">

@@ -267,7 +267,6 @@ html {
 
 /* 폼 박스 타입 2 시작 */
 /* 로그인 아이디 찾기, 로그인 패스워드 찾기, 패스워드 체크, 회원정보 수정 */
-/* 검색창 */
 /* 게시물 목록, 작성, 수정 */
 /* 댓글 수정 */
 .form-box-type-2 > div {
@@ -325,8 +324,16 @@ articles-info-bar__total-count {
 	position: absolute;
 }
 
-.searchKeyword-box > div {
+.searchKeyword-box {
+	display: flex;
 	height: 25px;
+	margin-top: 10px;
+}
+
+.searchKeyword-box > .searchKeyword-input {
+	display: flex;
+	min-width: 120px;
+	align-items: center;
 }
 
 .searchKeyword-box > .searchKeyword-input > input[type="text"] {
@@ -337,6 +344,7 @@ articles-info-bar__total-count {
 }
 
 .searchKeyword-box > .searchKeyword-submit {
+	flex: 1 0 0;
 	margin-left: 10px;
 }
 
@@ -345,7 +353,7 @@ articles-info-bar__total-count {
 	height: 100%;
 	background-color: rgb(255, 255, 255);
 	font-weight: bold;
-	border: 2px solid rgb(0, 0, 0);
+	border: 1px solid rgb(0, 0, 0);
 	border-radius: 5px;
 	box-sizing: border-box;
 }
