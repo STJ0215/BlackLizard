@@ -9,7 +9,7 @@
         		<div class="content1">
         			<ul>
         				<li>메인 페이지 디자인</li>
-        				<li>로그인 패스워드 체크</li>
+        				<li>로그인 패스워드 체크, 회원정보 수정</li>
         				<li>코드 정리</li>
         			</ul>
         		</div>
