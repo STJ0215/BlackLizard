@@ -27,7 +27,7 @@
             </div>
         </div>
         
-        <div class="article-list-box con-min-width">
+        <div class="article-list-box con-min-width margin-top-30">
             <div class="con">
                 <div class="article-list-box__head">
                     <div class="article-list-box__row">
@@ -46,12 +46,11 @@
                         <div>
                             <span>제목</span>
                         </div>
-                        
                         <div>
-                            <!--
-                            <span>작업</span>
-                            -->
-                        </div>                       
+                        	<!--
+                        	<span>작업</span>
+                        	-->
+                        </div>
                     </div>
                 </div>
                 <div class="article-list-box__body">

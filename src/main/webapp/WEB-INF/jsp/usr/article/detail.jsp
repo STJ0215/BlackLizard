@@ -69,38 +69,24 @@
         
         <div class="write-reply-box con-min-width">
             <div class="con">                
-                <form class="" action="/usr/reply/doWrite" method="POST">
+                <form class="form-box-type-3 margin-top-30" action="/usr/reply/doWrite" method="POST">
                     <input type="hidden" name="redirectUri" value="${currentUri}">
                     <input type="hidden" name="relTypeCode" value="article">
                     <input type="hidden" name="relId" value="${param.id}">
                     
                     <div>
                         <div>
-                            <span>댓글 작성</span>
-                        </div>
-                        <div>
                             <textarea maxlength="2000" name="body" placeholder="댓글을 입력해 주세요."></textarea>
                         </div>
-                    </div>
-                    <div>
                         <div>
-                            <span></span>
-                        </div>
-                        <div>
-                            <input type="submit" value="작성">
+                            <input type="submit" value="댓글 작성">
                         </div>
                     </div>
                 </form>
             </div>
         </div>
         
-        <div class="con-min-width margin-top-30">
-            <div class="con">
-                <h2>댓글 목록</h2>
-            </div>
-        </div>
-        
-        <div class="article-reply-list-box con-min-width">
+        <div class="article-reply-list-box con-min-width margin-top-30">
             <div class="con">
                 <div class="article-reply-list-box__head">
                     <div class="article-reply-list-box__row">
@@ -120,7 +106,9 @@
                             <span>내용</span>
                         </div>
                         <div>
-                            <span>작업</span>
+                        	<!--
+                        	<span>작업</span>
+                        	-->
                         </div>
                     </div>
                 </div>

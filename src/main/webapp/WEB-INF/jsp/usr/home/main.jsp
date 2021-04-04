@@ -7,6 +7,13 @@
         <div class="home-main con-min-width">
         	<div class="con">
         		<div class="content1">
+        			<ul>
+        				<li>메인 페이지 디자인</li>
+        				<li>로그인 아이디 찾기, 로그인 패스워드 찾기</li>
+        				<li>로그인 패스워드 체크</li>
+        				<li>게시물 작성 버튼 링크, 게시물 작성</li>
+        				<li>코드 정리</li>
+        			</ul>
         		</div>
         		<div class="content2 margin-top-30">
         		</div>
