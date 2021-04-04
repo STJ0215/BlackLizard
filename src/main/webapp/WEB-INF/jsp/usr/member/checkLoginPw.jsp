@@ -47,10 +47,10 @@
                     
                     <div>
                         <div>
-                            <span>확인 :</span>
+                            
                         </div>
                         <div>
-                            <input type="submit" value="패스워드 확인"/>
+                            <input type="submit" value="확인"/>
                         </div>
                     </div>
                 </form>

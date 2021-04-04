@@ -44,7 +44,7 @@
                     </div>
                     <div>
                         <div>
-                            <span>수정 :</span>
+                        	
                         </div>
                         <div>
                             <input type="submit" value="수정"/>

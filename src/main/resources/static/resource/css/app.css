@@ -101,6 +101,7 @@ html {
 
 /* 폼 박스 타입 1 시작 */
 /* 회원가입, 로그인 */
+/* 로그인 아이디 찾기, 로그인 패스워드 찾기 */
 .form-box-type-1 {
 	width: 500px;
 	margin: 0 auto;
@@ -140,7 +141,7 @@ html {
 }
 
 .form-box-type-1 > div > div:last-child > input[type="submit"] {
-	width: 60px;
+	width: 80px;
 	height: 30px;
 	margin: 20px auto;
 	background-color: rgb(255, 255, 255);
@@ -188,10 +189,6 @@ html {
 }
 
 .sub-menu_login > div > a {
-	
-}
-
-.sub-menu_login > div > a > p {
 	color: rgb(100, 100, 100);
 	text-align: center;
 	vertical-align: center;
@@ -266,8 +263,8 @@ html {
 
 
 /* 폼 박스 타입 2 시작 */
-/* 로그인 아이디 찾기, 로그인 패스워드 찾기, 패스워드 체크, 회원정보 수정 */
-/* 게시물 목록, 작성, 수정 */
+/* 패스워드 체크, 회원정보 수정 */
+/* 게시물 작성, 수정 */
 /* 댓글 수정 */
 .form-box-type-2 > div {
 	display: flex;
@@ -299,7 +296,7 @@ html {
 }
 
 .form-box-type-2 > div > div:last-child > input[type="submit"] {
-	width: 100px;
+	width: 80px;
 	height: 30px;
 	margin: 10px auto;
 	background-color: rgb(255, 255, 255);
@@ -439,7 +436,7 @@ articles-info-bar__total-count {
 
 
 /* 게시물 작성 시작 */
-.write-box .form-box-type-2 > div > div:first-child {
+.write-box .form-box-type-2 > div > div:nth-child(1) {
 	display: flex;
 	min-width: 80px;
 	line-height: 30px;
