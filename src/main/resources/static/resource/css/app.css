@@ -99,6 +99,45 @@ html {
 
 
 
+/* 로고바 시작 */
+.logo-bar {
+	background-color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+}
+
+.logo-bar__logo {
+	width: 150px;
+}
+
+.logo-blank {
+	width: 100%;
+	height: 91.5px;
+}
+/* 로고바 끝 */
+
+
+
+/* 탑바 시작 */
+.top-bar {
+	height: 50px;
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	margin: 0 auto;
+}
+
+.top-bar__menu-box > ul > li > a {
+	padding: 0 10px;
+	min-width: 80px;
+	font-weight: bold;
+}
+
+.top-bar__menu-box > ul > li:hover > a {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+/* 탑바 끝 */
+
+
 /* 폼 박스 타입 1 시작 */
 /* 회원가입, 로그인 */
 /* 로그인 아이디 찾기, 로그인 패스워드 찾기 */
@@ -197,57 +236,6 @@ html {
 
 
 
-/* 로고바 시작 */
-.logo-bar {
-	background-color: rgb(255, 255, 255);
-	color: rgb(255, 255, 255);
-}
-
-.logo-bar__logo {
-	width: 150px;
-}
-
-.logo-blank {
-	width: 100%;
-	height: 91.5px;
-}
-/* 로고바 끝 */
-
-
-
-/* 탑바 시작 */
-.top-bar {
-	height: 50px;
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
-	margin: 0 auto;
-}
-
-.top-bar__menu-box > ul > li > a {
-	padding: 0 10px;
-	min-width: 80px;
-	font-weight: bold;
-}
-
-.top-bar__menu-box > ul > li:hover > a {
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
-}
-/* 탑바 끝 */
-
-
-
-/* 타이틀 바 시작 */
-/*
-.title-bar {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-*/
-/* 타이틀 바 끝 */
-
-
-
 /* 서브 메뉴 바 시작 */
 .sub-menu-bar {
 	font-weight: bold;
@@ -259,6 +247,55 @@ html {
 	margin: 0 10px;
 }
 /* 서브 메뉴 바 끝 */
+
+
+
+/* 메인 페이지 시작 */
+.main-page-section-visual {
+	width: 100%;
+	height: 500px;
+	background-color: black;
+}
+
+.slider-wrap .slider-content {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.slider-wrap .slide-01 {
+	background-color: rgb(50, 50, 50);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slider-wrap .slide-02 {
+	background-color: rgb(100, 100, 100);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slider-wrap .slide-03 {
+	background-color: rgb(150, 150, 150);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slider-wrap .slide-04 {
+	background-color: rgb(200, 200, 200);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.slider-wrap .slider-content > .slider-vision-wrap {
+	
+}
+
+.slider-wrap .slider-content > .slider-vision-wrap > img {
+	
+}
+
+/* 메인 페이지 끝 */
 
 
 
@@ -438,6 +475,7 @@ articles-info-bar__total-count {
 	color: red;
 }
 /* 게시물 페이지 메뉴 끝 */
+
 
 
 /* 게시물 작성 시작 */
@@ -655,5 +693,4 @@ articles-info-bar__total-count {
     float: left;
     margin: 0 15px;
 }
-
 /* 푸터 바 끝 */
