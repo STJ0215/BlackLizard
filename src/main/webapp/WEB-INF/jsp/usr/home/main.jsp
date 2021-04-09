@@ -10,34 +10,22 @@
         			<div class="slider-wrap">
         				<div class="slider-content slide-01">
 	        				<div class="slider-vision-wrap">
-	        					<img src="" alt="">
-	        					<div>
-	        						<p>slide01</p>
-	        					</div>
+	        					<img src="/img/01-main/lizard01.jpg" alt="">
 	        				</div>
 	        			</div>
 	        			<div class="slider-content slide-02">
 	        				<div class="slider-vision-wrap">
-	        					<img src="" alt="">
-	        					<div>
-	        						<p>slide02</p>
-	        					</div>
+	        					<img src="/img/01-main/lizard02.jpg" alt="">
 	        				</div>
 	        			</div>
 	        			<div class="slider-content slide-03">
 	        				<div class="slider-vision-wrap">
-	        					<img src="" alt="">
-	        					<div>
-	        						<p>slide03</p>
-	        					</div>
+	        					<img src="/img/01-main/lizard03.jpg" alt="">
 	        				</div>
 	        			</div>
 	        			<div class="slider-content slide-04">
 	        				<div class="slider-vision-wrap">
-	        					<img src="" alt="">
-	        					<div>
-	        						<p>slide04</p>
-	        					</div>
+	        					<img src="/img/01-main/lizard04.jpg" alt="">
 	        				</div>
 	        			</div>
         			</div>
