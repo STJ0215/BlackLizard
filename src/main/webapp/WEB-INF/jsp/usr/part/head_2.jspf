@@ -5,6 +5,10 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        
+        <!-- js -->
+        <script src="/resources/js/app.js"></script>
+        
         <!-- css -->
         <link rel="stylesheet" href="/resource/css/app.css">
         

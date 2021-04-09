@@ -6,7 +6,7 @@
 <%@ include file="../part/head.jspf"%>
         <div class="home-main-page con-min-width">
         	<div class="con">
-        		<div class="main-page-section-visual">
+        		<div class="main-page-section_slide">
         			<div class="slider-wrap">
         				<div class="slider-content slide-01">
 	        				<div class="slider-vision-wrap">
