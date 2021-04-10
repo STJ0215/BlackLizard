@@ -59,14 +59,55 @@
 	        			</div>
         			</div>
         		</div>
-        		<div class="home-main-content2 margin-top-30">
-        			<ul>
-        				<li>메인 페이지 디자인</li>
-        				<li>로그인 패스워드 체크, 회원정보 수정</li>
-        				<li>코드 정리</li>
-        			</ul>
-        		</div>
-        		<div class="home-main-content3 margin-top-30">
+        		
+        		<div class="main-page-content">
+        			<div class="content-box box1">
+        				<div class="content-box-title">
+        					<p>BlackLizard</p>
+        				</div>
+        				<div class="content-box-body">
+        					<ul>
+	        					<li>Windows 10</li>
+	        					<li>Git, GitHub</li>
+	        					<li>JDK 1.8</li>
+	        					<li>STS 4.7.1</li>
+	        					<li>SQLYog Community Edition</li>
+	        					<li>XAMPP</li>
+	        					<li>Brackets</li>	        					
+	        				</ul>
+        				</div>
+        			</div>
+        			<div class="content-box box2">
+        				<div class="content-box-title">
+        					<p>To Do List</p>
+        				</div>
+        				<div class="content-box-body">
+        					<ul>
+	        					<li>1. 바른 생활</li>
+	        					<li>2. 꾸준한 운동</li>
+	        					<li>3. 건강한 식사</li>
+	        					<li>4. 실력 향상</li>
+	        					<li>5. 쉴 때는 푹 쉬기</li>
+	        				</ul>
+        				</div>
+        			</div>
+        			<div class="content-box box3">
+        				<div class="content-box-title">
+        					<p>Memo</p>
+        				</div>
+        				<div class="content-box-body">
+        					<span>
+	        					Lorem ipsum dolor<br>
+	        					sit amet consectetur adipisicing elit.<br> 
+	        					Adipisci libero totam blanditiis<br>
+	        					alias incidunt accusantium <br>
+	        					dicta non aliquid harum culpa.<br>
+	        					Dolore saepe fugit maxime <br>
+	        					reprehenderit dolores numquam sit.<br>
+	        					Quae, quasi?
+        					</span>
+        				</div>
+        			</div>
         		</div>
         	</div>
         </div>

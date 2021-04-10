@@ -342,6 +342,69 @@ html {
 	padding: 50px;
 	box-sizing: border-box;
 }
+
+
+
+.main-page-content {
+	width: 100%;
+	height: 500px;
+}
+
+.main-page-content > .content-box {
+	position: relative;
+	width: 380px;
+	height: 500px;
+	float: left;
+}
+
+.main-page-content > .content-box:nth-child(1) {
+	margin-right: 30px;
+}
+
+.main-page-content > .content-box:nth-child(2) {
+	margin-right: 30px;
+}
+
+.main-page-content > .content-box:hover {
+	
+}
+
+.main-page-content > .content-box > .content-box-title {
+	width: 100%;
+	height: 20%;
+	padding: 40px 20px;
+	box-sizing: border-box;
+}
+
+.main-page-content > .content-box > .content-box-title > p {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+.main-page-content > .content-box > .content-box-body {
+	width: 100%;
+	height: 80%;
+	padding: 50px;
+	border: 2px solid rgb(200, 200, 200);
+	box-sizing: border-box;
+}
+
+.main-page-content > .content-box > .content-box-body > ul {
+	
+}
+
+.main-page-content > .content-box > .content-box-body > ul > li {
+	line-height: 40px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.main-page-content > .content-box > .content-box-body > span {
+	line-height: 30px;
+	font-size: 16px;
+}
+}
 /* 메인 페이지 끝 */
 
 
@@ -677,7 +740,7 @@ articles-info-bar__total-count {
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
     height: 60px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .footer-bar > .footer-inner {
