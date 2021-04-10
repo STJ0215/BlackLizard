@@ -254,7 +254,6 @@ html {
 .main-page-section_slide {
 	width: 100%;
 	height: 500px;
-	background-color: rgb(0, 0, 0);
 }
 
 .slider-wrap .slider-content {
@@ -264,37 +263,13 @@ html {
 	height: 500px;
 }
 
-.slider-wrap .slide-01 {
-	background-color: rgb(50, 50, 50);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.slider-wrap .slide-02 {
-	background-color: rgb(100, 100, 100);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.slider-wrap .slide-03 {
-	background-color: rgb(150, 150, 150);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.slider-wrap .slide-04 {
-	background-color: rgb(200, 200, 200);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
 .slider-wrap .slick-prev1 {
 	position: absolute;
-    top: 50%;
-    left: 30px;
-    display: block;
+	display: block;
     width: 40px;
     height: 40px;
+    top: 50%;
+    left: 30px;
     background-image: url("../img/icon_button_gototop.png");
     background-size: cover;
     opacity: 0;
@@ -314,11 +289,11 @@ html {
 
 .slider-wrap .slick-next1 {
 	position: absolute;
-    top: 50%;
-    right: 30px;
     display: block;
     width: 40px;
     height: 40px;
+    top: 50%;
+    right: 30px;
     background-image: url("../img/icon_button_gototop.png");
     background-size: cover;
     opacity: 0;
@@ -336,23 +311,37 @@ html {
 	border-radius: 50%;
 }
 
-.slider-wrap .slider-content > .slider-vision-wrap {
+.slider-wrap .slider-content > .slider-vision {
 	position: absolute;
 	display: block;
 	width: 300px;
 	height: 300px;
-	top: 50px;
+	top: 100px;
 	left: 50px;	
 }
 
-.slider-wrap .slider-content > .slider-vision-wrap > img {
-	
+.slider-wrap .slide-01 .slider-vision {
+	background-image: url("../img/01-main/lizard01.jpg");
 }
 
-.slider-wrap .slider-content > .slider-vision-wrap > div {
-	
+.slider-wrap .slide-02 .slider-vision {
+	background-image: url("../img/01-main/lizard02.jpg");
 }
 
+.slider-wrap .slide-03 .slider-vision {
+	background-image: url("../img/01-main/lizard03.jpg");
+}
+
+.slider-wrap .slider-content > .slide-text {
+	position: absolute;
+	display: block;
+	width: 600px;
+	height: 300px;
+	top: 100px;
+	left: 400px;
+	padding: 50px;
+	box-sizing: border-box;
+}
 /* 메인 페이지 끝 */
 
 

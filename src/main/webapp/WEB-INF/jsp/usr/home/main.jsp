@@ -9,23 +9,52 @@
         		<div class="main-page-section_slide">
         			<div class="slider-wrap">
         				<div class="slider-content slide-01">
-	        				<div class="slider-vision-wrap">
+	        				<div class="slider-vision">
 	        					<img src="/img/01-main/lizard01.jpg" alt="">
+	        				</div>
+	        				<div class="slide-text">
+	        					<div class="slide-text-title">
+	        						<h1>BlackLizard</h1>
+	        					</div>
+	        					<div class="slide-text-body margin-top-30">
+	        						<p>검은 도마뱀</p>
+	        					</div>
 	        				</div>
 	        			</div>
 	        			<div class="slider-content slide-02">
-	        				<div class="slider-vision-wrap">
+	        				<div class="slider-vision">
 	        					<img src="/img/01-main/lizard02.jpg" alt="">
+	        				</div>
+	        				<div class="slide-text">
+	        					<div class="slide-text-title">
+	        						<h1>Lorem ipsum</h1>
+	        					</div>
+	        					<div class="slide-text-body margin-top-30">
+	        						<p>
+	        							Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+	        							Fuga sunt modi <br>
+				                        maxime <br>
+				                        incidunt eos dolorum itaque <br>
+				                        magnam porro dicta.
+	        						</p>
+	        					</div>
 	        				</div>
 	        			</div>
 	        			<div class="slider-content slide-03">
-	        				<div class="slider-vision-wrap">
+	        				<div class="slider-vision">
 	        					<img src="/img/01-main/lizard03.jpg" alt="">
 	        				</div>
-	        			</div>
-	        			<div class="slider-content slide-04">
-	        				<div class="slider-vision-wrap">
-	        					<img src="/img/01-main/lizard04.jpg" alt="">
+	        				<div class="slide-text">
+	        					<div class="slide-text-title">
+	        						<h1>Lorem ipsum</h1>
+	        					</div>
+	        					<div class="slide-text-body margin-top-30">
+	        						<p>
+	        							Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, architecto!<br>
+	        							Autem quidem, nulla eos dolores accusamus quaerat itaque architecto magnam, omnis distinctio labore!<br>
+	        							Aperiam, ipsum?
+	        						</p>
+	        					</div>
 	        				</div>
 	        			</div>
         			</div>
