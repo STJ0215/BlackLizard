@@ -144,7 +144,7 @@ public class MemberController {
 		session.setAttribute("loginedMemberId", member.getId());
 		
 		model.addAttribute("msg", String.format("%s님 환영합니다.", member.getName()));
-		model.addAttribute("redirectUri", "/usr/article-free/list");
+		model.addAttribute("redirectUri", "/usr/home/main");
 		
 		return "/common/redirect";
 	}
@@ -153,7 +153,7 @@ public class MemberController {
 	public String doLogout(HttpSession session, Model model) {		
 		session.removeAttribute("loginedMemberId");
 		
-		model.addAttribute("redirectUri", "/usr/article-free/list");
+		model.addAttribute("redirectUri", "/usr/home/main");
 		
 		return "/common/redirect";
 	}
@@ -263,7 +263,7 @@ public class MemberController {
 		memberService.modify(param);
 		
 		model.addAttribute("msg", "회원정보가 수정되었습니다.");
-		model.addAttribute("redirectUri", "/usr/article-free/list");
+		model.addAttribute("redirectUri", "/usr/home/main");
 		
 		return "/common/redirect";
 	}
