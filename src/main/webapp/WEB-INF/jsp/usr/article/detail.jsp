@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:set var="title" value="${board.name} 상세 정보"/>
+<c:set var="title" value="${board.name} : ${article.forPrintTitle}"/>
 <%@ include file="../part/head.jspf"%>
         
         <div class="article-detail-box con-min-width">
