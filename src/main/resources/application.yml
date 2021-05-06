@@ -22,7 +22,7 @@ spring:
     username: root
     password: 
 mybatis:
-  type-aliases-package: com.stj.tunnel.BlackLizard.dto
+  type-aliases-package: com.stj.tunnel.blacklizard.dto
 server:
   error:
     include-exception: true
