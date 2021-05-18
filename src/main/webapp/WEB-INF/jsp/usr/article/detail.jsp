@@ -69,7 +69,7 @@
         
         <div class="write-reply-box con-min-width">
             <div class="con">                
-                <form class="form-box-type-3 margin-top-30" action="/usr/reply/doWrite" method="POST">
+                <form class="form-box-type-03 margin-top-30" action="/usr/reply/doWrite" method="POST">
                     <input type="hidden" name="redirectUri" value="${currentUri}">
                     <input type="hidden" name="relTypeCode" value="article">
                     <input type="hidden" name="relId" value="${param.id}">
@@ -88,8 +88,8 @@
         
         <div class="article-reply-list-box con-min-width margin-top-30">
             <div class="con">
-                <div class="article-reply-list-box__head">
-                    <div class="article-reply-list-box__row">
+                <div class="article-reply-list-box-head">
+                    <div class="article-reply-list-box-row">
                         <div>
                             <span>ID</span>
                         </div>
@@ -112,9 +112,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="article-reply-list-box__body">
+                <div class="article-reply-list-box-body">
                     <c:forEach var="reply" items="${replies}">
-                        <div class="article-reply-list-box__row">
+                        <div class="article-reply-list-box-row">
                             <div>
                                 <span>${reply.id}</span>
                             </div>

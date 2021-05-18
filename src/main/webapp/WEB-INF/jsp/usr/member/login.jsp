@@ -43,9 +43,9 @@
         <div class="login-box con-min-width">
             <div class="con">
             	<a href="/" class="logo-login block img-box">
-                   	<img src="/resource/img/BlackLizard-logo_500px.png">
+                   	<img src="/resource/img/BlackLizard_logo_500px.png">
                 </a>
-                <form class="form-box-type-1 margin-top-30" action="doLogin" method="POST" onsubmit="loginFormSubmit(this); return false;">
+                <form class="form-box-type-01 margin-top-30" action="doLogin" method="POST" onsubmit="loginFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>아이디 :</span>
@@ -64,11 +64,11 @@
                     </div>
                     <div>
                         <div>
-                            <input type="submit" class="login-button" value="로그인"/>
+                            <input type="submit" class="button-login" value="로그인"/>
                         </div>
                     </div>
                 </form>
-                <div class="sub-menu_login">
+                <div class="sub-menu-login">
 	                <div>
 	                	<a href="/usr/member/findLoginId">
 			                <p>아이디 찾기</p>

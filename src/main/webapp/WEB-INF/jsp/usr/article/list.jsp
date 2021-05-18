@@ -15,11 +15,11 @@
         <div class="con-min-width">
             <div class="con">
                 <form class="">
-                    <div class="searchKeyword-box">
-                        <div class="searchKeyword-input">
+                    <div class="searchkeyword-box">
+                        <div class="searchkeyword-input">
                             <input type="text" placeholder="검색어 입력" name="searchKeyword" value="${param.searchKeyword}">
                         </div>
-                        <div class="searchKeyword-submit">
+                        <div class="searchkeyword-submit">
                             <input type="submit" value="검색">
                         </div>
                     </div>
@@ -29,8 +29,8 @@
         
         <div class="article-list-box con-min-width margin-top-30">
             <div class="con">
-                <div class="article-list-box__head">
-                    <div class="article-list-box__row">
+                <div class="article-list-box-head">
+                    <div class="article-list-box-row">
                         <div>
                             <span>ID</span>
                         </div>
@@ -53,10 +53,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="article-list-box__body">
+                <div class="article-list-box-body">
                     <c:forEach var="article" items="${articles}">
                         <c:set var="detailUrl" value="/usr/article-${board.code}/detail?id=${article.id}&listUrl=${encodedCurrentUri}"/>
-                        <div class="article-list-box__row">
+                        <div class="article-list-box-row">
                             <div>
                                 <a href="${detailUrl}">${article.id}</a>
                             </div>

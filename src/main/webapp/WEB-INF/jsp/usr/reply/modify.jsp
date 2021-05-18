@@ -7,7 +7,7 @@
         
         <div class="modify-reply-box con-min-width">
             <div class="con">
-                <form class="form-box-type-2" action="doModify" method="POST">
+                <form class="form-box-type-02" action="doModify" method="POST">
                     <input type="hidden" name="id" value="${reply.id}"/>
                     <input type="hidden" name="redirectUri" value="${param.redirectUri}"/>
                     <div>

@@ -36,8 +36,8 @@
             <div class="con flex flex-jc-c">
             	<!-- 좌우 대칭 맞추기 -->
                 <div class="flex-1-0-0"></div>
-                <a href="/" class="logo-bar__logo block img-box">
-                    <img src="/resource/img/BlackLizard-logo_500px.png">
+                <a href="/" class="logo-logo-bar block img-box">
+                    <img src="/resource/img/BlackLizard_logo_500px.png">
                 </a>
                 <!-- 좌우 대칭 맞추기 -->
                 <div class="flex flex-1-0-0 flex-ai-c flex-jc-e">
@@ -47,7 +47,7 @@
         
          <div class="top-bar con-min-width">
             <div class="con flex flex-jc-sb height-100p">
-                <nav class="top-bar__menu-box top-bar__menu-box-1">
+                <nav class="top-bar-menu-box top-bar-menu-box-01">
                 	<ul class="flex height-100p">
                 		<li>
                 			<a href="/" class="height-100p flex flex-jc-c flex-ai-c">
@@ -67,7 +67,7 @@
                 	</ul>
                 </nav>
                 
-                <nav class="top-bar__menu-box top-bar__menu-box-2">
+                <nav class="top-bar-menu-box top-bar-menu-box-02">
                     <ul class="flex height-100p">
                         <c:if test="${not isLogined}">
                             <li>

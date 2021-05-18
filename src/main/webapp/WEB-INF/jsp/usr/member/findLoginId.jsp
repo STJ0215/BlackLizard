@@ -39,9 +39,9 @@
         <div class="find-login-id-box con-min-width">
             <div class="con">
             	<a href="/" class="logo-login block img-box">
-                   	<img src="/resource/img/BlackLizard-logo_500px.png">
+                   	<img src="/resource/img/BlackLizard_logo_500px.png">
                 </a>
-                <form class="form-box-type-1" action="doFindLoginId" method="POST" onsubmit="findLoginIdFormSubmit(this); return false;">
+                <form class="form-box-type-01" action="doFindLoginId" method="POST" onsubmit="findLoginIdFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>이름 :</span>

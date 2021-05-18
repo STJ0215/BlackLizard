@@ -34,7 +34,7 @@
         
         <div class="check-login-pw-box con-min-width">
             <div class="con">
-                <form class="form-box-type-2" action="doCheckLoginPw" method="POST" onsubmit="checkLoginPwFormSubmit(this); return false;">
+                <form class="form-box-type-02" action="doCheckLoginPw" method="POST" onsubmit="checkLoginPwFormSubmit(this); return false;">
                     <input type="hidden" name="redirectUri" value="/usr/member/modify"/>
                     <div>
                         <div>

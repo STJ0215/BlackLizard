@@ -3,24 +3,24 @@
 		<div class="footer-bar con-min-width">
 			<div class="footer-inner con flex flex-jc-c">
 				<div class="copyright-area">
-					<span class="txt_copyright">
+					<span class="txt-copyright">
 						STJ
-						<a class="link_Blog" href="https://stj960215.tistory.com">
+						<a class="link-Blog" href="https://stj960215.tistory.com">
 							BlackLizard
                         </a>
 					</span>
             	</div>
             	<div class="familysite-area">
-					<div class="box_site">
-						<a class="link_site" href="https://stj960215.tistory.com">
+					<div class="familysite-inner">
+						<a class="link-familysite" href="https://stj960215.tistory.com">
 							Blog
 						</a>
-						<span class="txt_bar">|</span>
-						<a class="link_site" href="http://stj960215.dothome.co.kr/stj/main/index.html">
+						<span class="txt-bar">|</span>
+						<a class="link-familysite" href="http://stj960215.dothome.co.kr/stj/main/index.html">
 							Site
 						</a>
-						<span class="txt_bar">|</span>
-						<a class="link_site" href="https://github.com/STJ0215/BlackLizard">
+						<span class="txt-bar">|</span>
+						<a class="link-familysite" href="https://github.com/STJ0215/BlackLizard">
 							Github
 						</a>
 					</div>

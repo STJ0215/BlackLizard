@@ -4,13 +4,15 @@
 
 <c:set var="title" value="BlackLizard"/>
 <%@ include file="../part/head.jspf"%>
-        <div class="home-main-page con-min-width">
+        <div class="main-page con-min-width">
         	<div class="con">
-        		<div class="main-page-section_slide">
-        			<div class="slider-wrap">
-        				<div class="slider-content slide-01">
-	        				<div class="slider-vision">
-	        					<img src="/img/01-main/lizard01.jpg" alt="">
+        		<div class="main-page-slider">
+        			<div class="slide-wrap">
+        				<div class="slide slide-01">
+	        				<div class="slide-vision">
+	        					<!--
+	        					<img src="/img/01_main/lizard_01.jpg" alt="">
+	        					-->
 	        				</div>
 	        				<div class="slide-text">
 	        					<div class="slide-text-title">
@@ -21,9 +23,11 @@
 	        					</div>
 	        				</div>
 	        			</div>
-	        			<div class="slider-content slide-02">
-	        				<div class="slider-vision">
-	        					<img src="/img/01-main/lizard02.jpg" alt="">
+	        			<div class="slide slide-02">
+	        				<div class="slide-vision">
+	        					<!--
+	        					<img src="/img/01_main/lizard_02.jpg" alt="">
+	        					-->
 	        				</div>
 	        				<div class="slide-text">
 	        					<div class="slide-text-title">
@@ -40,9 +44,11 @@
 	        					</div>
 	        				</div>
 	        			</div>
-	        			<div class="slider-content slide-03">
-	        				<div class="slider-vision">
-	        					<img src="/img/01-main/lizard03.jpg" alt="">
+	        			<div class="slide slide-03">
+	        				<div class="slide-vision">
+	        					<!--
+	        					<img src="/img/01_main/lizard_03.jpg" alt="">
+	        					-->
 	        				</div>
 	        				<div class="slide-text">
 	        					<div class="slide-text-title">
@@ -61,7 +67,7 @@
         		</div>
         		
         		<div class="main-page-content">
-        			<div class="content-box box1">
+        			<div class="content-box content-box-01">
         				<div class="content-box-title">
         					<p>BlackLizard</p>
         				</div>
@@ -77,7 +83,7 @@
 	        				</ul>
         				</div>
         			</div>
-        			<div class="content-box box2">
+        			<div class="content-box content-box-02">
         				<div class="content-box-title">
         					<p>To Do List</p>
         				</div>
@@ -87,11 +93,10 @@
 	        					<li>2. 꾸준한 운동</li>
 	        					<li>3. 건강한 식사</li>
 	        					<li>4. 실력 향상</li>
-	        					<li>5. 쉴 때는 푹 쉬기</li>
 	        				</ul>
         				</div>
         			</div>
-        			<div class="content-box box3">
+        			<div class="content-box content-box-03">
         				<div class="content-box-title">
         					<p>Memo</p>
         				</div>

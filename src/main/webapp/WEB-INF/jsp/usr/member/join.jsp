@@ -68,9 +68,9 @@
         <div class="join-box con-min-width">
             <div class="con">
             	<a href="/" class="logo-login block img-box">
-                   	<img src="/resource/img/BlackLizard-logo_500px.png">
+                   	<img src="/resource/img/BlackLizard_logo_500px.png">
                 </a>
-                <form class="form-box-type-1" action="doJoin" method="POST" onsubmit="joinFormSubmit(this); return false;">
+                <form class="form-box-type-01" action="doJoin" method="POST" onsubmit="joinFormSubmit(this); return false;">
                     <div>
                         <div>
                             <span>아이디 :</span>
@@ -114,7 +114,7 @@
                     
                     <div>
                         <div>
-                            <input type="submit" class="join-button" value="가입"/>
+                            <input type="submit" class="button-join" value="가입"/>
                         </div>
                     </div>
                 </form>
